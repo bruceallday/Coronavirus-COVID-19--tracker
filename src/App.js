@@ -9,7 +9,7 @@ const App = () => {
     return(
         <div>
             <Totals />
-            <div>
+            <div style={{display: 'flex', flexDirection: 'row'}} >
                 <Map />
                 <Countries />
             </div>
