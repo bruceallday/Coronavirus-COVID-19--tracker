@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
+import {DATA_KEY, YOUR_KEY} from './map.data'
 import { useStyles } from './map.styles'
 
 import { Chart } from "react-google-charts";
 
 const Map = () => {
 
-    const [data, setData] = useState({})
+    const [data, setData] = useState(null)
     const [isLoadding, setLoading] = useState(false)
 
     useEffect(() => {
@@ -14,14 +15,13 @@ const Map = () => {
     }, [])
 
     const getData = async () => {
-        setData(null)
         setLoading(true)
 
         const result = await fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats", {
             "method": "GET",
             "headers": {
                 "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-                "x-rapidapi-key": "1a7130203bmsh6dc4ed6f9e52a2cp18ec4ejsnc05fef1e303c"
+                "x-rapidapi-key": DATA_KEY
             }
         })
 
@@ -29,11 +29,10 @@ const Map = () => {
 
         if (data.error) {
             console.log(data.error)
-            setLoading(false)
         } else {
             setData(data)
-            setLoading(false)
         }
+        setLoading(false)
     }
 
     console.log("COVID-19 DATA", data)
@@ -55,7 +54,7 @@ const Map = () => {
                 height={'600px'}
                 chartType="GeoChart"
                 data={countriesData}
-                mapsApiKey="AIzaSyAKnPETi-b68l3iYZlJ0GlGq_fR4b4ZVzk"
+                mapsApiKey={YOUR_KEY}
                 rootProps={{ 'data-testid': '1' }}
                 options={{
                     colorAxis: { colors: ['white', 'red'] },
