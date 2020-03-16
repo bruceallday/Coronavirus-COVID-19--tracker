@@ -7,8 +7,10 @@ import { Chart } from "react-google-charts";
 
 const Map = () => {
 
-    const [data, setData] = useState(null)
-    const [isLoadding, setLoading] = useState(false)
+    const [allData, setAllData] = useState(null)
+    const [countryData, setCountriesData] = useState([])
+
+    const [isLoading, setLoading] = useState(false)
 
     useEffect(() => {
         getData()
@@ -17,47 +19,68 @@ const Map = () => {
     const getData = async () => {
         setLoading(true)
 
-        const result = await fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats", {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-                "x-rapidapi-key": DATA_KEY
-            }
-        })
+        // const result = await fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats", {
+        //     "method": "GET",
+        //     "headers": {
+        //         "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+        //         "x-rapidapi-key": DATA_KEY
+        //     }
+        // })
 
-        const data = await result.json()
+        const resultAll = await fetch(
+            `https://corona.lmao.ninja/all`
+        )
+        const allData = await resultAll.json()
 
-        if (data.error) {
-            console.log(data.error)
-        } else {
-            setData(data)
+        const resultCountries = await fetch(
+            `https://corona.lmao.ninja/countries`
+        )
+        const countryData = await resultCountries.json()
+
+        if (allData.error) {
+            console.log(allData.error)
+
+        } else if (countryData.error) {
+            console.log(countryData.error)
+            
+        }else{
+            setAllData(allData)
+            setCountriesData(countryData)
         }
         setLoading(false)
     }
 
-    console.log("COVID-19 DATA", data)
+    console.log("COUNTRY DATA", countryData)
+
+    const countryArr = countryData.map((item, index) => {
+        if(item.country == "UK"){
+            return ["United Kingdom", item.cases, item.deaths]
+        }else{
+            return [item.country, item.cases, item.deaths]
+        }
+    })
+
+    console.log("COUNTRY ARRAY", countryArr)
 
     let countriesData = [
         ['Country', 'Cases', 'Deaths'],
-        ['Germany', 200, 100],
-        ['United States', 300, 150],
-        ['Brazil', 400, 90],
-        ['Canada', 500, 69],
-        ['France', 600, 300],
-        ['RU', 700, 900],
+        ...countryArr,
     ]
 
     return(
         <div>
             <Chart
-                width={'800px'}
-                height={'600px'}
+                width={'1000px'}
+                height={'800px'}
                 chartType="GeoChart"
                 data={countriesData}
                 mapsApiKey={YOUR_KEY}
                 rootProps={{ 'data-testid': '1' }}
                 options={{
-                    colorAxis: { colors: ['white', 'red'] },
+                    colorAxis: { colors: [
+                        'pink','#E50000', '#CC0000', '#B20000', '#7F0000', '#660000', 'black']},
+                    // backgroundColor: '#81d4fa',
+                    datalessRegionColor: '#81d4fa',
                 }}
             />
         </div>
