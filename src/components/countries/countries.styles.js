@@ -2,11 +2,12 @@ import { makeStyles } from '@material-ui/styles/'
 
 export const useStyles = makeStyles({
     root: {
-        // backgroundColor: 'blue',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         flexWrap: 'wrap',
-        
         height: '1500vh',
+        width: '40vw',
+        position: 'relative',
+        marginLeft: '60vw',
     },
 });

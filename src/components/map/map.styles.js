@@ -1,9 +1,8 @@
 import { makeStyles } from '@material-ui/styles/'
 
-const useStyles = makeStyles({
+export const useStyles = makeStyles({
     root: {
-
+        width: '60vw', 
+        position: 'fixed',
     },
 });
-
-export default useStyles;

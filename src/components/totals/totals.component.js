@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
-import useStyles from './totals.styles'
+import { useStyles } from './totals.styles'
 
 const Totals = () => {
-
+    const classes = useStyles()
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
 
@@ -29,7 +29,7 @@ const Totals = () => {
     }
 
     return (
-        <div>Totals</div>
+        <div className={classes.root} >Totals</div>
     )
 }
 

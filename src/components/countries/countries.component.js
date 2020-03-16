@@ -7,7 +7,6 @@ import { useStyles } from './countries.styles'
 const Countries = () => {
 
     const classes = useStyles()
-
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
 

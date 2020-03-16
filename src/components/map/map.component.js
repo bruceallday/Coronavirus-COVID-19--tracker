@@ -6,6 +6,7 @@ import { useStyles } from './map.styles'
 import { Chart } from "react-google-charts";
 
 const Map = () => {
+    const classes = useStyles()
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
 
@@ -51,9 +52,9 @@ const Map = () => {
     ]
 
     return(
-        <div >
+        <div className={classes.root} >
             <Chart
-                width={'1000px'}
+                width={'60vw'}
                 height={'800px'}
                 chartType="GeoChart"
                 data={countriesData}
