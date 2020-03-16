@@ -1,0 +1,22 @@
+{
+  "name": "covid19-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Bruce Pouncey",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel ./src/index.html"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.0.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.9.0",
+    "@types/react": "^16.8.6",
+    "babel-polyfill": "^6.26.0",
+    "material-ui": "^0.20.2",
+    "parcel": "latest",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  }
+}
+
