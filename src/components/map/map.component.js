@@ -37,8 +37,6 @@ const Map = () => {
         setLoading(false)
     }
 
-    console.log("COUNTRY DATA", data)
-
     const countryArr = data.map((item, index) => {
         if(item.country == "UK"){
             return ["United Kingdom", item.cases, item.deaths]
@@ -47,15 +45,13 @@ const Map = () => {
         }
     })
 
-    console.log("COUNTRY ARRAY", countryArr)
-
     let countriesData = [
         ['Country', 'Cases', 'Deaths'],
         ...countryArr,
     ]
 
     return(
-        <div>
+        <div >
             <Chart
                 width={'1000px'}
                 height={'800px'}
