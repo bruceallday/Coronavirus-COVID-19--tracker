@@ -1,9 +1,14 @@
 import React from 'react'
 
+import Map from './components/map/map.component'
+
 const App = () => {
 
     return(
-        <div>Hello world</div>
+        <div>
+        Hello world
+            <Map />
+        </div>
     )
 }
 
