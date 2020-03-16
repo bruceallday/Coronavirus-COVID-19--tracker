@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
+import TextField from '@material-ui/core/TextField';
+
 import Card from '../country-card/country-card.component'
 
 import { useStyles } from './countries.styles'
@@ -40,10 +42,13 @@ const Countries = () => {
 
 
     return(
-        <div className={classes.root} >
-           {data.map((item, index) => (
-                <Card country={item.country} />
-           ))}
+        <div>
+            <TextField style={{ width: '36vw', position: 'fixed', backgroundColor: 'white', marginLeft: "60vw", zIndex: '999' }} id="outlined-basic" label="Search by country..." variant="outlined" />
+            <div className={classes.root} >
+                {data.map((item, index) => (
+                    <Card country={item.country} />
+                ))}
+            </div>
         </div>
     )
 }

@@ -6,8 +6,9 @@ export const useStyles = makeStyles({
         flexDirection: 'row',
         flexWrap: 'wrap',
         height: '1500vh',
-        width: '40vw',
+        width: '37vw',
         position: 'relative',
         marginLeft: '60vw',
+        marginTop: 55,
     },
 });
