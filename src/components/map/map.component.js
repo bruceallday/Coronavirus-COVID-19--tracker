@@ -6,10 +6,7 @@ import { useStyles } from './map.styles'
 import { Chart } from "react-google-charts";
 
 const Map = () => {
-
-    const [allData, setAllData] = useState(null)
-    const [countryData, setCountriesData] = useState([])
-
+    const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -27,32 +24,22 @@ const Map = () => {
         //     }
         // })
 
-        const resultAll = await fetch(
-            `https://corona.lmao.ninja/all`
-        )
-        const allData = await resultAll.json()
-
-        const resultCountries = await fetch(
+        const result = await fetch(
             `https://corona.lmao.ninja/countries`
         )
-        const countryData = await resultCountries.json()
+        const data = await result.json()
 
-        if (allData.error) {
-            console.log(allData.error)
-
-        } else if (countryData.error) {
-            console.log(countryData.error)
-            
+        if (data.error) {
+            console.log(data.error)
         }else{
-            setAllData(allData)
-            setCountriesData(countryData)
+            setData(data)
         }
         setLoading(false)
     }
 
-    console.log("COUNTRY DATA", countryData)
+    console.log("COUNTRY DATA", data)
 
-    const countryArr = countryData.map((item, index) => {
+    const countryArr = data.map((item, index) => {
         if(item.country == "UK"){
             return ["United Kingdom", item.cases, item.deaths]
         }else{
@@ -78,9 +65,9 @@ const Map = () => {
                 rootProps={{ 'data-testid': '1' }}
                 options={{
                     colorAxis: { colors: [
-                        'pink','#E50000', '#CC0000', '#B20000', '#7F0000', '#660000', 'black']},
+                         '#FEEDED', '#FB7F81', '#FB4146', '#FA030B', '#FB040C', '#BC0309', '#7D0206', '#360202']},
                     // backgroundColor: '#81d4fa',
-                    datalessRegionColor: '#81d4fa',
+                    datalessRegionColor: 'white',
                 }}
             />
         </div>
