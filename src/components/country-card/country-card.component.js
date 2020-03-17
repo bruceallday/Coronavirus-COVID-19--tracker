@@ -1,6 +1,8 @@
 import React from 'react'
 
-import Paper from '@material-ui/core/Paper';
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
+
 import { useStyles}  from './country-card.styles'
 
 const Card = (props) => {
@@ -10,20 +12,33 @@ const Card = (props) => {
     const { 
         country, 
         cases, 
-        casesToday, 
+        todayCases, 
         deaths, 
-        deathsToday, 
+        todayDeaths, 
         recovered, 
         critical } = props
 
     return(
-            <Paper 
-                elevation={3}
-                style={{
-                    width: '30vh', 
-                    height: '15vh', 
-                    margin: 10}}>
-                    { country }
+            <Paper elevation={3}className={classes.root}>
+                <Typography variant="h4">
+                    {country}
+                </Typography>
+
+                <Typography variant="body1" >
+                    {`Cases: ${cases} | Today: ${todayCases}`}
+                </Typography>
+
+                <Typography variant="body1" >
+                    {`Recovered: ${recovered}`}
+                </Typography>
+
+                <Typography variant="body1" >
+                    {`Deaths: ${deaths} | Today: ${todayDeaths}`}
+                </Typography>
+
+                <Typography variant="body1" >
+                    {`Critical: ${critical}`}
+                </Typography>
             </Paper>
     )
 }

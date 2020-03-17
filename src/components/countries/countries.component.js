@@ -41,7 +41,7 @@ const Countries = () => {
     const filteredCountries = data.filter(item =>
         item.country.toLowerCase().includes(search.toLowerCase()))
 
-    console.log("filtered", filteredCountries)
+    console.log("DATA", data)
 
     return(
         <div>
@@ -54,7 +54,16 @@ const Countries = () => {
 
             <div className={classes.root} >
                 {filteredCountries.map((item, index) => (
-                    <Card key={index} country={item.country} />
+                    <Card
+                        key={index}
+                        country={item.country}
+                        cases={item.cases}
+                        todayCases={item.todayCases}
+                        deaths={item.deaths}
+                        todayDeaths={item.todayDeaths}
+                        recovered={item.recovered}
+                        critical={item.critical}
+                        />
                 ))}
             </div>
         </div>
