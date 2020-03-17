@@ -5,14 +5,14 @@ export const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        width: '37vw',
+        width: '40%',
         position: 'relative',
         marginLeft: '60vw',
         marginTop: 55,
     },
 
     textField:{
-        width: '36vw',
+        width: '37vw',
         position: 'fixed',
         backgroundColor: 'white',
         marginLeft: "60vw",
