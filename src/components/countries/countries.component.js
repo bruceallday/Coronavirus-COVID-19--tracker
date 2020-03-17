@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 
 import Card from '../country-card/country-card.component'
 
-import { useStyles } from './countries.styles'
+import { useStyles, CssTextField } from './countries.styles'
 
 const Countries = () => {
 
@@ -45,7 +45,7 @@ const Countries = () => {
 
     return(
         <div>
-            <TextField
+            <CssTextField
                 className={classes.textField}
                 id="outlined-basic"
                 label="Search by country..."
