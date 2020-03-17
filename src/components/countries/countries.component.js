@@ -10,13 +10,12 @@ const Countries = () => {
 
     const classes = useStyles()
     const [data, setData] = useState([])
-    const [code, setCode] = useState([])
     const [isLoading, setLoading] = useState(false)
     const [search, setSearch] = useState("")
 
     useEffect(() => {
         getData()
-        getCountryCodes()
+        // getCountryCodes()
     }, [])
 
     const getData = async () => {
@@ -35,21 +34,7 @@ const Countries = () => {
         setLoading(false)
     }
 
-    const getCountryCodes = async () => {
-        const result = await fetch(`
-            https://pkgstore.datahub.io/core/country-list/data_json/data/8c458f2d15d9f2119654b29ede6e45b8/data_json.json
-        `)
-        const data = await result.json()
-        
-        if (data.error) {
-            console.log("error", data.error)
-        } else {
-            setCode(data)
-        }
-        setLoading(false)
-    }
-
-    console.log("COUNTRY", code)
+    console.log("COVID-19 DATA", data)
 
     const handleChange = () =>{
         setSearch(event.target.value)
