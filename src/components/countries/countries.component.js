@@ -11,6 +11,7 @@ const Countries = () => {
     const classes = useStyles()
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
+    const [search, setSearch] = useState("")
 
     useEffect(() => {
         getData()
@@ -33,20 +34,27 @@ const Countries = () => {
         setLoading(false)
     }
 
-    // const countries = data.map((item, index) => {
-    //     // console.log("ITEM", item)
-    //     <Card country={item.country} />
-    // })
+    const handleChange = () =>{
+        setSearch(event.target.value)
+    }
 
-    // console.log("COUNTRIES", countries)
+    const filteredCountries = data.filter(item =>
+        item.country.toLowerCase().includes(search.toLowerCase()))
 
+    console.log("filtered", filteredCountries)
 
     return(
         <div>
-            <TextField style={{ width: '36vw', position: 'fixed', backgroundColor: 'white', marginLeft: "60vw", zIndex: '999' }} id="outlined-basic" label="Search by country..." variant="outlined" />
+            <TextField
+                className={classes.textField}
+                id="outlined-basic"
+                label="Search by country..."
+                variant="outlined"
+                onChange={handleChange} />
+
             <div className={classes.root} >
-                {data.map((item, index) => (
-                    <Card country={item.country} />
+                {filteredCountries.map((item, index) => (
+                    <Card key={index} country={item.country} />
                 ))}
             </div>
         </div>

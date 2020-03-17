@@ -11,4 +11,12 @@ export const useStyles = makeStyles({
         marginLeft: '60vw',
         marginTop: 55,
     },
+
+    textField:{
+        width: '36vw',
+        position: 'fixed',
+        backgroundColor: 'white',
+        marginLeft: "60vw",
+        zIndex: '999'
+    },
 });
