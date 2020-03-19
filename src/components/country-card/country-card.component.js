@@ -48,56 +48,56 @@ const Card = (props) => {
         data.map(item => {
 
             if (country === "Iran"){
-                setCode("https://www.countryflags.io/ir/flat/64.png")
+                setCode("https://www.countryflags.io/ir/flat/32.png")
             }else if (country === "S. Korea"){
-                setCode("https://www.countryflags.io/kr/flat/64.png")
+                setCode("https://www.countryflags.io/kr/flat/32.png")
             } else if (country === "USA") {
-                setCode("https://www.countryflags.io/us/flat/64.png")
+                setCode("https://www.countryflags.io/us/flat/32.png")
             } else if (country === "UK") {
-                setCode("https://www.countryflags.io/gb/flat/64.png")
+                setCode("https://www.countryflags.io/gb/flat/32.png")
             } else if (country === "Czechia") {
-                setCode("https://www.countryflags.io/cz/flat/64.png")
+                setCode("https://www.countryflags.io/cz/flat/32.png")
             } else if (country === "UAE") {
-                setCode("https://www.countryflags.io/ae/flat/64.png")
+                setCode("https://www.countryflags.io/ae/flat/32.png")
             } else if (country === "Russia") {
-                setCode("https://www.countryflags.io/ru/flat/64.png")
+                setCode("https://www.countryflags.io/ru/flat/32.png")
             } else if (country === "Taiwan") {
-                setCode("https://www.countryflags.io/tw/flat/64.png")
+                setCode("https://www.countryflags.io/tw/flat/32.png")
             } else if (country === "Vietnam") {
-                setCode("https://www.countryflags.io/vn/flat/64.png")
+                setCode("https://www.countryflags.io/vn/flat/32.png")
             } else if (country === "Brunei") {
-                setCode("https://www.countryflags.io/bn/flat/64.png")
+                setCode("https://www.countryflags.io/bn/flat/32.png")
             } else if (country === "Palestine") {
-                setCode("https://www.countryflags.io/ps/flat/64.png")
+                setCode("https://www.countryflags.io/ps/flat/32.png")
             } else if (country === "Venezuela") {
-                setCode("https://www.countryflags.io/ve/flat/64.png")
+                setCode("https://www.countryflags.io/ve/flat/32.png")
             } else if (country === "Moldova") {
-                setCode("https://www.countryflags.io/md/flat/64.png")
+                setCode("https://www.countryflags.io/md/flat/32.png")
             } else if (country === "North Macedonia") {
-                setCode("https://www.countryflags.io/mk/flat/64.png")
+                setCode("https://www.countryflags.io/mk/flat/32.png")
             } else if (country === "Faeroe Islands") {
-                setCode("https://www.countryflags.io/fo/flat/64.png")
+                setCode("https://www.countryflags.io/fo/flat/32.png")
             } else if (country === "Bolivia") {
-                setCode("https://www.countryflags.io/ve/flat/64.png")
+                setCode("https://www.countryflags.io/ve/flat/32.png")
             } else if (country === "DRC") {
-                setCode("https://www.countryflags.io/do/flat/64.png")
+                setCode("https://www.countryflags.io/do/flat/32.png")
             } else if (country === "St. Barth") {
-                setCode("https://www.countryflags.io/bl/flat/64.png")
+                setCode("https://www.countryflags.io/bl/flat/32.png")
             } else if (country === "Saint Martin") {
-                setCode("https://www.countryflags.io/mf/flat/64.png")
+                setCode("https://www.countryflags.io/mf/flat/32.png")
             } else if (country === "CAR") {
-                setCode("https://www.countryflags.io/cf/flat/64.png")
+                setCode("https://www.countryflags.io/cf/flat/32.png")
             } else if (country === "Vatican City") {
-                setCode("https://www.countryflags.io/va/flat/64.png")
+                setCode("https://www.countryflags.io/va/flat/32.png")
             } else if (country === "St. Vincent Grenadines") {
-                setCode("https://www.countryflags.io/vc/flat/64.png")
+                setCode("https://www.countryflags.io/vc/flat/32.png")
             } else if (country === "Tanzania") {
-                setCode("https://www.countryflags.io/tz/flat/64.png")
+                setCode("https://www.countryflags.io/tz/flat/32.png")
             } else if (country === "U.S. Virgin Islands") {
-                setCode("https://www.countryflags.io/vg/flat/64.png")
+                setCode("https://www.countryflags.io/vg/flat/32.png")
             }else if (item.Name === country){
                 const code = item.Code.toLowerCase()
-                setCode(`https://www.countryflags.io/${code}/flat/64.png`)
+                setCode(`https://www.countryflags.io/${code}/flat/32.png`)
             }else{
             }
         })

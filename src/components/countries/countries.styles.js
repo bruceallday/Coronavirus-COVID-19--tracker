@@ -7,11 +7,11 @@ export const useStyles = makeStyles({
         flexDirection: 'row',
         flexWrap: 'wrap',
         marginLeft: '65vw',
-        marginTop: 85,
+        marginTop: 95,
     },
 
     textField:{
-        width: '32.3vw',
+        width: '33vw',
     },
 
     title: {
@@ -26,8 +26,13 @@ export const useStyles = makeStyles({
 
     textfieldInput: {
         color: 'white',
-        fontSize: "1.5em",
+        fontSize: "1.7em",
+        padding: 0
     },
+
+    appBar: {
+        backgroundColor:'#363636', 
+        height: '9.3vh' }
 
 });
 
@@ -37,6 +42,11 @@ export const CssTextField = withStyles({
 
         '& label.Mui-focused': {
             color: 'white',
+        },
+        '& .MuiInputLabel-root': {
+            color: '#999999',
+            fontSize: '1.6em',
+            fontWeight:1,
         },
         '& .MuiInput-underline:after': {
             borderBottomColor: 'white',

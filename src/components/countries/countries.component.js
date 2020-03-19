@@ -49,7 +49,7 @@ const Countries = () => {
 
     return(
         <div>
-            <AppBar style={{ backgroundColor: '#363636', height: '8.4vh'}} position="fixed">
+            <AppBar className={classes.appBar} position="fixed">
                 <Toolbar className={classes.toolbar}>
                     <Typography className={classes.title} variant="h2" noWrap>
                         Coronavirus (COVID-19) Tracker
