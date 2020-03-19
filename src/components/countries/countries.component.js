@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
 import TextField from '@material-ui/core/TextField';
+import AppBar from'@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
+import Toolbar from '@material-ui/core/Toolbar';
 
 import Card from '../country-card/country-card.component'
 
@@ -45,12 +48,21 @@ const Countries = () => {
 
     return(
         <div>
-            <CssTextField
-                className={classes.textField}
-                id="outlined-basic"
-                label="Search by country..."
-                variant="outlined"
-                onChange={handleChange} />
+            <AppBar style={{ backgroundColor: '#363636', height: '8vh'}} position="fixed">
+                <Toolbar className={classes.toolbar}>
+                    <Typography className={classes.title} variant="h2" noWrap>
+                        Coronavirus (COVID-19) Tracker
+                    </Typography>
+                    <TextField
+                        className={classes.textField}
+                        id="filled-basic"
+                        label="Search by country..."
+                        variant="filled"
+                        onChange={handleChange} 
+                    />
+                </Toolbar>
+            </AppBar>
+            
 
             <div className={classes.root} >
                 {filteredCountries.map((item, index) => (

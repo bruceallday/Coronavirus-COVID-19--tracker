@@ -1,8 +1,9 @@
 import { makeStyles } from '@material-ui/styles/'
 
 export const useStyles = makeStyles({
-    root: {
-        width: '60vw', 
+    map: {
         position: 'fixed',
+        marginTop: '2.5%'
     },
-});
+
+})

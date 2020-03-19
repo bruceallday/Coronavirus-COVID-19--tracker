@@ -6,42 +6,22 @@ export const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        width: '40%',
-        position: 'relative',
-        marginLeft: '60vw',
-        marginTop: 55,
+        marginLeft: '65vw',
+        marginTop: 80,
     },
 
     textField:{
-        
-        width: '37vw',
-        position: 'fixed',
-        marginLeft: "60.5vw",
-        zIndex: '999'
+        width: '29vh',
     },
+
+    title: {
+        padding: 25,
+    },
+
+    toolbar: { 
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    }
 });
 
-export const CssTextField = withStyles({
-    root: {
-        backgroundColor: '#363636',
-        borderRadius: 5,
-
-        '& label.Mui-focused': {
-            color: 'white',
-        },
-        '& .MuiInput-underline:after': {
-            borderBottomColor: 'white',
-        },
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                borderColor: 'white',
-            },
-            '&:hover fieldset': {
-                borderColor: 'white',
-            },
-            '&.Mui-focused fieldset': {
-                borderColor: 'white',
-            },
-        },
-    },
-})(TextField);

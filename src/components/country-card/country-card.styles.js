@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/styles/'
 export const useStyles = makeStyles({
     root: {
         width: '30vh',
-        height: '17vh',
-        margin: 10,
         padding: 5,
+        marginBottom: 5,
+        marginLeft: 5,
         color: 'white',
         backgroundColor: '#363636',
     },

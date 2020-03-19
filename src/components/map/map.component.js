@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import {DATA_KEY, YOUR_KEY} from './map.data'
 import Paper from '@material-ui/core/Paper'
+
 import { useStyles } from './map.styles'
 
 import { Chart } from "react-google-charts";
@@ -53,10 +54,10 @@ const Map = () => {
     ]
 
     return(
-        <div className={classes.root} >
-            <Paper elevation={3} style={{ width: '60vw', height: '15vh',  backgroundColor: '#363636'}} >  </Paper>
+        <div className={classes.map} >
+           {/*<Paper elevation={3} style={{ width: '60vw', height: '15vh',  backgroundColor: '#363636', borderRadius: 0}} >  </Paper>*/}
             <Chart
-                width={'60vw'}
+                width={'65vw'}
                 height={'80vh'}
                 chartType="GeoChart"
                 data={countriesData}
