@@ -9,6 +9,7 @@ import Card from '../country-card/country-card.component'
 
 import { useStyles, CssTextField } from './countries.styles'
 
+
 const Countries = () => {
 
     const classes = useStyles()
@@ -48,18 +49,22 @@ const Countries = () => {
 
     return(
         <div>
-            <AppBar style={{ backgroundColor: '#363636', height: '8vh'}} position="fixed">
+            <AppBar style={{ backgroundColor: '#363636', height: '8.4vh'}} position="fixed">
                 <Toolbar className={classes.toolbar}>
                     <Typography className={classes.title} variant="h2" noWrap>
                         Coronavirus (COVID-19) Tracker
                     </Typography>
-                    <TextField
-                        className={classes.textField}
-                        id="filled-basic"
-                        label="Search by country..."
-                        variant="filled"
-                        onChange={handleChange} 
-                    />
+                    <div>
+                        <CssTextField
+                            className={classes.textField}
+                            label="Search by country..."
+                            variant="outlined"
+                            onChange={handleChange}
+                            InputProps={{
+                                className: classes.textfieldInput
+                            }}
+                        />
+                    </div>
                 </Toolbar>
             </AppBar>
             
@@ -75,6 +80,9 @@ const Countries = () => {
                         todayDeaths={item.todayDeaths}
                         recovered={item.recovered}
                         critical={item.critical}
+                        InputProps={{
+                            className: classes.multilineColor
+                        }}
                         />
                 ))}
             </div>
