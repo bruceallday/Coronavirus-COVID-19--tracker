@@ -98,16 +98,16 @@ const Card = (props) => {
             }else if (item.Name === country){
                 const code = item.Code.toLowerCase()
                 setCode(`https://www.countryflags.io/${code}/flat/64.png`)
+            }else{
             }
         })
     }
 
     return(
-            <Paper elevation={3}className={classes.root}>
-
+            <Paper elevation={3} className={classes.root}>
                 <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}} >
                     <img style={{marginRight: 10}} src={`${code}`}></img>
-                    <Typography  variant="h4">
+                    <Typography  variant="h5">
                         {` ${country}`}
                     </Typography>
                 </div>

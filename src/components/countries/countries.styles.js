@@ -13,34 +13,34 @@ export const useStyles = makeStyles({
     },
 
     textField:{
-        width: '38vw',
+        
+        width: '37vw',
         position: 'fixed',
-        color: 'white',
-        marginLeft: "60vw",
+        marginLeft: "60.5vw",
         zIndex: '999'
     },
 });
 
 export const CssTextField = withStyles({
     root: {
-        backgroundColor: 'white',
+        backgroundColor: '#363636',
         borderRadius: 5,
 
         '& label.Mui-focused': {
-            color: '#363636',
+            color: 'white',
         },
         '& .MuiInput-underline:after': {
-            borderBottomColor: '#363636',
+            borderBottomColor: 'white',
         },
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
-                borderColor: '#363636',
+                borderColor: 'white',
             },
             '&:hover fieldset': {
-                borderColor: '#363636',
+                borderColor: 'white',
             },
             '&.Mui-focused fieldset': {
-                borderColor: '#363636',
+                borderColor: 'white',
             },
         },
     },
