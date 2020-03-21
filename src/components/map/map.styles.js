@@ -26,6 +26,8 @@ export const useStyles = makeStyles({
 
     title:{
         margin: 20,
+        fontSize: 28,
+        fontWeight: 'lighter'
     }
 
 })

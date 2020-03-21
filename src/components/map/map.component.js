@@ -37,6 +37,8 @@ const Map = () => {
         } else {
             setTotalsData(totalsData)
         }
+
+        console.log("recoveries >>> ", totalsData)
     
         const result = await fetch(
             `https://corona.lmao.ninja/countries`
@@ -96,7 +98,7 @@ const Map = () => {
                     options={{
                         sizeAxis: { minValue: 10, maxValue: 50000 },
                         colorAxis: { colors: [
-                            '#FEEDED', '#FB7F81', '#FB4146', '#FA030B', '#FB040C', '#BC0309', '#7D0206', '#360202']},
+                            '#FEEDED', '#FB7F81', '#FB4146', '#FA030B', '#FB040C', '#BC0309', '#7D0206']},
                         // backgroundColor: '#81d4fa',
                         // datalessRegionColor: 'blue',
                     }}
@@ -104,17 +106,18 @@ const Map = () => {
             </div>
 
             <AppBar className={classes.appBar} position="fixed" >
-                <Toolbar classNames={classes.toolbar}>
-                    <Typography className={classes.title} variant="h4" >
-                        {`| Total Cases: ${totalsData.cases ? totalsData.cases : loader }`}
+                <Toolbar className={classes.toolbar}>
+                    <Typography className={classes.title} >
+                        | Total Cases: <span style={{color: 'yellow'}} >{`${totalsData.cases ? totalsData.cases : loader }`}</span>
                     </Typography>
-                    <Typography className={classes.title} variant="h4" >
-                        {`| Recoveries: ${totalsData.recovered ? totalsData.recovered : loader }`}
+                    <Typography className={classes.title} >
+                         | Recovered: <span style={{ color: 'green' }} >{`${totalsData.recovered ? totalsData.recovered : loader}`}</span>
                     </Typography>
-                    <Typography className={classes.title} variant="h4" >
-                        {`| Deaths: ${totalsData.deaths ? totalsData.deaths : loader }`}
+                    <Typography className={classes.title} >
+                         | Deaths: <span style={{ color: 'red' }} >{`${totalsData.deaths ? totalsData.deaths : loader}`}</span>
                     </Typography>
                 </Toolbar>
+                <p style={{ fontWeight: 'lighter', marginLeft: '4.5%' }} > Numbers represent recorded cases | <a style={{ color: 'cyan' }} href="https://github.com/NovelCOVID/API/issues">API</a> | <a style={{ color: 'cyan' }} href="https://github.com/BPouncey">Author</a></p>
             </AppBar>
         </div>
     )

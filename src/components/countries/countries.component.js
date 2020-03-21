@@ -11,7 +11,6 @@ import { useStyles, CssTextField } from './countries.styles'
 
 
 const Countries = () => {
-
     const classes = useStyles()
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
@@ -71,6 +70,7 @@ const Countries = () => {
                     <Card
                         key={index}
                         country={item.country}
+
                         cases={item.cases}
                         todayCases={item.todayCases}
                         deaths={item.deaths}
