@@ -17,7 +17,15 @@ export const useStyles = makeStyles({
     toolbar: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
+
+
+        // padding: 50,
+        // justifyContent: 'flex-start',
+        // justifyContent: 'space-evenly',
     },
+
+    title:{
+        margin: 20,
+    }
 
 })

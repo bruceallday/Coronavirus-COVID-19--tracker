@@ -19,7 +19,6 @@ const Countries = () => {
 
     useEffect(() => {
         getData()
-        // getCountryCodes()
     }, [])
 
     const getData = async () => {
@@ -37,8 +36,6 @@ const Countries = () => {
         }
         setLoading(false)
     }
-
-    console.log("COVID-19 DATA", data)
 
     const handleChange = () =>{
         setSearch(event.target.value)

@@ -12,40 +12,32 @@ import { Chart } from "react-google-charts";
 const Map = () => {
     const classes = useStyles()
     const [data, setData] = useState([])
-    const [totalsData, setTotalsData] = useState([])
+    const [totalsData, setTotalsData] = useState("")
+
+    // E N D  P O I N T 2
+    // const [data2, setData2] = useState("")
+
     const [isLoading, setLoading] = useState(false)
+    const loader = '...'
 
     useEffect(() => {
         getData()
     }, [])
 
     const getData = async () => {
-
         setLoading(true)
 
-        // const result = await fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats", {
-        //     "method": "GET",
-        //     "headers": {
-        //         "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-        //         "x-rapidapi-key": DATA_KEY
-        //     }
-        // })
-
-        const totalResult = await fetch(`
+        const totalsResult = await fetch(`
             https://corona.lmao.ninja/all
         `)
+        const totalsData = await totalsResult.json()
 
-        const totalData = await totalResult.json()
-
-        if (totalData.error) {
-            console.log("error", totalData.error)
+        if (totalsData.error) {
+            console.log("error", totalsData.error)
         } else {
-            setTotalsData(data)
+            setTotalsData(totalsData)
         }
-        setLoading(false)
     
-
-
         const result = await fetch(
             `https://corona.lmao.ninja/countries`
         )
@@ -56,6 +48,25 @@ const Map = () => {
         }else{
             setData(data)
         }
+                // E N D  P O I N T 2
+        // const result2 = await fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats", {
+        //     "method": "GET",
+        //     "headers": {
+        //         "x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+        //         "x-rapidapi-key": DATA_KEY
+        //     }
+        // })
+
+        // const data2 = await result2.json()
+
+        // if (data2.error) {
+        //     console.log("error", data2.error)
+        // } else {
+        //     setData2(data2)
+        //     console.log("data2 >>>>", data2)
+        // }
+
+        // console.log("DATA2", data2)
         setLoading(false)
     }
 
@@ -75,7 +86,6 @@ const Map = () => {
     return(
         <div>
             <div className={classes.map} >
-            {/*<Paper elevation={3} style={{ width: '60vw', height: '15vh',  backgroundColor: '#363636', borderRadius: 0}} >  </Paper>*/}
                 <Chart
                     width={'65vw'}
                     height={'80vh'}
@@ -93,18 +103,19 @@ const Map = () => {
                 />
             </div>
 
-
             <AppBar className={classes.appBar} position="fixed" >
-                <Toolbar className={classes.toolbar}>
-                    <Typography className={classes.title} variant="h2" noWrap>
-                        Totals
+                <Toolbar classNames={classes.toolbar}>
+                    <Typography className={classes.title} variant="h4" >
+                        {`| Total Cases: ${totalsData.cases ? totalsData.cases : loader }`}
+                    </Typography>
+                    <Typography className={classes.title} variant="h4" >
+                        {`| Recoveries: ${totalsData.recovered ? totalsData.recovered : loader }`}
+                    </Typography>
+                    <Typography className={classes.title} variant="h4" >
+                        {`| Deaths: ${totalsData.deaths ? totalsData.deaths : loader }`}
                     </Typography>
                 </Toolbar>
             </AppBar>
-
-
-
-
         </div>
     )
 }
