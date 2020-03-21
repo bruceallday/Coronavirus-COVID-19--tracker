@@ -3,7 +3,10 @@ import { makeStyles } from '@material-ui/styles/'
 export const useStyles = makeStyles({
     map: {
         position: 'fixed',
-        marginTop: '3.7%'
+        marginTop: '3.7%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
     appBar: {
@@ -17,8 +20,6 @@ export const useStyles = makeStyles({
     toolbar: {
         display: 'flex',
         flexDirection: 'row',
-
-
         // padding: 50,
         // justifyContent: 'flex-start',
         // justifyContent: 'space-evenly',

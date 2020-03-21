@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import { useStyles } from './map.styles'
 
 import { Chart } from "react-google-charts";
@@ -88,21 +89,28 @@ const Map = () => {
     return(
         <div>
             <div className={classes.map} >
-                <Chart
-                    width={'65vw'}
-                    height={'80vh'}
-                    chartType="GeoChart"
-                    data={countriesData}
-                    mapsApiKey={YOUR_KEY}
-                    rootProps={{ 'data-testid': '1' }}
-                    options={{
-                        sizeAxis: { minValue: 10, maxValue: 50000 },
-                        colorAxis: { colors: [
-                            '#FEEDED', '#FB7F81', '#FB4146', '#FA030B', '#FB040C', '#BC0309', '#7D0206']},
-                        // backgroundColor: '#81d4fa',
-                        // datalessRegionColor: 'blue',
-                    }}
-                />
+                {!isLoading ? (
+                    <CircularProgress style={{marginLeft: '31vw', marginTop: '33vh'}} color={'secondary'} size={70} />
+                ):(
+                    <Chart
+                        width={'65vw'}
+                        height={'80vh'}
+                        chartType="GeoChart"
+                        data={countriesData}
+                        mapsApiKey={YOUR_KEY}
+                        rootProps={{ 'data-testid': '1' }}
+                        options={{
+                            sizeAxis: { minValue: 10, maxValue: 50000 },
+                            colorAxis: {
+                                colors: [
+                                    '#FEEDED', '#FB7F81', '#FB4146', '#FA030B', '#FB040C', '#BC0309', '#7D0206']
+                            },
+                            // backgroundColor: '#81d4fa',
+                            // datalessRegionColor: 'blue',
+                        }}
+                    />
+
+                )}
             </div>
 
             <AppBar className={classes.appBar} position="fixed" >
