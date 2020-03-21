@@ -32,7 +32,8 @@ export const useStyles = makeStyles({
 
     appBar: {
         backgroundColor:'#363636', 
-        height: '9.3vh' }
+        height: '9.3vh' 
+    },
 
 });
 
