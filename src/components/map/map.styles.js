@@ -11,18 +11,16 @@ export const useStyles = makeStyles({
 
     appBar: {
         backgroundColor: '#363636',
-        marginTop: '86vh',
-        marginRight: '35vw',
-        height: '14vh',
-        width: '65vw',
+        marginTop: '49%',
+        marginRight: '35%',
+        height: '100%',
+        width: '66%',
+        position: 'fixed'
     },
 
     toolbar: {
         display: 'flex',
         flexDirection: 'row',
-        // padding: 50,
-        // justifyContent: 'flex-start',
-        // justifyContent: 'space-evenly',
     },
 
     title:{
@@ -30,5 +28,4 @@ export const useStyles = makeStyles({
         fontSize: 28,
         fontWeight: 'lighter'
     }
-
 })

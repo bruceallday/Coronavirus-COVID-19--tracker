@@ -48,12 +48,12 @@ const Countries = () => {
             <AppBar className={classes.appBar} position="fixed">
                 <Toolbar className={classes.toolbar}>
                     <Typography className={classes.title} variant="h2" noWrap>
-                        Coronavirus (COVID-19) Tracker
+                        Track Coronavirus (COVID-19) 
                     </Typography>
                     <div>
                         <CssTextField
                             className={classes.textField}
-                            label="Search by country..."
+                            label="Search by country"
                             variant="outlined"
                             onChange={handleChange}
                             InputProps={{
@@ -70,7 +70,6 @@ const Countries = () => {
                     <Card
                         key={index}
                         country={item.country}
-
                         cases={item.cases}
                         todayCases={item.todayCases}
                         deaths={item.deaths}

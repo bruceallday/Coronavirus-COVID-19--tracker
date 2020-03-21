@@ -14,6 +14,7 @@ const Map = () => {
     const classes = useStyles()
     const [data, setData] = useState([])
     const [totalsData, setTotalsData] = useState("")
+    const [lastUpdate, setLastUpdate] = useState('')
 
     // E N D  P O I N T 2
     // const [data2, setData2] = useState("")
@@ -24,6 +25,14 @@ const Map = () => {
     useEffect(() => {
         getData()
     }, [])
+
+    const createDate = (date) => {
+        let fullDate = new Date(date)
+        let str = fullDate.toString()
+        let trimStr = str.split('(')
+        return trimStr[0]
+    }
+
 
     const getData = async () => {
         setLoading(true)
@@ -39,7 +48,8 @@ const Map = () => {
             setTotalsData(totalsData)
         }
 
-        console.log("recoveries >>> ", totalsData)
+        let date = createDate(totalsData.updated)
+        setLastUpdate(date)
     
         const result = await fetch(
             `https://corona.lmao.ninja/countries`
@@ -66,10 +76,11 @@ const Map = () => {
         //     console.log("error", data2.error)
         // } else {
         //     setData2(data2)
-        //     console.log("data2 >>>>", data2)
+        //     // console.log("data2 >>>>", data2)
         // }
 
         // console.log("DATA2", data2)
+
         setLoading(false)
     }
 
@@ -87,12 +98,13 @@ const Map = () => {
     ]
 
     return(
-        <div>
+        <div style={{display: 'flex', flexDirection: 'column'}}>
             <div className={classes.map} >
-                {!isLoading ? (
+                {isLoading ? (
                     <CircularProgress style={{marginLeft: '31vw', marginTop: '33vh'}} color={'secondary'} size={70} />
                 ):(
                     <Chart
+                            forceIFrame={true}
                         width={'65vw'}
                         height={'80vh'}
                         chartType="GeoChart"
@@ -100,12 +112,13 @@ const Map = () => {
                         mapsApiKey={YOUR_KEY}
                         rootProps={{ 'data-testid': '1' }}
                         options={{
+                            region: 'world',
                             sizeAxis: { minValue: 10, maxValue: 50000 },
                             colorAxis: {
                                 colors: [
                                     '#FEEDED', '#FB7F81', '#FB4146', '#FA030B', '#FB040C', '#BC0309', '#7D0206']
                             },
-                            // backgroundColor: '#81d4fa',
+                            backgroundColor: '#81d4fa',
                             // datalessRegionColor: 'blue',
                         }}
                     />
@@ -113,19 +126,29 @@ const Map = () => {
                 )}
             </div>
 
-            <AppBar className={classes.appBar} position="fixed" >
+             
+            <AppBar className={classes.appBar} >
                 <Toolbar className={classes.toolbar}>
                     <Typography className={classes.title} >
                         | Total Cases: <span style={{color: 'yellow'}} >{`${totalsData.cases ? totalsData.cases : loader }`}</span>
                     </Typography>
                     <Typography className={classes.title} >
-                         | Recovered: <span style={{ color: 'green' }} >{`${totalsData.recovered ? totalsData.recovered : loader}`}</span>
+                        | Recovered: <span style={{ color: 'green' }} >{`${totalsData.recovered ? totalsData.recovered : loader}`}</span>
                     </Typography>
                     <Typography className={classes.title} >
-                         | Deaths: <span style={{ color: 'red' }} >{`${totalsData.deaths ? totalsData.deaths : loader}`}</span>
+                        | Deaths: <span style={{ color: 'red' }} >{`${totalsData.deaths ? totalsData.deaths : loader}`}</span>
                     </Typography>
                 </Toolbar>
-                <p style={{ fontWeight: 'lighter', marginLeft: '4.5%' }} > Numbers represent recorded cases | <a style={{ color: 'cyan' }} href="https://github.com/NovelCOVID/API/issues">API</a> | <a style={{ color: 'cyan' }} href="https://github.com/BPouncey">Author</a></p>
+                <p style={{
+                    fontWeight: 'lighter',
+                    marginLeft: '4.5%' }}>
+                    {`| Numbers represent recorded cases  |  Last updated ${lastUpdate} | `}
+                    <a style={{ color: 'cyan', textDecoration: 'none' }} href="https://www.worldometers.info/coronavirus/">
+                        Source </a> | <a style={{ color: 'cyan', textDecoration: 'none'  }} href="https://github.com/NovelCOVID/">
+                        API</a> | <a style={{ color: 'cyan', textDecoration: 'none'  }} href="https://github.com/BPouncey">
+                        Author</a> | <a style={{ color: 'cyan', textDecoration: 'none' }} href="https://github.com/BPouncey">
+                        Donate to this project</a> |
+                         </p>
             </AppBar>
         </div>
     )

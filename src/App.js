@@ -11,7 +11,7 @@ const App = () => {
     return(
         <div>
         <CssBaseline/>
-            <div style={{display: 'flex', flexDirection: 'row'}} >
+            <div style={{ display: 'flex', flexDirection: 'row' }} >
                 <Map />
                 <Countries />
             </div>
