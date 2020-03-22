@@ -1,4 +1,5 @@
-import { makeStyles } from '@material-ui/styles/'
+import { makeStyles, withStyles } from '@material-ui/styles/'
+import TextField from '@material-ui/core/TextField/'
 
 export const useStyles = makeStyles({
     map: {
@@ -57,6 +58,44 @@ export const useStyles = makeStyles({
         color: '#363636', 
         width: 40, 
         height: 40, 
-    }
+    },
+
+    textfieldInput: {
+        color: 'white',
+        fontSize: "1.7em",
+        padding: 0
+    },
+
+    textField: {
+        width: 300,
+    },
 
 })
+export const CssTextField = withStyles({
+    root: {
+
+        '& label.Mui-focused': {
+            color: 'white',
+        },
+        '& .MuiInputLabel-root': {
+            color: '#999999',
+            fontSize: '1.6em',
+            fontWeight: 1,
+        },
+        '& .MuiInput-underline:after': {
+            borderBottomColor: 'white',
+        },
+
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: 'white',
+            },
+            '&:hover fieldset': {
+                borderColor: 'white',
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: 'white',
+            },
+        },
+    },
+})(TextField);

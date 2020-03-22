@@ -7,14 +7,18 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Button from '@material-ui/core/Button'
-import ClearIcon from '@material-ui/icons/Clear';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import ClearIcon from '@material-ui/icons/Clear'
+import MoreVertIcon from '@material-ui/icons/MoreVert'
+import Card from '@material-ui/core/Card'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 
 import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 import { PayPalButton } from "react-paypal-button-v2";
 
-import { useStyles } from './map.styles'
+import { useStyles, CssTextField } from './map.styles'
 import { textStyles } from '../../constants/textColor'
 
 import { Chart } from "react-google-charts";
@@ -124,46 +128,84 @@ const Map = () => {
                 ):(
                 <div>
                     <div className={classes.navIconDiv} >
-                        {supportWindow ? (
-                            <ClearIcon
+                        {!supportWindow && (
+                            <MoreVertIcon
                                 className={classes.navIcon}
                                 onClick={() => {
                                     setSupportWindow(!supportWindow)
                                 }}
                             />
-                        ):(
-                            <MoreVertIcon 
-                                className={classes.navIcon}
-                                onClick={() => {
-                                setSupportWindow(!supportWindow)
-                            }} 
-                        />
-                    )}
+                        )}
                      
                 </div>
 
                     {supportWindow && (
-                        <div className={classes.aboutWindow} >
-                            <div style={{ width: 100, height: 40 }}>
-
-                                <PayPalButton
-                                    clientId={`https://www.paypal.com/sdk/js?client-id=${PAYPALSANDBOXKEY}`}
-                                    amount="0.01"
-                                    currency='USD'
-                                    style={{shape: 'pill', size: 'responsive'}}
-                                    // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                                    onSuccess={(details, data) => {
-                                        alert("Transaction completed by " + details.payer.name.given_name);
-                                        // OPTIONAL: Call your server to save the transaction
-                                        return fetch("/paypal-transaction-complete", {
-                                            method: "post",
-                                            body: JSON.stringify({
-                                                orderID: data.orderID
-                                            })
-                                        });
+                        <div className={classes.aboutWindow} > 
+                            <Card style={{ backgroundColor: '#363636', width: '70%', height: '70%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }} variant="outlined" >
+                                <ClearIcon
+                                    style={{color: 'white'}}
+                                    onClick={() => {
+                                        setSupportWindow(!supportWindow)
                                     }}
                                 />
-                            </div>
+                                
+                                    <Typography style={{ color: 'white', padding: 20, fontWeight: 'lighter' }} variant="h4" >
+                                        Track Coronavirus (Covid-19)
+                                    </Typography>
+                                        <Typography style={{ color: 'white', padding: 20}} >
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Pellentesque vel est nec nisi blandit ornare vel a orci.
+                                        Sed eget elementum elit. Donec scelerisque, orci et elementum lobortis,
+                                        risus erat viverra nisi, nec luctus erat urna sit amet massa.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Pellentesque vel est nec nisi blandit ornare vel a orci.
+                                        Sed eget elementum elit. Donec scelerisque, orci et elementum lobortis,
+                                        risus erat viverra nisi, nec luctus erat urna sit amet massa.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Pellentesque vel est nec nisi blandit ornare vel a orci.
+                                        Sed eget elementum elit. Donec scelerisque, orci et elementum lobortis,
+                                        risus erat viverra nisi, nec luctus erat urna sit amet massa.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        Pellentesque vel est nec nisi blandit ornare vel a orci.
+                                        Sed eget elementum elit. Donec scelerisque, orci et elementum lobortis,
+                                        risus erat viverra nisi, nec luctus erat urna sit amet massa.
+                                    </Typography>
+                               
+
+                                <CardContent>
+                                    <div style={{ width: 100, height: 40 }}>
+                                        <div>
+                                            <CssTextField
+                                                className={classes.textField}
+                                                label="$"
+                                                variant="outlined"
+                                                size="small"
+                                                // onChange={handleChange}
+                                                InputProps={{
+                                                    className: classes.textfieldInput
+                                                }}
+                                            />
+                                        </div>
+                                        <PayPalButton
+                                            clientId={`https://www.paypal.com/sdk/js?client-id=${PAYPALSANDBOXKEY}`}
+                                            amount="0.01"
+                                            currency='USD'
+                                            style={{ shape: 'pill', size: 'responsive' }}
+                                            // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                                            onSuccess={(details, data) => {
+                                                alert("Transaction completed by " + details.payer.name.given_name);
+                                                // OPTIONAL: Call your server to save the transaction
+                                                // return fetch("/paypal-transaction-complete", {
+                                                //     method: "post",
+                                                //     body: JSON.stringify({
+                                                //         orderID: data.orderID
+                                                //     })
+                                                // });
+                                            }}
+                                        />
+                                    </div>
+                                </CardContent>
+                            </Card>
                         </div>
                     )}
                     <Chart
