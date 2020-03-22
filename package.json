@@ -5,7 +5,8 @@
   "author": "Bruce Pouncey",
   "license": "MIT",
   "scripts": {
-    "start": "parcel ./src/index.html"
+    "start": "parcel ./src/index.html",
+    "build": "parcel ./src/index.html"
   },
   "dependencies": {
     "@material-ui/core": "^4.0.0",
