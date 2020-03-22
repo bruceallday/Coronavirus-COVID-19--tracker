@@ -1,7 +1,7 @@
 import { makeStyles, withStyles } from '@material-ui/styles/'
 import TextField from '@material-ui/core/TextField/'
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles(theme => ({
     map: {
         position: 'fixed',
         marginTop: '3.7%',
@@ -35,17 +35,17 @@ export const useStyles = makeStyles({
         marginTop: '33vh' 
     },
 
-    aboutWindow: {
-        backgroundColor: '#363636',
-        width: '65vw',
-        height: '80vh', 
-        display: 'flex', 
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'rgba(0,0,0,.7)',
-        position: 'absolute',
-        zIndex: 99
-    },
+    // aboutWindow: {
+    //     backgroundColor: '#363636',
+    //     width: '65vw',
+    //     height: '80vh', 
+    //     display: 'flex', 
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     backgroundColor: 'rgba(0,0,0,.7)',
+    //     position: 'absolute',
+    //     zIndex: 99
+    // },
 
     navIconDiv: { 
         position: 'absolute', 
@@ -71,6 +71,7 @@ export const useStyles = makeStyles({
     },
 
 })
+)
 export const CssTextField = withStyles({
     root: {
 

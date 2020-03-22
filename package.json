@@ -15,9 +15,11 @@
     "babel-polyfill": "^6.26.0",
     "material-ui": "^0.20.2",
     "parcel": "latest",
+    "prop-types": "^15.7.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-google-charts": "^3.0.15",
+    "react-number-format": "^4.4.1",
     "react-paypal-button-v2": "^2.6.1",
     "react-stripe-checkout": "^2.6.3"
   }
