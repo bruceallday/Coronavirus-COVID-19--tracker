@@ -41,8 +41,22 @@ export const useStyles = makeStyles({
         display: 'flex', 
         justifyContent: 'center',
         alignItems: 'center',
-        opacity: 0.5,
+        backgroundColor: 'rgba(0,0,0,.7)',
         position: 'absolute',
         zIndex: 99
+    },
+
+    navIconDiv: { 
+        position: 'absolute', 
+        marginTop: 45, 
+        marginLeft: 10, 
+        zIndex: 999 
+    },
+
+    navIcon: { 
+        color: '#363636', 
+        width: 40, 
+        height: 40, 
     }
+
 })

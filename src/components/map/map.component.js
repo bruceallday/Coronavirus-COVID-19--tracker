@@ -6,6 +6,11 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import Button from '@material-ui/core/Button'
+import ClearIcon from '@material-ui/icons/Clear';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+
+
 import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 import { PayPalButton } from "react-paypal-button-v2";
 
@@ -47,7 +52,6 @@ const Map = () => {
         let trimStr = str.split('(')
         return trimStr[0]
     }
-
 
     const getData = async () => {
         setLoading(true)
@@ -119,14 +123,34 @@ const Map = () => {
                     <CircularProgress className={classes.loader} color={'secondary'} size={70} />
                 ):(
                 <div>
+                    <div className={classes.navIconDiv} >
+                        {supportWindow ? (
+                            <ClearIcon
+                                className={classes.navIcon}
+                                onClick={() => {
+                                    setSupportWindow(!supportWindow)
+                                }}
+                            />
+                        ):(
+                            <MoreVertIcon 
+                                className={classes.navIcon}
+                                onClick={() => {
+                                setSupportWindow(!supportWindow)
+                            }} 
+                        />
+                    )}
+                     
+                </div>
+
                     {supportWindow && (
                         <div className={classes.aboutWindow} >
                             <div style={{ width: 100, height: 40 }}>
+
                                 <PayPalButton
                                     clientId={`https://www.paypal.com/sdk/js?client-id=${PAYPALSANDBOXKEY}`}
                                     amount="0.01"
                                     currency='USD'
-                                    style={{color: 'blue', shape: 'pill', size: 'responsive'}}
+                                    style={{shape: 'pill', size: 'responsive'}}
                                     // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
                                     onSuccess={(details, data) => {
                                         alert("Transaction completed by " + details.payer.name.given_name);
@@ -179,32 +203,8 @@ const Map = () => {
                 </Toolbar>
                 
                 <div 
-                    style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems:'center'}}
+                    style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems:'center'}}
                     className={textClass.totalsText}>
-
-                    <a
-                        className={textClass.linkText}
-                        onClick={() => { setSupportWindow(!supportWindow) }}>
-                        About
-                    </a> |
-
-                    <a
-                        className={textClass.linkText}
-                        href="https://www.worldometers.info/coronavirus/">
-                        Source
-                    </a> |
-
-                    <a
-                        className={textClass.linkText}
-                        href="https://github.com/NovelCOVID/">
-                        API
-                    </a> |
-
-                    <a
-                        className={textClass.linkText}
-                        href="https://github.com/BPouncey">
-                        Author
-                    </a> |
 
                     <p>
                        Numbers represent recorded cases
@@ -213,6 +213,30 @@ const Map = () => {
                     <p>
                         Last updated: <span style={{ fontWeight: "Bold" }} >{lastUpdate}</span>
                     </p> |
+
+                    <Button
+                        className={textClass.linkText}
+                        onClick={() => { setSupportWindow(!supportWindow) }}>
+                        About
+                    </Button> |
+
+                    <Button
+                        className={textClass.linkText}
+                        href="https://www.worldometers.info/coronavirus/">
+                        Source
+                    </Button> |
+
+                    <Button
+                        className={textClass.linkText}
+                        href="https://github.com/NovelCOVID/">
+                        API
+                    </Button> |
+
+                    <Button
+                        className={textClass.linkText}
+                        href="https://github.com/BPouncey">
+                        Author
+                    </Button>
 
                     </div>
             </AppBar>

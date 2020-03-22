@@ -4,7 +4,9 @@ export const textStyles = makeStyles({
 
     linkText: {
         color: 'cyan',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        width: 90,
+        textTransform: 'none',
     },
 
     redtext: {
