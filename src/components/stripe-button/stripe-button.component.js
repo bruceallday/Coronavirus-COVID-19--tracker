@@ -1,6 +1,5 @@
 import React from 'react'
 import StripeCheckout from 'react-stripe-checkout'
-import KEY from '../stripe-button/stripe-key'
 
 const StripeCheckoutButton = (props) => {
     const { price } = props
