@@ -10,42 +10,10 @@ export const useStyles = makeStyles(theme => ({
         alignItems: 'center'
     },
 
-    // appBar: {
-    //     backgroundColor: '#363636',
-    //     marginTop: '49%',
-    //     marginRight: '35%',
-    //     height: '100%',
-    //     width: '66%',
-    //     position: 'fixed'
-    // },
-
-    // toolbar: {
-    //     display: 'flex',
-    //     flexDirection: 'row',
-    // },
-
-    // title:{
-    //     margin: 20,
-    //     fontSize: 28,
-    //     fontWeight: 'lighter'
-    // },
-
     loader: { 
         marginLeft: '31vw', 
         marginTop: '33vh' 
     },
-
-    // aboutWindow: {
-    //     backgroundColor: '#363636',
-    //     width: '65vw',
-    //     height: '80vh', 
-    //     display: 'flex', 
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     backgroundColor: 'rgba(0,0,0,.7)',
-    //     position: 'absolute',
-    //     zIndex: 99
-    // },
 
     navIconDiv: { 
         position: 'absolute', 
@@ -72,31 +40,3 @@ export const useStyles = makeStyles(theme => ({
 
 })
 )
-export const CssTextField = withStyles({
-    root: {
-
-        '& label.Mui-focused': {
-            color: 'white',
-        },
-        '& .MuiInputLabel-root': {
-            color: '#999999',
-            fontSize: '1.6em',
-            fontWeight: 1,
-        },
-        '& .MuiInput-underline:after': {
-            borderBottomColor: 'white',
-        },
-
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                borderColor: 'white',
-            },
-            '&:hover fieldset': {
-                borderColor: 'white',
-            },
-            '&.Mui-focused fieldset': {
-                borderColor: 'white',
-            },
-        },
-    },
-})(TextField);

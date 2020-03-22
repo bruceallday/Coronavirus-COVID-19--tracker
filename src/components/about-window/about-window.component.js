@@ -7,12 +7,12 @@ import CardContent from '@material-ui/core/CardContent'
 
 import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 import { PayPalButton } from "react-paypal-button-v2";
-import { useStyles } from './about-window.styles'
+import { useStyles, CssTextField } from './about-window.styles'
+// import { textStyles } from '../../constants/textColor'
 
 const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
     const classes = useStyles()
-
-
+    // const textClass = textStyles()
     //PAYPAL
     const [paidFor, setPaidFor] = useState()
     let paypalRef = useRef()
@@ -27,6 +27,7 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
     return(
         <div className={classes.root} >
             <Card style={{ backgroundColor: '#363636', width: '70%', height: '70%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }} variant="outlined" >
+                <CardContent>
                 <ClearIcon
                     style={{ color: 'white' }}
                     onClick={() => {
@@ -34,40 +35,36 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                     }}
                 />
 
-                <Typography style={{ color: 'white', padding: 20, fontWeight: 'lighter' }} variant="h4" >
-                    Track Coronavirus (Covid-19)
+                <Typography style={{ color: 'white', paddingTop: 20, paddingLeft: 20, fontWeight: 'lighter' }} variant="h4" >
+                    About Track Coronavirus (Covid-19)
                 </Typography>
 
-                <Typography style={{ color: 'white', padding: 20 }} >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Pellentesque vel est nec nisi blandit ornare vel a orci.
-                    Sed eget elementum elit. Donec scelerisque, orci et elementum lobortis,
-                    risus erat viverra nisi, nec luctus erat urna sit amet massa.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Pellentesque vel est nec nisi blandit ornare vel a orci.
-                    Sed eget elementum elit. Donec scelerisque, orci et elementum lobortis,
-                    risus erat viverra nisi, nec luctus erat urna sit amet massa.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Pellentesque vel est nec nisi blandit ornare vel a orci.
-                </Typography>
+                <p style={{ color: 'white', padding: 20 , fontSize: '1.1em'}} >
+                        Due to the panic and fear in society I created this application to provide correct infomation, on every country
+                        where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown.
+                        <br/>
+                        <a className={classes.linkText} href='https://www.worldometers.info/coronavirus/'>Data Source</a>
+                        <br/>
+                        <br/>
+                        Track Coronavirus(COVID-19) is an independently developed web application. 
+                        Though the app will always remain free to use you can help support the development of this project, 
+                        including improved mobile support and the addition of new features
+                        by sending a small donation. 
+                </p>
 
-                <CardContent>
-                    <div style={{ width: 100, height: 40 }}>
+                    <div style={{ width: 100, height: 40, paddingLeft: 20 }}>
                         <div className={classes.donationInput}>
 
-                            {/*<CssTextField
+                            <CssTextField
                                 className={classes.textField}
                                 label="$"
                                 variant="outlined"
                                 size="small"
-                                onChange={handleChange('numberformat')}
-                                // onChange={handleChange}
-                                // id="formatted-numberformat-input"
                                 InputProps={{
-                                    inputComponent: NumberFormatCustom,
-                                    className: classes.textfieldInput,
+                                    className: classes.textfieldInput
                                 }}
-                            />*/}
+                               
+                            />
                         </div>
                         <PayPalButton
                             clientId={`https://www.paypal.com/sdk/js?client-id=${PAYPALSANDBOX}`}
