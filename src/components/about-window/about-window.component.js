@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-// import {PAYPALSANDBOX} from './about-window.key'
 import Typography from '@material-ui/core/Typography'
 import ClearIcon from '@material-ui/icons/Clear'
 import Card from '@material-ui/core/Card'
@@ -77,7 +76,7 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                             />
                         </div>
                         <PayPalButton
-                            clientId={`https://www.paypal.com/sdk/js?client-id=${PAYPALSANDBOX}`}
+                            clientId={`https://www.paypal.com/sdk/js?client-id=${process.env.PAYPALSANDBOX}`}
                             amount="0.01"
                             currency='USD'
                             style={{ shape: 'pill', size: 'responsive' }}

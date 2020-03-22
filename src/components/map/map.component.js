@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import {YOUR_KEY} from './map.data'
 
 import NumberFormat from 'react-number-format'
 import PropTypes from 'prop-types'
@@ -87,7 +86,7 @@ const Map = () => {
                         height={'80vh'}
                         chartType="GeoChart"
                         data={countriesData}
-                        mapsApiKey={YOUR_KEY}
+                        mapsApiKey={process.env.YOUR_KEY}
                         rootProps={{ 'data-testid': '1' }}
                         options={{
                             colorAxis: {

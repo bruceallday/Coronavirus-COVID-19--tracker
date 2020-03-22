@@ -1,6 +1,7 @@
 /node_modules
 yarn-error.log
 .cache
+.env
 dist
 /src/components/map/map.data.js
 /src/components/stripe-button/stripe-key.js
