@@ -5,6 +5,16 @@ import ClearIcon from '@material-ui/icons/Clear'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    LinkedinShareButton,
+    PinterestShareButton,
+    RedditShareButton,
+    TwitterShareButton,
+    WhatsappShareButton,
+} from "react-share";
+
 import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 import { PayPalButton } from "react-paypal-button-v2";
 import { useStyles, CssTextField } from './about-window.styles'
@@ -46,13 +56,13 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                         <a className={classes.linkText} href='https://www.worldometers.info/coronavirus/'>Data Source</a>
                         <br/>
                         <br/>
-                        Track Coronavirus(COVID-19) is an independently developed web application. 
-                        Though the app will always remain free to use you can help support the development of this project, 
+                        Track Coronavirus(COVID-19) is an independently developed, free to use web application. 
+                        {/*The app will always remain free to use, you can help support the development of this project, 
                         including improved mobile support and the addition of new features
-                        by sending a small donation. 
+                        by sending a small donation.*/}
                 </p>
 
-                    <div style={{ width: 100, height: 40, paddingLeft: 20 }}>
+                    {/*<div style={{ width: 100, height: 40, paddingLeft: 20 }}>
                         <div className={classes.donationInput}>
 
                             <CssTextField
@@ -83,7 +93,7 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                                 // });
                             }}
                         />
-                    </div>
+                        </div>*/}
                 </CardContent>
             </Card>
         </div>
