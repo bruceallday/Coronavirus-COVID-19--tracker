@@ -178,54 +178,43 @@ const Map = () => {
                     </Typography>
                 </Toolbar>
                 
-                <p 
-                className={textClass.totalsText}>
-                    | Numbers represent recorded cases  |  Last updated: <span style={{fontWeight: "Bold"}} >{lastUpdate}</span> | 
-                    <a 
-                        className={ textClass.linkText }
-                        href="https://www.worldometers.info/coronavirus/">
-                         Source 
-                    </a> |
-
-                    <a 
-                        className={textClass.linkText }
-                        href="https://github.com/NovelCOVID/">
-                        API
-                    </a> | 
-                     
-                    <a 
-                        className={textClass.linkText }
-                        href="https://github.com/BPouncey">
-                        Author
-                    </a> | 
+                <div 
+                    style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems:'center'}}
+                    className={textClass.totalsText}>
 
                     <a
-                        className={textClass.linkText }
-                        onClick={() => {setSupportWindow(!supportWindow)}}>
-                        Help support this project
-                    </a> | 
+                        className={textClass.linkText}
+                        onClick={() => { setSupportWindow(!supportWindow) }}>
+                        About
+                    </a> |
 
-                    </p>
+                    <a
+                        className={textClass.linkText}
+                        href="https://www.worldometers.info/coronavirus/">
+                        Source
+                    </a> |
 
-                   {/* <div style={{ width: 100, height: 40 }}>
-                        <PayPalButton
-                            clientId={`https://www.paypal.com/sdk/js?client-id=${PAYPALSANDBOXKEY}`}
-                            amount="0.01"
-                            currency='USD'
-                            style={{ color: 'blue', shape: 'pill', size: 'responsive' }}
-                            // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                            onSuccess={(details, data) => {
-                                alert("Transaction completed by " + details.payer.name.given_name);
-                                // OPTIONAL: Call your server to save the transaction
-                                return fetch("/paypal-transaction-complete", {
-                                    method: "post",
-                                    body: JSON.stringify({
-                                        orderID: data.orderID
-                                    })
-                                });
-                            }}
-                        />
-                        </div>*/}
+                    <a
+                        className={textClass.linkText}
+                        href="https://github.com/NovelCOVID/">
+                        API
+                    </a> |
+
+                    <a
+                        className={textClass.linkText}
+                        href="https://github.com/BPouncey">
+                        Author
+                    </a> |
+
+                    <p>
+                       Numbers represent recorded cases
+                    </p> |
+
+                    <p>
+                        Last updated: <span style={{ fontWeight: "Bold" }} >{lastUpdate}</span>
+                    </p> |
+
+                    </div>
             </AppBar>
         </div>
     )
