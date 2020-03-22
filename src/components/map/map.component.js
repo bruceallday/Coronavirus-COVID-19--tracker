@@ -56,10 +56,15 @@ const Map = () => {
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <div className={classes.map} >
                 {isLoading ? (
-                    <CircularProgress className={classes.loader} color={'secondary'} size={70} />
+                    <CircularProgress
+                        className={classes.loader}
+                        color={'secondary'}
+                        size={70}
+                    />
                 ):(
                     <div>
-                        <div className={classes.navIconDiv} >
+                        <div 
+                            className={classes.navIconDiv} >
                             {!aboutWindow && (
                                 <MoreVertIcon
                                     className={classes.navIcon}
@@ -76,7 +81,6 @@ const Map = () => {
                             aboutWindow={aboutWindow}/>
                         )
                     }
-
                     <Chart
                         forceIFrame={true}
                         width={'65vw'}
