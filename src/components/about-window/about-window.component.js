@@ -1,17 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import {PAYPALSANDBOX} from './about-window.key'
 import Typography from '@material-ui/core/Typography'
 import ClearIcon from '@material-ui/icons/Clear'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 
+import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 import { PayPalButton } from "react-paypal-button-v2";
 import { useStyles } from './about-window.styles'
 
 const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
-    // const [supportWindow, setAboutWindow] = useState(false)
-    const open = setAboutWindow
     const classes = useStyles()
+
+
+    //PAYPAL
+    const [paidFor, setPaidFor] = useState()
+    let paypalRef = useRef()
+    const [isLoading, setLoading] = useState(false)
+
+    const product = {
+        price: 0.01,
+        description: "Donate to this project",
+        // img: ''        
+    }
 
     return(
         <div className={classes.root} >
@@ -45,18 +56,18 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                         <div className={classes.donationInput}>
 
                             {/*<CssTextField
-                                                className={classes.textField}
-                                                label="$"
-                                                variant="outlined"
-                                                size="small"
-                                                onChange={handleChange('numberformat')}
-                                                // onChange={handleChange}
-                                                // id="formatted-numberformat-input"
-                                                InputProps={{
-                                                    inputComponent: NumberFormatCustom,
-                                                    className: classes.textfieldInput,
-                                                }}
-                                            />*/}
+                                className={classes.textField}
+                                label="$"
+                                variant="outlined"
+                                size="small"
+                                onChange={handleChange('numberformat')}
+                                // onChange={handleChange}
+                                // id="formatted-numberformat-input"
+                                InputProps={{
+                                    inputComponent: NumberFormatCustom,
+                                    className: classes.textfieldInput,
+                                }}
+                            />*/}
                         </div>
                         <PayPalButton
                             clientId={`https://www.paypal.com/sdk/js?client-id=${PAYPALSANDBOX}`}

@@ -23,7 +23,10 @@ export const textStyles = makeStyles({
 
     totalsText: {
         fontWeight: 'lighter',
-        marginLeft: '4.5%'
+        marginLeft: '4.5%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly', 
+        alignItems: 'center' 
     }
-
 })
