@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import {PAYPALSANDBOX} from './about-window.key'
+// import {PAYPALSANDBOX} from './about-window.key'
 import Typography from '@material-ui/core/Typography'
 import ClearIcon from '@material-ui/icons/Clear'
 import Card from '@material-ui/core/Card'

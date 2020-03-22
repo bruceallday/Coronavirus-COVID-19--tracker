@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {YOUR_KEY} from './map.data'
+// import {YOUR_KEY} from './map.data'
 
 import NumberFormat from 'react-number-format'
 import PropTypes from 'prop-types'
