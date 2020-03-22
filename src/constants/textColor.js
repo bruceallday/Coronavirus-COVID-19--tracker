@@ -19,4 +19,9 @@ export const textStyles = makeStyles({
         color: '#44AF69',
     },
 
+    totalsText: {
+        fontWeight: 'lighter',
+        marginLeft: '4.5%'
+    }
+
 })

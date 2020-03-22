@@ -17,6 +17,8 @@
     "parcel": "latest",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
-    "react-google-charts": "^3.0.15"
+    "react-google-charts": "^3.0.15",
+    "react-paypal-button-v2": "^2.6.1",
+    "react-stripe-checkout": "^2.6.3"
   }
 }

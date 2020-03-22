@@ -3,3 +3,4 @@ yarn-error.log
 .cache
 dist
 /map/map.data.js
+/stripe-button/stripe-key.js

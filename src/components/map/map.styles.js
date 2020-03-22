@@ -34,21 +34,15 @@ export const useStyles = makeStyles({
         marginTop: '33vh' 
     },
 
-    linkText: {
-        color: 'cyan',
-        textDecoration: 'none' 
-    },
-
-    redtext: {
-        color: '#F8333C',
-    },
-
-    yellowText: {
-        color: '#FCAB10',
-    },
-
-    greenText: {
-        color: '#44AF69',
-    },
-
+    aboutWindow: {
+        backgroundColor: '#363636',
+        width: '65vw',
+        height: '80vh', 
+        display: 'flex', 
+        justifyContent: 'center',
+        alignItems: 'center',
+        opacity: 0.5,
+        position: 'absolute',
+        zIndex: 99
+    }
 })

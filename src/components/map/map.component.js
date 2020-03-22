@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import {DATA_KEY, YOUR_KEY} from './map.data'
+import React, { useEffect, useState, useRef } from 'react'
+import {DATA_KEY, YOUR_KEY, PAYPALSANDBOXKEY} from './map.data'
 
 
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import StripeCheckoutButton from '../stripe-button/stripe-button.component'
+import { PayPalButton } from "react-paypal-button-v2";
 
 import { useStyles } from './map.styles'
 import { textStyles } from '../../constants/textColor'
@@ -18,12 +20,22 @@ const Map = () => {
     const [data, setData] = useState([])
     const [totalsData, setTotalsData] = useState("")
     const [lastUpdate, setLastUpdate] = useState('')
+    const [supportWindow, setSupportWindow] = useState(false)
 
     // E N D  P O I N T 2
     // const [data2, setData2] = useState("")
 
+    //PAYPAL
+    const [paidFor, setPaidFor] = useState()
+    let paypalRef = useRef()
     const [isLoading, setLoading] = useState(false)
     const loader = '...'
+
+    const product = {
+        price: 0.01,
+        description: "Donate to this project",
+        // img: ''        
+    }
 
     useEffect(() => {
         getData()
@@ -106,8 +118,32 @@ const Map = () => {
                 {isLoading ? (
                     <CircularProgress className={classes.loader} color={'secondary'} size={70} />
                 ):(
+                <div>
+                    {supportWindow && (
+                        <div className={classes.aboutWindow} >
+                            <div style={{ width: 100, height: 40 }}>
+                                <PayPalButton
+                                    clientId={`https://www.paypal.com/sdk/js?client-id=${PAYPALSANDBOXKEY}`}
+                                    amount="0.01"
+                                    currency='USD'
+                                    style={{color: 'blue', shape: 'pill', size: 'responsive'}}
+                                    // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                                    onSuccess={(details, data) => {
+                                        alert("Transaction completed by " + details.payer.name.given_name);
+                                        // OPTIONAL: Call your server to save the transaction
+                                        return fetch("/paypal-transaction-complete", {
+                                            method: "post",
+                                            body: JSON.stringify({
+                                                orderID: data.orderID
+                                            })
+                                        });
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    )}
                     <Chart
-                            forceIFrame={true}
+                        forceIFrame={true}
                         width={'65vw'}
                         height={'80vh'}
                         chartType="GeoChart"
@@ -117,17 +153,18 @@ const Map = () => {
                         options={{
                             colorAxis: {
                                 colors: [
-                                   '#FEEDED', '#FB7F81', '#FB4146', '#FA030B', '#FB040C', '#BC0309', '#7D0206']
+                                    '#FEEDED', '#FB7F81', '#FB4146', '#FA030B', '#FB040C', '#BC0309', '#7D0206'
+                                ]
                             },
                             backgroundColor: '#81d4fa',
                             // datalessRegionColor: 'blue',
                         }}
                     />
-
+    
+                </div>
                 )}
             </div>
 
-             
             <AppBar className={classes.appBar} >
                 <Toolbar className={classes.toolbar}>
                     <Typography className={classes.title} >
@@ -140,16 +177,55 @@ const Map = () => {
                         | Deaths: <span className={textClass.redtext} >{`${totalsData.deaths ? totalsData.deaths : loader}`}</span>
                     </Typography>
                 </Toolbar>
-                <p style={{
-                    fontWeight: 'lighter',
-                    marginLeft: '4.5%' }}>
+                
+                <p 
+                className={textClass.totalsText}>
                     | Numbers represent recorded cases  |  Last updated: <span style={{fontWeight: "Bold"}} >{lastUpdate}</span> | 
-                    <a className={ textClass.linkText } href="https://www.worldometers.info/coronavirus/">
-                        Source </a> | <a className={textClass.linkText } href="https://github.com/NovelCOVID/">
-                        API</a> | <a className={textClass.linkText } href="https://github.com/BPouncey">
-                        Author</a> | <a className={textClass.linkText } href="https://github.com/BPouncey">
-                        Donate to this project</a> |
-                         </p>
+                    <a 
+                        className={ textClass.linkText }
+                        href="https://www.worldometers.info/coronavirus/">
+                         Source 
+                    </a> |
+
+                    <a 
+                        className={textClass.linkText }
+                        href="https://github.com/NovelCOVID/">
+                        API
+                    </a> | 
+                     
+                    <a 
+                        className={textClass.linkText }
+                        href="https://github.com/BPouncey">
+                        Author
+                    </a> | 
+
+                    <a
+                        className={textClass.linkText }
+                        onClick={() => {setSupportWindow(!supportWindow)}}>
+                        Help support this project
+                    </a> | 
+
+                    </p>
+
+                   {/* <div style={{ width: 100, height: 40 }}>
+                        <PayPalButton
+                            clientId={`https://www.paypal.com/sdk/js?client-id=${PAYPALSANDBOXKEY}`}
+                            amount="0.01"
+                            currency='USD'
+                            style={{ color: 'blue', shape: 'pill', size: 'responsive' }}
+                            // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                            onSuccess={(details, data) => {
+                                alert("Transaction completed by " + details.payer.name.given_name);
+                                // OPTIONAL: Call your server to save the transaction
+                                return fetch("/paypal-transaction-complete", {
+                                    method: "post",
+                                    body: JSON.stringify({
+                                        orderID: data.orderID
+                                    })
+                                });
+                            }}
+                        />
+                        </div>*/}
             </AppBar>
         </div>
     )

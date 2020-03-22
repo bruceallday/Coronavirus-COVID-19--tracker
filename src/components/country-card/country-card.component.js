@@ -20,6 +20,7 @@ const Card = (props) => {
     
     return(
             <Paper elevation={3} className={classes.root}>
+            
                 <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}} >
                 <img style={{ marginRight: 10 }} src={`https://www.countryflags.io/${countryCode}/flat/32.png`}></img>
                     <Typography  variant="h5">
