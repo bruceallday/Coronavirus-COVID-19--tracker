@@ -1,7 +1,7 @@
 # Track Coronavirus(COVID-19) v1.0.0 :globe_with_meridians:
 A Selection of Coronavirus COVID-19 endpoints <br>
 
-## [trackcoronavirus.info](trackcoronavirus.info) 
+## [trackcoronavirus.info](https://trackcoronavirus.info) 
 ![](./readme-images/readme.gif)
 
 ### Run locally
