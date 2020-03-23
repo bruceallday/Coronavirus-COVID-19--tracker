@@ -2,7 +2,7 @@
 A Selection of Coronavirus COVID-19 endpoints <br>
 
 
-[](./readme-images/readme.gif)
+[](./readme-images/readme-fullscreen.png)
 
 ## Technologies used
 * [JS ES6](http://es6-features.org/)
