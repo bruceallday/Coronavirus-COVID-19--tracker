@@ -1,9 +1,7 @@
-# Track Coronavirus(COVID-19) v1.0.0
+# Track Coronavirus(COVID-19) v1.0.0 :globe_with_meridians:
 A Selection of Coronavirus COVID-19 endpoints <br>
 
-## Home
-[trackcoronavirus.info](trackcoronavirus.info)
-:laughing:
+## [trackcoronavirus.info](trackcoronavirus.info) 
 ![](./readme-images/readme.gif)
 
 ### Run locally
@@ -26,7 +24,6 @@ View at ```localhost:1234/```<br>
 * Country Flags - [https://www.countryflags.io/](https://www.countryflags.io/)
 
 ### Media Query Breakpoints
-
 | Device      | Width         | Height        | 
 |:-----------:|:-------------:|:-------------:|
 | Mobile      | 320           | 568           |
@@ -83,16 +80,20 @@ export default Totals
 
 ## Features
 
-### Dynamic search engine
+### Dynamic search engine :mag:
 Making use of the React ```useState()``` hook to make an event based search engine. <br>
 
-### Interactive map
-After sorting my Promised data, I give relevant data to associated parameters, in my [GeoChart](https://developers.google.com/chart/interactive/docs/gallery/geochart), to dynammically create a real-time data visual of COVID-19 cases around the world <br>
+### Interactive map :world_map:
+After sorting my Promised data, I give relevant data to associated parameters, in my [GeoChart](https://developers.google.com/chart/interactive/docs/gallery/geochart), to dynammically create a real-time data visualisation of COVID-19 cases around the world <br>
 ![](./readme-images/map-gif.gif)
 
+### Totals display :chart_with_upwards_trend:
+![](./readme-images/footer.png)
 
-
-
+## About
+Due to the panic and fear in society I created this application to provide correct infomation, on every country where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown. 
+<br>
+Track Coronavirus(COVID-19) is an independently developed, free to use web application.
 
 ## Environment
 * macOS catalina: 10.15.3
