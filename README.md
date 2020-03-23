@@ -1,4 +1,4 @@
-# Track Coronavirus(COVID-19) v1.0.0 :globe_with_meridians:
+# :globe_with_meridians: Track Coronavirus(COVID-19) v1.0.0 :globe_with_meridians:
 A Selection of Coronavirus COVID-19 endpoints <br>
 
 ## [trackcoronavirus.info](https://trackcoronavirus.info) 
@@ -87,13 +87,13 @@ Making use of the React ```useState()``` hook to make an event based search engi
 After sorting my Promised data, I give relevant data to associated parameters, in my [GeoChart](https://developers.google.com/chart/interactive/docs/gallery/geochart), to dynammically create a real-time data visualisation of COVID-19 cases around the world <br>
 ![](./readme-images/map-gif.gif)
 
-### Totals display :chart_with_upwards_trend:
+### Totals display :bar_chart:
 ![](./readme-images/footer.png)
 
-## About
-Due to the panic and fear in society I created this application to provide correct infomation, on every country where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown. 
+## About :information_source:
+Due to the panic and fear in society I created this accesible application to provide correct infomation, on every country where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown. 
 <br>
-Track Coronavirus(COVID-19) is an independently developed, free to use web application.
+Track Coronavirus(COVID-19) is an independently developed, free to use web application :heavy_check_mark:
 
 ## Environment
 * macOS catalina: 10.15.3
