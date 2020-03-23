@@ -1,15 +1,29 @@
 # Track Coronavirus(COVID-19) v1.0.0
 A Selection of Coronavirus COVID-19 endpoints <br>
 
+## Home
+[trackcoronavirus.info](trackcoronavirus.info)
 
-[](./readme-images/readme-fullscreen.png)
+### Run locally
+Clone project <br>
+run ```yarn``` in the project directory to install all dependancies <br>
+```yarn start``` to spin up a local server <br>
+View at ```localhost:1234/```<br>
 
-## Technologies used
+[](./readme-images/readme.gif)
+
+### Technologies used
 * [JS ES6](http://es6-features.org/)
 * [React](https://reactjs.org/)
 * [JSS](https://cssinjs.org/?v=v10.0.4)
 * [Material-UI](https://material-ui.com)
-* [NASA Open API'S](https://api.nasa.gov//)
+* [Parcel](https://parceljs.org/)
+
+### Endpoints:
+* Map - [Google GeoCharts](https://developers.google.com/chart/interactive/docs/gallery/geochart)
+* Coronavirus(COVID-19) data - [NovelCOVID/API](https://github.com/NovelCOVID/API)
+* Country Codes - [https://datahub.io/core/country-list](https://datahub.io/core/country-list)
+* Country Flags - [https://www.countryflags.io/](https://www.countryflags.io/)
 
 ## Media Query Breakpoints
 
@@ -19,92 +33,55 @@ A Selection of Coronavirus COVID-19 endpoints <br>
 | Tablet      | 768           | 1024          |
 | Desktop     | 1240          | 800           |
 
-## Endpoints:
-* [Google GeoCharts](https://developers.google.com/chart/interactive/docs/gallery/geochart)
-* [React](https://reactjs.org/)
-* [JSS](https://cssinjs.org/?v=v10.0.4)
-* [Material-UI](https://material-ui.com)
-* [NASA Open API'S](https://api.nasa.gov//)
-
-
-## Page Component Template:
-After reiterating over my code structure for the pages I decided the code below was a solid starting template for each page. 
+## API Tutorial:
 
 ```javascript
-const MediaLibrary = () => {
+import React, { useState, useEffect } from 'react'
 
+import { useStyles } from './totals.styles'
+
+const Totals = () => {
     const classes = useStyles()
-    const [data, setData] = useState()
-    const [isLoading, setLoading] = useState()
+    const [data, setData] = useState([])
+    const [isLoading, setLoading] = useState(false)
 
     useEffect(() => {
         getData()
     }, [])
 
-    const getData = async () =>{
-
-        setData(null)
+    const getData = async () => {
         setLoading(true)
 
-        const result = await fetch(`https://images-api.nasa.gov/search?q=apollo%2011...`)
+        const result = await fetch(`
+            https://corona.lmao.ninja/all
+        `)
+
         const data = await result.json()
 
         if (data.error) {
-            console.log(data.error)
-            setLoading(false)
-        }else{
+            console.log("error", data.error)
+        } else {
             setData(data)
-            setLoading(false)
-            console.log("DATA", data)
         }
+        setLoading(false)
     }
 
-    return(
-        <div>
-            {isLoading && <LinearProgress/>}
-            <PageTitle
-                title="PAGE_TITLE"
-                subTitle="PAGE_SUBTITLE"
-            />
+    return (
+        <div className={classes.root}>
+            {!isLoading && (
+                data.map((item, index) => {
+                    <h3>{item.country}</h3>
+                    <p>{item.cases}</p>
+                })
+            )}
         </div>
     )
 }
 
-export default MediaLibrary
-
+export default Totals
 ```
 
-### PAGES:
-Select from some of my favourtie NASA API'S<br>
-
-![](./readme-images/nasa_api.gif)
-
-## Page Title Component Template:
-Custom Title and SubTitle component takes the ```title``` and ```subTitle``` as props. Creating a modular, consistent, page title.
-
-```javascript
-import React from 'react'
-import { useStyles } from './page-title.styles'
-
-const PageTitle = (props) =>{
-    const classes = useStyles()
-
-    const { title, subTitle } = props
-    return (
-      <div className={classes.root}>
-        <div className={classes.pageTitle}>
-          <span>{title}</span>
-        </div>
-        <p className={classes.pageSubTitle}>
-          <span>{subTitle}</span>
-        </p>
-      </div>
-    );
-}
-
-export default PageTitle
-
-```
+## Features
 
 ## Environment
 * macOS catalina: 10.15.3
@@ -117,4 +94,4 @@ export default PageTitle
 (MIT)
 
 ## Acknowledgments
-[RED Academy](https://github.com/redacademy) 
+[@NovelCOVID](github.com/NovelCOVID)

@@ -29,7 +29,14 @@ const Totals = () => {
     }
 
     return (
-        <div className={classes.root} >Totals</div>
+        <div className={classes.root}>
+            {!isLoading && (
+                data.map((item, index) => {
+                    <h3>{item.country}</h3>
+                    <p>{item.cases}</p>
+                })
+            )}
+        </div>
     )
 }
 
