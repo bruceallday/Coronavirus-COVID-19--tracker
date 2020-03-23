@@ -2,7 +2,7 @@
 A Selection of Coronavirus COVID-19 endpoints <br>
 
 ## [trackcoronavirus.info](https://trackcoronavirus.info) 
-![](./readme-images/readme.gif)
+![](./readme-images/readme-hero.png)
 
 ### Run locally
 Clone project <br>
@@ -81,6 +81,7 @@ export default Totals
 
 ### :mag:  Dynamic search engine
 Making use of the React ```useState()``` hook to make an event based search engine. <br>
+![](./readme-images/readme.gif)
 
 ### :world_map:  Interactive map
 After sorting my Promised data, I give relevant data to associated parameters, in my [GeoChart](https://developers.google.com/chart/interactive/docs/gallery/geochart), to dynammically create a real-time data visualisation of COVID-19 cases around the world <br>
