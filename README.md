@@ -89,7 +89,7 @@ After sorting my Promised data, I give relevant data to associated parameters, i
 ### :bar_chart:  Totals display 
 ![](./readme-images/footer.png)
 
-## :information_source:  About
+## :exclamation: About
 Due to the panic and fear in society I created this accesible application to provide correct infomation, on every country where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown. 
 <br>
 Track Coronavirus(COVID-19) is an independently developed, free to use web application :heavy_check_mark:
