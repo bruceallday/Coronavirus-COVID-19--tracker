@@ -1,8 +1,8 @@
-# Covid-19 World tracker
-<!-- A collection of my favourite NASA API's brought together using React and Material-UI <br> -->
+# Track Coronavirus(COVID-19) v1.0.0
+A Selection of Coronavirus COVID-19 endpoints <br>
 
 
-<!-- ![](./readme-images/apod_img.png)
+[](./readme-images/readme.gif)
 
 ## Technologies used
 * [JS ES6](http://es6-features.org/)
@@ -19,8 +19,13 @@
 | Tablet      | 768           | 1024          |
 | Desktop     | 1240          | 800           |
 
-### React:
-JS ES6 
+## Endpoints:
+* [Google GeoCharts](https://developers.google.com/chart/interactive/docs/gallery/geochart)
+* [React](https://reactjs.org/)
+* [JSS](https://cssinjs.org/?v=v10.0.4)
+* [Material-UI](https://material-ui.com)
+* [NASA Open API'S](https://api.nasa.gov//)
+
 
 ## Page Component Template:
 After reiterating over my code structure for the pages I decided the code below was a solid starting template for each page. 
@@ -112,4 +117,4 @@ export default PageTitle
 (MIT)
 
 ## Acknowledgments
-[RED Academy](https://github.com/redacademy) -->
+[RED Academy](https://github.com/redacademy) 
