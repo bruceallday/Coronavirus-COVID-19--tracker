@@ -1,4 +1,4 @@
-# :globe_with_meridians: Track Coronavirus(COVID-19) v1.0.0 :globe_with_meridians:
+# :globe_with_meridians: Track Coronavirus(COVID-19) v1.0.0
 A Selection of Coronavirus COVID-19 endpoints <br>
 
 ## [trackcoronavirus.info](https://trackcoronavirus.info) 
@@ -31,7 +31,6 @@ View at ```localhost:1234/```<br>
 | Desktop     | 1240          | 800           |
 
 ## API Tutorial:
-
 ```javascript
 import React, { useState, useEffect } from 'react'
 
@@ -80,17 +79,17 @@ export default Totals
 
 ## Features
 
-### Dynamic search engine :mag:
+### :mag:  Dynamic search engine
 Making use of the React ```useState()``` hook to make an event based search engine. <br>
 
-### Interactive map :world_map:
+### :world_map:  Interactive map
 After sorting my Promised data, I give relevant data to associated parameters, in my [GeoChart](https://developers.google.com/chart/interactive/docs/gallery/geochart), to dynammically create a real-time data visualisation of COVID-19 cases around the world <br>
 ![](./readme-images/map-gif.gif)
 
-### Totals display :bar_chart:
+### :bar_chart:  Totals display 
 ![](./readme-images/footer.png)
 
-## About :information_source:
+## :information_source:  About
 Due to the panic and fear in society I created this accesible application to provide correct infomation, on every country where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown. 
 <br>
 Track Coronavirus(COVID-19) is an independently developed, free to use web application :heavy_check_mark:
