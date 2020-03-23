@@ -1,4 +1,4 @@
-# :globe_with_meridians: Track Coronavirus(COVID-19) v1.0.0
+# :heavy_exclamation_mark: Track Coronavirus(COVID-19) v1.0.0
 A Selection of Coronavirus COVID-19 endpoints <br>
 
 ## [trackcoronavirus.info](https://trackcoronavirus.info) 
@@ -86,7 +86,7 @@ Making use of the React ```useState()``` hook to make an event based search engi
 After sorting my Promised data, I give relevant data to associated parameters, in my [GeoChart](https://developers.google.com/chart/interactive/docs/gallery/geochart), to dynammically create a real-time data visualisation of COVID-19 cases around the world <br>
 ![](./readme-images/map-gif.gif)
 
-### :bar_chart:  Totals display 
+### :chart_with_upwards_trend: Totals display 
 ![](./readme-images/footer.png)
 
 ## :exclamation: About
