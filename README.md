@@ -3,14 +3,14 @@ A Selection of Coronavirus COVID-19 endpoints <br>
 
 ## Home
 [trackcoronavirus.info](trackcoronavirus.info)
+:laughing:
+![](./readme-images/readme.gif)
 
 ### Run locally
 Clone project <br>
 run ```yarn``` in the project directory to install all dependancies <br>
 ```yarn start``` to spin up a local server <br>
 View at ```localhost:1234/```<br>
-
-[](./readme-images/readme.gif)
 
 ### Technologies used
 * [JS ES6](http://es6-features.org/)
@@ -25,7 +25,7 @@ View at ```localhost:1234/```<br>
 * Country Codes - [https://datahub.io/core/country-list](https://datahub.io/core/country-list)
 * Country Flags - [https://www.countryflags.io/](https://www.countryflags.io/)
 
-## Media Query Breakpoints
+### Media Query Breakpoints
 
 | Device      | Width         | Height        | 
 |:-----------:|:-------------:|:-------------:|
@@ -82,6 +82,17 @@ export default Totals
 ```
 
 ## Features
+
+### Dynamic search engine
+Making use of the React ```useState()``` hook to make an event based search engine. <br>
+
+### Interactive map
+After sorting my Promised data, I give relevant data to associated parameters, in my [GeoChart](https://developers.google.com/chart/interactive/docs/gallery/geochart), to dynammically create a real-time data visual of COVID-19 cases around the world <br>
+![](./readme-images/map-gif.gif)
+
+
+
+
 
 ## Environment
 * macOS catalina: 10.15.3
