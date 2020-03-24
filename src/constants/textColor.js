@@ -28,5 +28,17 @@ export const textStyles = makeStyles({
         flexDirection: 'row',
         justifyContent: 'space-evenly', 
         alignItems: 'center' 
-    }
+    },
+
+
+    '@media (max-width: 1024px)': {
+        totalsText: {
+            fontWeight: 'lighter',
+            marginLeft: '4.5%',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+        },
+    },
 })

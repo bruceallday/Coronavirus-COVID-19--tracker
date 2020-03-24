@@ -21,7 +21,7 @@ export const useStyles = makeStyles({
     toolbar: { 
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
     },
 
     textfieldInput: {
@@ -33,6 +33,17 @@ export const useStyles = makeStyles({
     appBar: {
         backgroundColor:'#363636', 
         height: '9.3vh' 
+    },
+
+    '@media (max-width: 1024px)': {
+        title: {
+            fontSize: 36,
+            padding: 5
+        },
+
+        toolbar: {
+            padding: 5,
+        },
     },
 
 });
