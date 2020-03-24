@@ -83,7 +83,7 @@ const Map = () => {
                     <Chart
                         forceIFrame={true}
                         width={'65vw'}
-                        height={'80vh'}
+                        height={'77.7vh'}
                         chartType="GeoChart"
                         data={countriesData}
                         mapsApiKey={process.env.YOUR_KEY}

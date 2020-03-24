@@ -6,8 +6,8 @@ export const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        marginLeft: '65vw',
-        marginTop: 95,
+        marginLeft: '65%',
+        marginTop: '10vh',
     },
 
     textField:{
@@ -21,7 +21,7 @@ export const useStyles = makeStyles({
     toolbar: { 
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-evenly',
     },
 
     textfieldInput: {

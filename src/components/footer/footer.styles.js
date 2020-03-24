@@ -4,9 +4,9 @@ export const useStyles = makeStyles({
 
     appBar: {
         backgroundColor: '#363636',
-        marginTop: '49%',
+        marginTop: '85vh',
         marginRight: '35%',
-        height: '100%',
+        height: '17vh',
         width: '66%',
         position: 'fixed'
     },
@@ -21,7 +21,4 @@ export const useStyles = makeStyles({
         fontSize: 28,
         fontWeight: 'lighter'
     },
-
-    
-
 });
