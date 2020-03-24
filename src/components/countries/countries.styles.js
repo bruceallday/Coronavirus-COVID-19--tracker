@@ -46,6 +46,18 @@ export const useStyles = makeStyles({
         },
     },
 
+
+    '@media (max-width: 1400px)': {
+        title: {
+            fontSize: '3.2em',
+            padding: 5
+        },
+
+        toolbar: {
+            padding: 5,
+        },
+    },
+
 });
 
 //CssTextField extends TextField with extra styles
