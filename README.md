@@ -1,6 +1,4 @@
 # :heavy_exclamation_mark: Track Coronavirus(COVID-19) v1.0.0
-A Selection of Coronavirus COVID-19 endpoints <br>
-
 ## [trackcoronavirus.info](https://trackcoronavirus.info) 
 ![](./readme-images/readme-hero.png)
 
