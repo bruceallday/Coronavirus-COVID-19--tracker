@@ -6,8 +6,9 @@ export const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        marginLeft: '65%',
+        marginLeft: '65vw',
         marginTop: '10vh',
+        width: '35vw'
     },
 
     textField:{

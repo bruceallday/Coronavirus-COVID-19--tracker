@@ -42,17 +42,6 @@ export const textStyles = makeStyles({
         },
     },
 
-    // '@media (max-width: 1215px)': {
-    //     totalsText: {
-    //         fontWeight: 'lighter',
-    //         // marginLeft: '4.5%',
-    //         display: 'flex',
-    //         // flexDirection: 'collumn',
-    //         // justifyContent: 'space-evenly',
-    //         // alignItems: 'center',
-    //     },
-    // },
-
     '@media (max-width: 1400px)': {
         title: {
             fontSize: '3.2em',
