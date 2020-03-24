@@ -35,4 +35,24 @@ export const useStyles = makeStyles({
        
     },
 
+    '@media (max-width: 1215)': {
+        appBar: {
+            padding: 10
+        }
+    },
+
+    '@media (max-width: 1305px)': {
+        title: {
+            padding: 2,
+            margin: 10,
+        },
+    },
+
+    '@media (max-width: 1400px)': {
+        title: {
+            fontSize: '1.8em',
+            padding: 5,
+        },
+    },
+
 });
