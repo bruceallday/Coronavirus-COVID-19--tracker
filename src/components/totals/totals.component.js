@@ -1,43 +1,43 @@
-import React, { useState, useEffect } from 'react'
+// import React, { useState, useEffect } from 'react'
 
-import { useStyles } from './totals.styles'
+// import { useStyles } from './totals.styles'
 
-const Totals = () => {
-    const classes = useStyles()
-    const [data, setData] = useState([])
-    const [isLoading, setLoading] = useState(false)
+// const Totals = () => {
+//     const classes = useStyles()
+//     const [data, setData] = useState([])
+//     const [isLoading, setLoading] = useState(false)
 
-    useEffect(() => {
-        getData()
-    }, [])
+//     useEffect(() => {
+//         getData()
+//     }, [])
 
-    const getData = async () => {
-        setLoading(true)
+//     const getData = async () => {
+//         setLoading(true)
 
-        const result = await fetch(`
-            https://corona.lmao.ninja/all
-        `)
+//         const result = await fetch(`
+//             https://corona.lmao.ninja/all
+//         `)
 
-        const data = await result.json()
+//         const data = await result.json()
 
-        if (data.error) {
-            console.log("error", data.error)
-        } else {
-            setData(data)
-        }
-        setLoading(false)
-    }
+//         if (data.error) {
+//             console.log("error", data.error)
+//         } else {
+//             setData(data)
+//         }
+//         setLoading(false)
+//     }
 
-    return (
-        <div className={classes.root}>
-            {!isLoading && (
-                data.map((item, index) => {
-                    <h3>{item.country}</h3>
-                    <p>{item.cases}</p>
-                })
-            )}
-        </div>
-    )
-}
+//     return (
+//         <div className={classes.root}>
+//             {!isLoading && (
+//                 data.map((item, index) => {
+//                     <h3>{item.country}</h3>
+//                     <p>{item.cases}</p>
+//                 })
+//             )}
+//         </div>
+//     )
+// }
 
-export default Totals
+// export default Totals
