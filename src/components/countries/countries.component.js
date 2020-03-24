@@ -123,7 +123,7 @@ const Countries = () => {
                     <Typography className={classes.title} variant="h2" noWrap>
                         Track Coronavirus(COVID-19) 
                     </Typography>
-                    <p style={{fontSize: '1.5em', fontWeight: 'lighter'}} >v1.0.0</p> 
+                    <p style={{fontSize: '1.5em', fontWeight: 'lighter'}} >v1.0.1</p> 
                     <div>
                         <CssTextField
                             className={classes.textField}
