@@ -30,6 +30,16 @@ export const textStyles = makeStyles({
         alignItems: 'center' 
     },
 
+    '@media (max-width: 1400px)': {
+        title: {
+            fontSize: '3.2em',
+            padding: 5
+        },
+
+        toolbar: {
+            padding: 5,
+        },
+    },
 
     '@media (max-width: 1024px)': {
         totalsText: {
@@ -42,14 +52,16 @@ export const textStyles = makeStyles({
         },
     },
 
-    '@media (max-width: 1400px)': {
-        title: {
-            fontSize: '3.2em',
-            padding: 5
-        },
-
-        toolbar: {
-            padding: 5,
+    '@media (max-width: 414px)': {
+        totalsText: {
+            fontWeight: 'lighter',
+            marginLeft: 0,
+            display: 'flex',
+            flexWrap: 'wrap',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            marginBottom: '%'
         },
     },
+
 })

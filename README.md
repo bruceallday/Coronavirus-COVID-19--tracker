@@ -1,6 +1,4 @@
 # :heavy_exclamation_mark: Track Coronavirus(COVID-19) v1.0.0
-A Selection of Coronavirus COVID-19 endpoints <br>
-
 ## [trackcoronavirus.info](https://trackcoronavirus.info) 
 ![](./readme-images/readme-hero.png)
 
@@ -106,4 +104,4 @@ Track Coronavirus(COVID-19) is an independently developed, free to use web appli
 (MIT)
 
 ## Acknowledgments
-[@NovelCOVID](github.com/NovelCOVID)
+@[NovelCOVID](github.com/NovelCOVID)

@@ -22,36 +22,13 @@ export const useStyles = makeStyles({
         fontWeight: 'lighter'
     },
 
-    '@media (max-width: 414px)': {
-
-        appBar: {
-            marginTop: 0,
-            marginRight: 0,
-            height: '25vh',
-            width: '100%',
-            position: 'fixed'
-        },
-    },
-
-    '@media (max-width: 1024px)': {
-        appBar: {
-            marginTop: '82vh',
-            height: '18vh',
-            padding: 9
-        },
+    '@media (max-width: 1400px)': {
         title: {
-            margin: 20,
-            fontSize: 22,
-            fontWeight: 'lighter'
+            fontSize: 20,
+            padding: 5,
         },
-       
     },
 
-    '@media (max-width: 1215)': {
-        appBar: {
-            padding: 10
-        }
-    },
 
     '@media (max-width: 1305px)': {
         title: {
@@ -60,11 +37,55 @@ export const useStyles = makeStyles({
         },
     },
 
-    '@media (max-width: 1400px)': {
-        title: {
-            fontSize: '1.8em',
-            padding: 5,
-        },
+    '@media (max-width: 1215)': {
+        appBar: {
+            padding: 10
+        }
     },
 
+    '@media (max-width: 1024px)': {
+        appBar: {
+            marginTop: '82vh',
+            height: '20vh',
+            padding: 9
+        },
+       
+    },
+
+    '@media (max-width: 414px)': {
+        appBar: {
+            marginTop: '75vh',
+            marginRight: '0%',
+            height: '25vh',
+            width: '100%',
+            position: 'fixed',
+            justifyContent: 'center',
+            alignItems: 'center'
+        },
+        title: {
+            fontSize: 21,
+            padding: 2,
+            margin: 5,
+        },
+
+        
+    },
+    
+    '@media (max-width: 375px)': {
+        root: {
+   
+        },
+
+        appBar: {
+            marginTop: '75vh',
+            height: '25vh',
+            padding: 0
+
+        },
+        title: {
+            fontSize: 18,
+            padding: 2,
+            margin: 5,
+        },
+    },
 });

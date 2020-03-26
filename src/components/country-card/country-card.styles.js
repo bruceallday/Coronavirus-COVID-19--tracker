@@ -10,7 +10,6 @@ export const useStyles = makeStyles({
         backgroundColor: '#363636',
     },
 
-
     '@media (max-width: 1024px)': {
         root: {
             width: "34vw",
@@ -22,6 +21,11 @@ export const useStyles = makeStyles({
             height: '17vh',
             width: '100%',
             zIndex: 99
+        },
+    },
+    '@media (max-width: 375px)': {
+        root: {
+
         },
     },
 
