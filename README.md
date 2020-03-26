@@ -104,4 +104,4 @@ Track Coronavirus(COVID-19) is an independently developed, free to use web appli
 (MIT)
 
 ## Acknowledgments
-[@NovelCOVID](github.com/NovelCOVID)
+@[NovelCOVID](github.com/NovelCOVID)
