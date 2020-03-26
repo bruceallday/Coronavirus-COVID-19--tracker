@@ -42,6 +42,11 @@ export const useStyles = makeStyles(theme => ({
         chart: {
             display: 'none',
         },
+
+        loader: {
+            marginLeft: '41vw',
+            marginTop: '40vh'
+        }
     },
     
 })

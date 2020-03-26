@@ -36,6 +36,11 @@ export const useStyles = makeStyles({
         height: '9.3vh' 
     },
 
+    version:{
+        fontSize: 20,
+        fontWeight: 'lighter',
+    },
+
     '@media (max-width: 1400px)': {
         title: {
             fontSize: '3.2em',
