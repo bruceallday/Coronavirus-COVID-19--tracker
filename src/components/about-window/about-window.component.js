@@ -35,7 +35,7 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
 
     return(
         <div className={classes.root} >
-            <Card style={{ backgroundColor: '#363636', width: '70%', height: '70%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }} variant="outlined" >
+            <Card className={classes.aboutCard} variant="outlined" >
                 <CardContent>
                 <ClearIcon
                     style={{ color: 'white' }}
@@ -44,11 +44,11 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                     }}
                 />
 
-                <Typography style={{ color: 'white', paddingTop: 20, paddingLeft: 20, fontWeight: 'lighter' }} variant="h4" >
+                <Typography className={classes.heading} variant="h4" >
                     About Track Coronavirus (Covid-19)
                 </Typography>
 
-                <p style={{ color: 'white', padding: 20 , fontSize: '1.1em'}} >
+                <p className={classes.paragraphText} >
                         Due to the panic and fear in society I created this application to provide correct infomation, on every country
                         where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown.
                         <br/>

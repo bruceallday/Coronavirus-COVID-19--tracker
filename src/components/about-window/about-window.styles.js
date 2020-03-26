@@ -4,9 +4,8 @@ import TextField from '@material-ui/core/TextField'
 export const useStyles = makeStyles({
 
     root: {
-        backgroundColor: '#363636',
         width: '65vw',
-        height: '80vh',
+        height: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -27,19 +26,82 @@ export const useStyles = makeStyles({
         textTransform: 'none',
     },
 
+    aboutCard: { 
+        backgroundColor: '#363636', 
+        width: '70%', 
+        height: '60%', 
+        display: 'flex', 
+        flexDirection: 'row', 
+        flexWrap: 'wrap' 
+    },
+
+    heading: {
+        color: 'white', 
+        paddingTop: 20, 
+        paddingLeft: 20, 
+        fontWeight: 'lighter' 
+    },
+
+    paragraphText: {
+        color: 'white', 
+        padding: 20, 
+        fontSize: '1.1em'
+    },
+
     '@media (max-width: 414px)': {
-        root : {
-            backgroundColor: '#363636',
+        root: {
             width: '100vw',
             height: '80vh',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
             backgroundColor: 'rgba(0,0,0,.7)',
-            position: 'absolute',
             zIndex: 999,
+            position: 'fixed',
+            marginTop: '5vh'
+        },
+
+        aboutCard: {
+            width: '85%',
+            height: '80%',           
+        },
+        heading: {
+            fontSize: 22,
+            color: 'white',
+            fontWeight: 'lighter'
+        },
+
+        paragraphText: {
+            color: 'white',
+            padding: 10,
+            fontSize: '1.1em'
         },
     },
+
+    '@media (max-width: 414px)': {
+        root: {
+            width: '100vw',
+            height: '80vh',
+            backgroundColor: 'rgba(0,0,0,.7)',
+            zIndex: 999,
+            position: 'fixed',
+            marginTop: '5vh'
+        },
+
+        aboutCard: {
+            width: '85%',
+            height: '80%',
+        },
+        heading: {
+            fontSize: 22,
+            color: 'white',
+            fontWeight: 'lighter'
+        },
+
+        paragraphText: {
+            color: 'white',
+            padding: 10,
+            fontSize: '1.1em'
+        },
+    },
+
 
 });
 
