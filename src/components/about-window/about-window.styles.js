@@ -10,7 +10,7 @@ export const useStyles = makeStyles({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'rgba(0,0,0,.7)',
-        position: 'absolute',
+        position: 'fixed',
         zIndex: 99,
     },
     textfieldInput: {
@@ -51,16 +51,16 @@ export const useStyles = makeStyles({
     '@media (max-width: 414px)': {
         root: {
             width: '100vw',
-            height: '80vh',
+            height: '85vh',
             backgroundColor: 'rgba(0,0,0,.7)',
             zIndex: 999,
             position: 'fixed',
-            marginTop: '5vh'
+            marginTop: '0vh'
         },
 
         aboutCard: {
             width: '85%',
-            height: '80%',           
+            height: '70%',           
         },
         heading: {
             fontSize: 22,
@@ -77,7 +77,8 @@ export const useStyles = makeStyles({
 
     '@media (max-width: 375px)': {
         root: {
-            
+            // height: '85vh',
+
         },
     },
 
