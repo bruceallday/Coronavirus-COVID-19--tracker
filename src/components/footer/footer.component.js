@@ -52,19 +52,18 @@ const Footer = ({ setAboutWindow, aboutWindow }) => {
         <AppBar className={classes.appBar} >
             <Toolbar className={classes.toolbar}>
                 <Typography className={classes.title} >
-                    | Total Cases: <span className={textClass.yellowText}>{`${totalsData.cases ? totalsData.cases : loader}`}</span>
+                    Total Cases: <span className={textClass.yellowText}>{`${totalsData.cases ? totalsData.cases : loader}`}</span>
                 </Typography>
                 <Typography className={classes.title} >
-                    | Recovered: <span className={textClass.greenText} >{`${totalsData.recovered ? totalsData.recovered : loader}`}</span>
+                    Recovered: <span className={textClass.greenText} >{`${totalsData.recovered ? totalsData.recovered : loader}`}</span>
                 </Typography>
                 <Typography className={classes.title} >
-                    | Deaths: <span className={textClass.redtext} >{`${totalsData.deaths ? totalsData.deaths : loader}`}</span>
+                    Deaths: <span className={textClass.redtext} >{`${totalsData.deaths ? totalsData.deaths : loader}`}</span>
                 </Typography>
             </Toolbar>
 
             <div className={textClass.totalsText}>
-                <p>Numbers represent recorded cases</p> | 
-                <p>Last updated: <span style={{ fontWeight: "Bold" }} >{lastUpdate}</span></p> |
+                <p>Last updated: <span style={{ fontWeight: "Bold" }} >{lastUpdate}</span></p> 
 
                 <Button
                     className={textClass.linkText}

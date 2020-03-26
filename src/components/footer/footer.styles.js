@@ -22,27 +22,11 @@ export const useStyles = makeStyles({
         fontWeight: 'lighter'
     },
 
-    '@media (max-width: 414px)': {
-
-        appBar: {
-            marginTop: 0,
-            marginRight: 0,
-            height: '25vh',
-            width: '100%',
-            position: 'fixed'
-        },
-    },
-
     '@media (max-width: 1024px)': {
         appBar: {
             marginTop: '82vh',
-            height: '18vh',
+            height: '20vh',
             padding: 9
-        },
-        title: {
-            margin: 20,
-            fontSize: 22,
-            fontWeight: 'lighter'
         },
        
     },
@@ -65,6 +49,22 @@ export const useStyles = makeStyles({
             fontSize: '1.8em',
             padding: 5,
         },
+    },
+
+    '@media (max-width: 414px)': {
+        appBar: {
+            marginTop: '80vh',
+            marginRight: 0,
+            height: '20vh',
+            width: '100%',
+            position: 'fixed'
+        },
+        title: {
+            fontSize: 21,
+            padding: 2,
+            margin: 5,
+        },
+
     },
 
 });
