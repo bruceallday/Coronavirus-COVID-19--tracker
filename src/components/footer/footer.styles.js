@@ -21,6 +21,18 @@ export const useStyles = makeStyles({
         fontSize: 28,
         fontWeight: 'lighter'
     },
+
+    '@media (max-width: 414px)': {
+
+        appBar: {
+            marginTop: 0,
+            marginRight: 0,
+            height: '25vh',
+            width: '100%',
+            position: 'fixed'
+        },
+    },
+
     '@media (max-width: 1024px)': {
         appBar: {
             marginTop: '82vh',
