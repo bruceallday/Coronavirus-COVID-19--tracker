@@ -46,7 +46,13 @@ export const useStyles = makeStyles(theme => ({
         loader: {
             marginLeft: '41vw',
             marginTop: '40vh'
-        }
+        },
+
+
+        navIconDiv: {
+           display: 'none'
+        },
+
     },
 
     '@media (max-width: 375px)': {

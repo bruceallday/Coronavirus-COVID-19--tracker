@@ -54,9 +54,9 @@ export const useStyles = makeStyles({
 
     '@media (max-width: 414px)': {
         appBar: {
-            marginTop: '78vh',
+            marginTop: '75vh',
             marginRight: '0%',
-            height: '22vh',
+            height: '25vh',
             width: '100%',
             position: 'fixed',
             justifyContent: 'center',
@@ -67,6 +67,8 @@ export const useStyles = makeStyles({
             padding: 2,
             margin: 5,
         },
+
+        
     },
     
     '@media (max-width: 375px)': {
@@ -75,8 +77,8 @@ export const useStyles = makeStyles({
         },
 
         appBar: {
-            marginTop: '73vh',
-            height: '27vh',
+            marginTop: '75vh',
+            height: '25vh',
             padding: 0
 
         },
@@ -85,9 +87,5 @@ export const useStyles = makeStyles({
             padding: 2,
             margin: 5,
         },
-
-        totalsText: {
-            width: '100%'
-        }
     },
 });
