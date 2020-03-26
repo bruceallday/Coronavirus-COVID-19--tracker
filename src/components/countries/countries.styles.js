@@ -37,7 +37,7 @@ export const useStyles = makeStyles({
     },
 
 
-    '@media (max-width: 414px)': {
+    '@media (max-width: 415px)': {
         root: {
             marginLeft: 0,
             width: '100vw',

@@ -30,6 +30,17 @@ export const textStyles = makeStyles({
         alignItems: 'center' 
     },
 
+    '@media (max-width: 415px)': {
+        totalsText: {
+            fontWeight: 'lighter',
+            marginLeft: 0,
+            display: 'flex',
+            flexWrap: 'wrap',
+            flexDirection: 'row',
+            justifyContent: 'center',
+        },
+    },
+
 
     '@media (max-width: 1024px)': {
         totalsText: {
