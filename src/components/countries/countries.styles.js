@@ -37,7 +37,7 @@ export const useStyles = makeStyles({
     },
 
     version:{
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'lighter',
     },
 
