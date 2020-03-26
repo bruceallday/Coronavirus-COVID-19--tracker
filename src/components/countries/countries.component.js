@@ -137,7 +137,6 @@ const Countries = () => {
                     </div>
                 </Toolbar>
             </AppBar>
-            
 
             <div className={classes.root} >
                 {filteredCountries.map((item, index) => (
@@ -154,7 +153,7 @@ const Countries = () => {
                         InputProps={{
                             className: classes.multilineColor
                         }}
-                        />
+                    />
                 ))}
             </div>
         </div>

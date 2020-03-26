@@ -31,12 +31,19 @@ export const useStyles = makeStyles(theme => ({
     textfieldInput: {
         color: 'white',
         fontSize: "1.7em",
-        padding: 0
+        padding: 0,
     },
 
     textField: {
         width: 300,
     },
 
+    '@media (max-width: 414px)': {
+        map: {
+            width: '100%'
+        },
+
+    },
+    
 })
 )

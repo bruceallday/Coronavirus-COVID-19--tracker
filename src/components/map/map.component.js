@@ -80,26 +80,28 @@ const Map = () => {
                             aboutWindow={aboutWindow}/>
                         )
                     }
-                    <Chart
-                        forceIFrame={true}
-                        width={'65vw'}
-                        height={'77.7vh'}
-                        chartType="GeoChart"
-                        data={countriesData}
-                        mapsApiKey={process.env.YOUR_KEY}
-                        rootProps={{ 'data-testid': '1' }}
-                        options={{
-                            colorAxis: {
-                                colors: [
-                                    '#FEEDED','#FB7F81',
-                                    '#FB4146','#FA030B',
-                                    '#FB040C','#BC0309',
-                                    '#7D0206'
-                                ]
-                            },
-                            backgroundColor: '#81d4fa',
-                            // datalessRegionColor: 'blue',
-                        }}/>
+                    <div className={classes.chart} >
+                        <Chart
+                            // forceIFrame={true}
+                            width={'65vw'}
+                            height={'77.7vh'}
+                            chartType="GeoChart"
+                            data={countriesData}
+                            mapsApiKey={process.env.YOUR_KEY}
+                            rootProps={{ 'data-testid': '1' }}
+                            options={{
+                                colorAxis: {
+                                    colors: [
+                                        '#FEEDED','#FB7F81',
+                                        '#FB4146','#FA030B',
+                                        '#FB040C','#BC0309',
+                                        '#7D0206'
+                                    ]
+                                },
+                                backgroundColor: '#81d4fa',
+                                // datalessRegionColor: 'blue',
+                            }}/>
+                        </div>
                     </div>
                 )}
             </div>

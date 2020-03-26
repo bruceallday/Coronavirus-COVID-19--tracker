@@ -9,16 +9,20 @@ export const useStyles = makeStyles({
         color: 'white',
         backgroundColor: '#363636',
     },
+
+
     '@media (max-width: 1024px)': {
         root: {
             width: "34vw",
             height: '21vh',
         }
     },
-    // '@media (min-width: 1366px)': {
-    //     root: {
-    //         width: "17vw",
-    //         height: '17vh',
-    //     }
-    // },
+    '@media (max-width: 414px)': {
+        root: {
+            height: '17vh',
+            width: '100%',
+            zIndex: 99
+        },
+    },
+
 });
