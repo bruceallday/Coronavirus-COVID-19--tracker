@@ -17,7 +17,7 @@ export const useStyles = makeStyles({
             height: '21vh',
         }
     },
-    '@media (max-width: 415px)': {
+    '@media (max-width: 414px)': {
         root: {
             height: '17vh',
             width: '100%',

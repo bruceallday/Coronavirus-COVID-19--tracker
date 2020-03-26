@@ -37,26 +37,6 @@ export const useStyles = makeStyles({
     },
 
 
-    '@media (max-width: 415px)': {
-        root: {
-            marginLeft: 0,
-            width: '100vw',
-            padding: 5,
-        },
-
-    },
-
-    '@media (max-width: 1024px)': {
-        title: {
-            fontSize: 36,
-            padding: 5
-        },
-
-        toolbar: {
-            padding: 5,
-        },
-    },
-
     '@media (max-width: 1400px)': {
         title: {
             fontSize: '3.2em',
@@ -67,6 +47,25 @@ export const useStyles = makeStyles({
             padding: 5,
         },
     },
+
+    '@media (max-width: 1024px)': {
+        title: {
+            fontSize: 36,
+            padding: 5
+        },
+
+
+    '@media (max-width: 414px)': {
+        root: {
+            marginLeft: 0,
+            width: '100vw',
+            padding: 5,
+        },
+
+    },
+        
+    },
+
 
 });
 
