@@ -75,30 +75,9 @@ export const useStyles = makeStyles({
         },
     },
 
-    '@media (max-width: 414px)': {
+    '@media (max-width: 375px)': {
         root: {
-            width: '100vw',
-            height: '80vh',
-            backgroundColor: 'rgba(0,0,0,.7)',
-            zIndex: 999,
-            position: 'fixed',
-            marginTop: '5vh'
-        },
-
-        aboutCard: {
-            width: '85%',
-            height: '80%',
-        },
-        heading: {
-            fontSize: 22,
-            color: 'white',
-            fontWeight: 'lighter'
-        },
-
-        paragraphText: {
-            color: 'white',
-            padding: 10,
-            fontSize: '1.1em'
+            
         },
     },
 

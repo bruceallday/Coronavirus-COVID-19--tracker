@@ -68,4 +68,10 @@ export const useStyles = makeStyles({
             margin: 5,
         },
     },
+    
+    '@media (max-width: 375px)': {
+        root: {
+
+        },
+    },
 });

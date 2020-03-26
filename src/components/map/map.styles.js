@@ -48,6 +48,12 @@ export const useStyles = makeStyles(theme => ({
             marginTop: '40vh'
         }
     },
+
+    '@media (max-width: 375px)': {
+        root: {
+
+        },
+    },
     
 })
 )

@@ -24,5 +24,10 @@ export const useStyles = makeStyles({
             zIndex: 99
         },
     },
+    '@media (max-width: 375px)': {
+        root: {
+
+        },
+    },
 
 });
