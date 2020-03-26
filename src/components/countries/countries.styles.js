@@ -36,7 +36,6 @@ export const useStyles = makeStyles({
         height: '9.3vh' 
     },
 
-
     '@media (max-width: 1400px)': {
         title: {
             fontSize: '3.2em',
@@ -61,6 +60,25 @@ export const useStyles = makeStyles({
             width: '100vw',
             padding: 5,
         },
+
+        appBar: {
+            backgroundColor: '#363636',
+            height: '10vh',
+        },
+
+        title: {
+            display: 'none',
+        },
+
+        version: { 
+            display: 'none',
+        },
+
+        textField: {
+            width: '95vw',
+            margin: 7
+        },
+
 
     },
         
