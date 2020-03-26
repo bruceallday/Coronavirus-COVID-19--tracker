@@ -60,7 +60,8 @@ export const textStyles = makeStyles({
             flexWrap: 'wrap',
             flexDirection: 'row',
             justifyContent: 'center',
-            marginBottom: '%'
+            marginBottom: '5%',
+            zIndex: 999
         },
     },
 
