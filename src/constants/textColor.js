@@ -63,6 +63,13 @@ export const textStyles = makeStyles({
             marginBottom: '5%',
             zIndex: 999
         },
+        linkText: {
+            color: 'cyan',
+            textDecoration: 'none',
+            width: 90,
+            textTransform: 'none',
+            zIndex: 9999
+        },
     },
 
 })
