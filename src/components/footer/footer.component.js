@@ -8,13 +8,15 @@ import Button from '@material-ui/core/Button'
 import { textStyles } from '../../constants/textColor'
 import { useStyles } from './footer.styles'
 
-const Footer = ({ setAboutWindow, aboutWindow }) => {
+const Footer = (props) => {
 
     const classes = useStyles()
     const textClass = textStyles()
     const [totalsData, setTotalsData] = useState("")
     const [lastUpdate, setLastUpdate] = useState('')
     const [isLoading, setLoading] = useState(false)
+
+    const {aboutWindow, setAboutWindow} = props
 
     const loader = '...'
 

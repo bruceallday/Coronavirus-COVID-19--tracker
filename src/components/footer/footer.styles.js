@@ -22,6 +22,27 @@ export const useStyles = makeStyles({
         fontWeight: 'lighter'
     },
 
+    '@media (max-width: 1400px)': {
+        title: {
+            fontSize: 20,
+            padding: 5,
+        },
+    },
+
+
+    '@media (max-width: 1305px)': {
+        title: {
+            padding: 2,
+            margin: 10,
+        },
+    },
+
+    '@media (max-width: 1215)': {
+        appBar: {
+            padding: 10
+        }
+    },
+
     '@media (max-width: 1024px)': {
         appBar: {
             marginTop: '82vh',
@@ -31,30 +52,10 @@ export const useStyles = makeStyles({
        
     },
 
-    '@media (max-width: 1215)': {
-        appBar: {
-            padding: 10
-        }
-    },
-
-    '@media (max-width: 1305px)': {
-        title: {
-            padding: 2,
-            margin: 10,
-        },
-    },
-
-    '@media (max-width: 1400px)': {
-        title: {
-            fontSize: '1.8em',
-            padding: 5,
-        },
-    },
-
-    '@media (max-width: 415px)': {
+    '@media (max-width: 414px)': {
         appBar: {
             marginTop: '80vh',
-            marginRight: 0,
+            marginRight: '0%',
             height: '20vh',
             width: '100%',
             position: 'fixed',
@@ -67,5 +68,10 @@ export const useStyles = makeStyles({
             margin: 5,
         },
     },
+    
+    '@media (max-width: 375px)': {
+        root: {
 
+        },
+    },
 });

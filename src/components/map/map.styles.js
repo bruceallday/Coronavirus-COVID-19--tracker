@@ -39,10 +39,20 @@ export const useStyles = makeStyles(theme => ({
     },
 
     '@media (max-width: 414px)': {
-        map: {
-            width: '100%'
+        chart: {
+            display: 'none',
         },
 
+        loader: {
+            marginLeft: '41vw',
+            marginTop: '40vh'
+        }
+    },
+
+    '@media (max-width: 375px)': {
+        root: {
+
+        },
     },
     
 })

@@ -36,25 +36,9 @@ export const useStyles = makeStyles({
         height: '9.3vh' 
     },
 
-
-    '@media (max-width: 415px)': {
-        root: {
-            marginLeft: 0,
-            width: '100vw',
-            padding: 5,
-        },
-
-    },
-
-    '@media (max-width: 1024px)': {
-        title: {
-            fontSize: 36,
-            padding: 5
-        },
-
-        toolbar: {
-            padding: 5,
-        },
+    version:{
+        fontSize: 20,
+        fontWeight: 'lighter',
     },
 
     '@media (max-width: 1400px)': {
@@ -67,6 +51,49 @@ export const useStyles = makeStyles({
             padding: 5,
         },
     },
+
+    '@media (max-width: 1024px)': {
+        title: {
+            fontSize: 36,
+            padding: 5
+        },
+
+
+    '@media (max-width: 414px)': {
+        root: {
+            marginLeft: 0,
+            width: '100vw',
+            padding: 5,
+        },
+
+        appBar: {
+            backgroundColor: '#363636',
+            height: '10vh',
+        },
+
+        title: {
+            display: 'none',
+        },
+
+        version: { 
+            display: 'none',
+        },
+
+        textField: {
+            width: '95vw',
+            margin: 7
+        },
+
+    },
+
+    '@media (max-width: 375px)': {
+        root: {
+
+        },
+    },
+
+    },
+
 
 });
 
