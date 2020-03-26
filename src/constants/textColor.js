@@ -30,7 +30,7 @@ export const textStyles = makeStyles({
         alignItems: 'center' 
     },
 
-    '@media (max-width: 414px)': {
+    '@media (max-width: 415px)': {
         totalsText: {
             fontWeight: 'lighter',
             marginLeft: 0,

@@ -51,20 +51,21 @@ export const useStyles = makeStyles({
         },
     },
 
-    '@media (max-width: 414px)': {
+    '@media (max-width: 415px)': {
         appBar: {
             marginTop: '80vh',
             marginRight: 0,
             height: '20vh',
             width: '100%',
-            position: 'fixed'
+            position: 'fixed',
+            justifyContent: 'center',
+            alignItems: 'center'
         },
         title: {
             fontSize: 21,
             padding: 2,
             margin: 5,
         },
-
     },
 
 });
