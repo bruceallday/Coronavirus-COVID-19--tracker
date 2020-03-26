@@ -12,10 +12,9 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 
 import { useStyles, CssTextField } from './map.styles'
 
-const Map = () => {
+const Map = ({ aboutWindow, setAboutWindow }) => {
     const classes = useStyles()
     const [data, setData] = useState([])
-    const [aboutWindow, setAboutWindow] = useState(false)
     const [isLoading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -74,12 +73,7 @@ const Map = () => {
                             )}
                         </div>
 
-                    {aboutWindow && (
-                        <AboutWindow 
-                            setAboutWindow={setAboutWindow} 
-                            aboutWindow={aboutWindow}/>
-                        )
-                    }
+                   
                     <div className={classes.chart} >
                         <Chart
                             // forceIFrame={true}
