@@ -8,7 +8,8 @@ export const useStyles = makeStyles({
         marginRight: '35%',
         height: '17vh',
         width: '66%',
-        position: 'fixed'
+        position: 'fixed',
+        zIndex: 9999
     },
 
     toolbar: {
