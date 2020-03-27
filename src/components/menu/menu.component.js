@@ -76,8 +76,8 @@ const MenuWidget = (props) => {
                     },
                 }}
             >
-                {options.map(option => (
-                    <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+                {options.map((option, index) => (
+                    <MenuItem key={index} selected={option === 'Pyxis'} onClick={handleClose}>
                         {option}
                     </MenuItem>
                 ))}

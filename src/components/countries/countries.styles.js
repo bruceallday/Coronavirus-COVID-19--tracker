@@ -2,6 +2,7 @@ import { makeStyles, withStyles } from '@material-ui/styles/'
 import TextField from '@material-ui/core/TextField/'
 
 export const useStyles = makeStyles({
+
     root: {
         display: 'flex',
         flexDirection: 'row',
@@ -57,8 +58,20 @@ export const useStyles = makeStyles({
             fontSize: 36,
             padding: 5
         },
+    },
 
-
+    '@media (max-width: 896px)': {
+        appBar: {
+            height: '19vh'
+        },
+        title: {
+            fontSize: 28,
+        }, 
+        version: {
+            fontSize: 18,
+        },
+    },
+        
     '@media (max-width: 414px)': {
         root: {
             marginLeft: 0,
@@ -83,16 +96,24 @@ export const useStyles = makeStyles({
             width: '95vw',
             margin: 7
         },
+        textfieldInput: {
+            fontSize: "1.5em",
+            padding: 0
+        },
 
     },
 
     '@media (max-width: 375px)': {
         root: {
 
+        }, 
+        textfieldInput: {
+            fontSize: "1em",
+            padding: 0
         },
+     
     },
 
-    },
 
 
 });
