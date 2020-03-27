@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/styles/'
-
+ 
 export const useStyles = makeStyles({
     root: {
         width: '48%',
@@ -16,6 +16,13 @@ export const useStyles = makeStyles({
             height: '21vh',
         }
     },
+
+    '@media (max-width: 896px)': {
+        root:{
+            height: '35vh'
+        }
+    },
+
     '@media (max-width: 414px)': {
         root: {
             height: '19vh',
@@ -23,6 +30,7 @@ export const useStyles = makeStyles({
             zIndex: 99,
         },
     },
+
     '@media (max-width: 375px)': {
         root: {
             height: '22vh'

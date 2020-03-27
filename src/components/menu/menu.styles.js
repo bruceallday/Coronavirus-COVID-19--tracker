@@ -24,6 +24,6 @@ export const useStyles = makeStyles({
         position: 'absolute',
         marginLeft: '77vw',
         marginTop: '-20%'
-    }
-    
+    },
+     
 });

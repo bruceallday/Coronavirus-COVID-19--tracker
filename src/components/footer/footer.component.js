@@ -28,10 +28,20 @@ const Footer = (props) => {
         checkForMobile()
     }, [])
 
+    window.addEventListener("orientationchange", () => {
+        checkForMobile()
+    });
+
+    window.onorientationchange = () => {
+        checkForMobile()
+    };
+
     const checkForMobile = () => {
         const windowWidth = window.innerWidth
         if (windowWidth <= 414) {
             setIsMobile(true)
+        }else{
+            setIsMobile(false)
         }
     }
 

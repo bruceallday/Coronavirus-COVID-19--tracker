@@ -2,6 +2,7 @@ import { makeStyles, withStyles } from '@material-ui/styles/'
 import TextField from '@material-ui/core/TextField/'
 
 export const useStyles = makeStyles({
+
     root: {
         display: 'flex',
         flexDirection: 'row',
@@ -56,6 +57,18 @@ export const useStyles = makeStyles({
         title: {
             fontSize: 36,
             padding: 5
+        },
+    },
+
+    '@media (max-width: 896px)': {
+        appBar: {
+            height: '19vh'
+        },
+        title: {
+            fontSize: 28,
+        }, 
+        version: {
+            fontSize: 18,
         },
     },
         
