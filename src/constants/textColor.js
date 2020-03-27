@@ -7,6 +7,7 @@ export const textStyles = makeStyles({
         textDecoration: 'none',
         width: 90,
         textTransform: 'none',
+        zIndex: 999
     },
 
     redtext: {
@@ -27,7 +28,9 @@ export const textStyles = makeStyles({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-evenly', 
-        alignItems: 'center' 
+        alignItems: 'center',
+        zIndex: 999,
+        flexWrap: 'wrap'
     },
 
     '@media (max-width: 1400px)': {
@@ -58,7 +61,6 @@ export const textStyles = makeStyles({
             marginLeft: 0,
             display: 'flex',
             flexWrap: 'wrap',
-            flexDirection: 'row',
             justifyContent: 'center',
             marginBottom: '5%',
             zIndex: 999
@@ -66,9 +68,9 @@ export const textStyles = makeStyles({
         linkText: {
             color: 'cyan',
             textDecoration: 'none',
-            width: 90,
             textTransform: 'none',
-            zIndex: 9999
+            width: 90,
+            zIndex: 9999,
         },
     },
 

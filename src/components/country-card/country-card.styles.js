@@ -18,9 +18,9 @@ export const useStyles = makeStyles({
     },
     '@media (max-width: 414px)': {
         root: {
-            height: '17vh',
+            height: '19vh',
             width: '100%',
-            zIndex: 99
+            zIndex: 99,
         },
     },
     '@media (max-width: 375px)': {

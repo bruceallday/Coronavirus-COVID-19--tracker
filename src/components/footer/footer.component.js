@@ -5,6 +5,8 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
+import MenuWidget from '../menu/menu.component'
+
 import { textStyles } from '../../constants/textColor'
 import { useStyles } from './footer.styles'
 
@@ -12,6 +14,7 @@ const Footer = (props) => {
 
     const classes = useStyles()
     const textClass = textStyles()
+    const [isMobile, setIsMobile] = useState(false)
     const [totalsData, setTotalsData] = useState("")
     const [lastUpdate, setLastUpdate] = useState('')
     const [isLoading, setLoading] = useState(false)
@@ -22,7 +25,15 @@ const Footer = (props) => {
 
     useEffect(() => {
         getData()
+        checkForMobile()
     }, [])
+
+    const checkForMobile = () => {
+        const windowWidth = window.innerWidth
+        if (windowWidth <= 414) {
+            setIsMobile(true)
+        }
+    }
 
     const createDate = (date) => {
         let fullDate = new Date(date)
@@ -50,6 +61,7 @@ const Footer = (props) => {
         setLoading(false)
     }
 
+
     return (
         <AppBar className={classes.appBar} >
             <Toolbar className={classes.toolbar}>
@@ -62,38 +74,58 @@ const Footer = (props) => {
                 <Typography className={classes.title} >
                     Deaths: <span className={textClass.redtext} >{`${totalsData.deaths ? totalsData.deaths : loader}`}</span>
                 </Typography>
+
+                {isMobile && (
+                    <MenuWidget
+                        aboutWindow={aboutWindow}
+                        setAboutWindow={setAboutWindow}
+                    />
+                )}
+             
             </Toolbar>
 
             <div className={textClass.totalsText}>
-                <p>Last updated: <span style={{ fontWeight: "Bold" }} >{lastUpdate}</span></p> 
 
-                <Button
-                    className={textClass.linkText}
-                    onClick={() => {
-                        setAboutWindow(!aboutWindow)
-                    }}>
-                    About
-                </Button> |
+                <p>Last updated: <span style={{ fontWeight: "Bold" }} >{lastUpdate}</span></p>
 
-                <Button
-                    className={textClass.linkText}
-                    href="https://www.worldometers.info/coronavirus/">
-                    Source
-                </Button> |
+                <div className={classes.linkContainer} >
+                    <Button
+                        className={textClass.linkText}
+                        onClick={() => {
+                            setAboutWindow(!aboutWindow)
+                        }}>
+                        About
+                    </Button> 
+                </div> <div className={classes.linkContainer}>|</div>
 
-                <Button
-                    className={textClass.linkText}
-                    href="https://github.com/NovelCOVID/">
-                    API
-                </Button> |
+                <div className={classes.linkContainer} >
+                    <Button
+                        className={textClass.linkText}
+                        href="https://www.worldometers.info/coronavirus/">
+                        Source
+                    </Button> 
+                </div> <div className={classes.linkContainer}>|</div>
 
-                <Button
-                    className={textClass.linkText}
-                    href="https://github.com/BPouncey">
-                    Author
-                </Button>
+                <div className={classes.linkContainer} >
+                    <Button
+                        className={textClass.linkText}
+                        href="https://github.com/NovelCOVID/">
+                        API
+                    </Button> 
+                </div> <div className={classes.linkContainer}>|</div>
+            
+                <div className={classes.linkContainer} >
+                    <Button
+                        className={textClass.linkText}
+                        href="https://github.com/BPouncey">
+                        Author
+                    </Button>
+                </div> <div className={classes.linkContainer}>|</div>
+     
 
+                
             </div>
+            
     </AppBar>)
 }
 
