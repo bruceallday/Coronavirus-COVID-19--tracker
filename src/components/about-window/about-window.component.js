@@ -52,11 +52,12 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                 <p className={classes.paragraphText} >
                         Due to the panic and fear in society I created this application to provide correct infomation, on every country
                         where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown.
+                        For more uptodate infomation on the Coronavirus(COVID-19) visit the Center for Disease Control and Prevention website <br />
+                        <a className={classes.linkText} href={"https://www.cdc.gov/coronavirus/2019-ncov/index.html"}>cdc.gov/coronavirus/2019-ncov/index.html</a> <br/>
                         <br/>
-                        <a className={classes.linkText} href='https://www.worldometers.info/coronavirus/'>Data Source</a>
+                        <a className={classes.linkText} href='https://www.worldometers.info/coronavirus/'>Website Data Source</a>
                         <br/>
                         <br/>
-                        Track Coronavirus(COVID-19) is an independently developed, free to use web application.
                         Help prevent the spread of Coronavirus(COVID-19) by taking necessary precautions.
                         Consider the following items.
                         {/*The app will always remain free to use, you can help support the development of this project, 
@@ -134,47 +135,7 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                         />
                  
                 </div>
-               
-   
-                   
-
-        
-                    
-
-                
-
-                    {/*<div style={{ width: 100, height: 40, paddingLeft: 20 }}>
-                        <div className={classes.donationInput}>
-
-                            <CssTextField
-                                className={classes.textField}
-                                label="$"
-                                variant="outlined"
-                                size="small"
-                                InputProps={{
-                                    className: classes.textfieldInput
-                                }}
-                               
-                            />
-                        </div>
-                        <PayPalButton
-                            clientId={`https://www.paypal.com/sdk/js?client-id=${process.env.PAYPALSANDBOX}`}
-                            amount="0.01"
-                            currency='USD'
-                            style={{ shape: 'pill', size: 'responsive' }}
-                            // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                            onSuccess={(details, data) => {
-                                alert("Transaction completed by " + details.payer.name.given_name);
-                                // OPTIONAL: Call your server to save the transaction
-                                // return fetch("/paypal-transaction-complete", {
-                                //     method: "post",
-                                //     body: JSON.stringify({
-                                //         orderID: data.orderID
-                                //     })
-                                // });
-                            }}
-                        />
-                        </div>*/}
+                    <p className={classes.paragraphText}>Track Coronavirus(COVID-19) is an independently developed, free to use web application.</p> 
                 </CardContent>
             </Card>
         </div>
