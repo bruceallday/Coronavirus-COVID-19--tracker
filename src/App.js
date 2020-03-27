@@ -16,17 +16,6 @@ const App = () => {
         setIsMobile(!isMobile)
     });
 
-    const checkForMobile = () => {
-        console.log('checked')
-        if (window.innerWidth <= 414) {
-            setIsMobile(true)
-        } else if (window.innerWidth > 414) {
-            setIsMobile(false)
-        }
-        console.log("IS MOBILE", isMobile)
- 
-    }
-
     return(
         <div>
             <CssBaseline/>
