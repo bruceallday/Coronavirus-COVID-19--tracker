@@ -29,8 +29,65 @@ const Countries = () => {
         if(data.error){
             console.log("error", data.error)
         }else{
-            getCountryCode(data)
+            // getCountryCode(data)
+            formatNumber(data)
         }
+    }
+
+    const formatNumber = (data) => {
+        let ammendedData = data.map(item => {
+            if (item.cases.toString().length === 5){
+                item.cases = item.cases.toString()
+                item.cases = [item.cases.slice(0, 2), ",", item.cases.slice(2)].join('')
+
+            }else if (item.todayCases.toString().length === 5){
+                item.todayCases = item.todayCases.toString()
+                item.todayCases = [item.todayCases.slice(0, 2), ",", item.todayCases.slice(2)].join('')
+
+            } else if (item.recovered.toString().length === 5){
+                item.recovered = item.recovered.toString()
+                item.recovered = [item.recovered.slice(0, 2), ",", item.recovered.slice(2)].join('')
+
+            } else if (item.deaths.toString().length === 5 ){
+                item.deaths = item.deaths.toString()
+                item.deaths = [item.deaths.slice(0, 2), ",", item.deaths.slice(2)].join('')
+
+            } else if (item.todayDeaths.toString().length === 5) {
+                item.todayDeaths = item.todayDeaths.toString()
+                item.todayDeaths = [item.todaySeaths.slice(0, 2), ",", item.todaySeaths.slice(2)].join('').cases
+
+            } else if (item.critical.toString().length === 5) {
+                item.critical = item.critical.toString()
+                item.critical = [item.critical.slice(0, 2), ",", item.critical.slice(2)].join('')
+
+            } else if (item.cases.toString().length === 6) {
+                item.cases = item.cases.toString()
+                item.cases = [item.cases.slice(0, 2), ",", item.cases.slice(2)].join('')
+
+            } else if (item.todayCases.toString().length === 6) {
+                item.todayCases = item.todayCases.toString()
+                item.todayCases = [item.todayCases.slice(0, 2), ",", item.todayCases.slice(2)].join('')
+
+            } else if (item.recovered.toString().length === 6) {
+                item.recovered = item.recovered.toString()
+                item.recovered = [item.recovered.slice(0, 2), ",", item.recovered.slice(2)].join('')
+
+            } else if (item.deaths.toString().length === 6) {
+                item.deaths = item.deaths.toString()
+                item.deaths = [item.deaths.slice(0, 2), ",", item.deaths.slice(2)].join('')
+
+            } else if (item.todayDeaths.toString().length === 6) {
+                item.todayDeaths = item.todayDeaths.toString()
+                item.todayDeaths = [item.todayDeaths.slice(0, 2), ",", item.todayDeaths.slice(2)].join('')
+
+            } else if (item.critical.toString().length === 6) {
+                item.critical = item.critical.toString()
+                item.critical = [item.critical.slice(0, 2), ",", item.critical.slice(2)].join('')
+            }
+            return(item)
+        })
+        // let formattedData = ammendedData
+        getCountryCode(ammendedData)
     }
 
     const getCountryCode = async (data) => {

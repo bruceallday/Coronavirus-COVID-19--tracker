@@ -19,6 +19,32 @@ const Card = (props) => {
         todayDeaths, 
         recovered, 
         critical } = props
+
+    // const formatNumber = (num) => {
+    //   let test = num.toString()
+    //   let proto
+    //   if (test.length === 4){
+    //       proto = [test.slice(0, 1), ",", test.slice(1)].join('')
+    //       console.log(proto)
+    //   }else if(test.length === 5){
+    //       proto = [test.slice(0, 2), ",", test.slice(2)].join('')
+    //       console.log(proto)
+    //   }else if (test.length === 6){
+    //       proto = [test.slice(0, 3), ",", test.slice(3)].join('')
+    //       console.log(proto)
+    //   }else{
+    //     return
+    //   }
+    //   return test
+    // }
+
+    // useEffect(() => {
+    //     formatNumber(1000000)
+    // }, [])
+
+    // let recov = formatNumber(recovered)
+
+    console.log("CASES", typeof(recovered))
     
     return(
         <Paper elevation={3} className={classes.root}>
@@ -35,8 +61,6 @@ const Card = (props) => {
                     {` ${country}`}
                 </Typography>
             </div>
-
-
             <Typography style={{paddingLeft: 5}} variant="body1" >
                 {`Cases: ${cases} | Today: `}<span className={textClasses.yellowText}>{`${todayCases}`}</span>
             </Typography>

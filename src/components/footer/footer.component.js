@@ -22,28 +22,8 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
     const loader = '...'
 
     useEffect(() => {
-        // checkForMobile()
         getData()
     }, [])
-
-    // window.addEventListener("orientationchange", () => {
-    //     checkForMobile()
-    // });
-
-    // // window.onorientationchange = () => {
-    // //     checkForMobile()
-    // // };
-
-    // const checkForMobile = () => {
-    //     console.log('checked')
-    //     const windowWidth = window.innerWidth
-    //     if (windowWidth <= 414) {
-    //         setIsMobile(true)
-    //     }else if (windowWidth > 414){
-    //         setIsMobile(false)
-    //     }
-    //     console.log("IS MOBILE", isMobile)
-    // }
 
     const createDate = (date) => {
         let fullDate = new Date(date)
@@ -51,6 +31,22 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
         let trimStr = str.split('(')
         return trimStr[0]
     }
+
+    const formatNumber = (num) => {
+        let str = num.toString()
+        if (str.length === 4) {
+            str = [str.slice(0, 1), ",", str.slice(1)].join('')
+            console.log("STR TYOE", typeof(str), "STR", str)
+        } else if (str.length === 5) {
+            str = [str.slice(0, 2), ",", str.slice(2)].join('')
+
+        } else if (str.length === 6) {
+            str = [str.slice(0, 3), ",", str.slice(3)].join('')
+        } 
+        return str
+    }
+
+   
 
     const getData = async () => {
         setLoading(true)
@@ -69,6 +65,8 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
         let date = createDate(totalsData.updated)
         setLastUpdate(date)
         setLoading(false)
+
+        let totalCases = formatNumber(totalsData.deaths)
     }
 
 
@@ -76,13 +74,13 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
         <AppBar className={classes.appBar} >
             <Toolbar className={classes.toolbar}>
                 <Typography className={classes.title} >
-                    Total Cases: <span className={textClass.yellowText}>{`${totalsData.cases ? totalsData.cases : loader}`}</span>
+                    Total Cases: <span className={textClass.yellowText}>{`${totalsData.cases ? formatNumber(totalsData.cases) : loader}`}</span>
                 </Typography>
                 <Typography className={classes.title} >
-                    Recovered: <span className={textClass.greenText} >{`${totalsData.recovered ? totalsData.recovered : loader}`}</span>
+                    Recovered: <span className={textClass.greenText} >{`${totalsData.recovered ? formatNumber(totalsData.recovered) : loader}`}</span>
                 </Typography>
                 <Typography className={classes.title} >
-                    Deaths: <span className={textClass.redtext} >{`${totalsData.deaths ? totalsData.deaths : loader}`}</span>
+                    Deaths: <span className={textClass.redtext} >{`${totalsData.deaths ? formatNumber(totalsData.deaths) : loader}`}</span>
                 </Typography>
 
                 {isMobile && (
