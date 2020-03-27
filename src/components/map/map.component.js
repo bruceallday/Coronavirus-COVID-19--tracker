@@ -33,6 +33,7 @@ const Map = ({ aboutWindow, setAboutWindow }) => {
             console.log(data.error)
         }else{
             setData(data)
+            console.log("DATA", data)
         }
         setLoading(false)
     }

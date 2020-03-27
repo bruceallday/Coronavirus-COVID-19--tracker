@@ -15,6 +15,7 @@ export const useStyles = makeStyles({
     toolbar: {
         display: 'flex',
         flexDirection: 'row',
+        zIndex: 999,
     },
 
     title: {
@@ -55,13 +56,14 @@ export const useStyles = makeStyles({
 
     '@media (max-width: 414px)': {
         appBar: {
-            marginTop: '75vh',
+            marginTop: '80vh',
             marginRight: '0%',
-            height: '25vh',
+            height: '20vh',
             width: '100%',
             position: 'fixed',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            zIndex: 999
         },
         title: {
             fontSize: 21,
@@ -69,7 +71,9 @@ export const useStyles = makeStyles({
             margin: 5,
         },
 
-        
+        linkContainer: {
+            display: 'none'
+        }
     },
     
     '@media (max-width: 375px)': {
