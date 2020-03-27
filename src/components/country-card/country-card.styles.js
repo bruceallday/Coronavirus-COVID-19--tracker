@@ -25,8 +25,7 @@ export const useStyles = makeStyles({
     },
     '@media (max-width: 375px)': {
         root: {
-
+            height: '22vh'
         },
     },
-
 });

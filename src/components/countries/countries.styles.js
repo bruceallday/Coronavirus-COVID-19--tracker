@@ -57,8 +57,8 @@ export const useStyles = makeStyles({
             fontSize: 36,
             padding: 5
         },
-
-
+    },
+        
     '@media (max-width: 414px)': {
         root: {
             marginLeft: 0,
@@ -83,16 +83,24 @@ export const useStyles = makeStyles({
             width: '95vw',
             margin: 7
         },
+        textfieldInput: {
+            fontSize: "1.5em",
+            padding: 0
+        },
 
     },
 
     '@media (max-width: 375px)': {
         root: {
 
+        }, 
+        textfieldInput: {
+            fontSize: "1em",
+            padding: 0
         },
+     
     },
 
-    },
 
 
 });
