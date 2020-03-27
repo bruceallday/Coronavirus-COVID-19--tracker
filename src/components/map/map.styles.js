@@ -14,7 +14,7 @@ export const useStyles = makeStyles(theme => ({
         marginLeft: '31vw', 
         marginTop: '33vh' 
     },
-
+ 
     navIconDiv: { 
         position: 'absolute', 
         marginTop: 45, 

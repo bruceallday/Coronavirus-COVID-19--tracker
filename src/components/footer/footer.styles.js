@@ -38,7 +38,7 @@ export const useStyles = makeStyles({
             margin: 10,
         },
     },
-
+ 
     '@media (max-width: 1215)': {
         appBar: {
             padding: 10
