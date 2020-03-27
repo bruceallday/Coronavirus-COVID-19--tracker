@@ -50,8 +50,6 @@ const MenuWidget = (props) => {
         setAnchorEl(null);
     };
 
-    console.log("WINDOW WIDTH", window.innerWidth)
-
     return (
         <div className={classes.menuContainer} >
             <IconButton

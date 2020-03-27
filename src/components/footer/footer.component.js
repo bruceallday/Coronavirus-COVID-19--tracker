@@ -10,40 +10,40 @@ import MenuWidget from '../menu/menu.component'
 import { textStyles } from '../../constants/textColor'
 import { useStyles } from './footer.styles'
 
-const Footer = (props) => {
+const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
 
     const classes = useStyles()
     const textClass = textStyles()
-    const [isMobile, setIsMobile] = useState(false)
+    // const [isMobile, setIsMobile] = useState()
     const [totalsData, setTotalsData] = useState("")
     const [lastUpdate, setLastUpdate] = useState('')
     const [isLoading, setLoading] = useState(false)
 
-    const {aboutWindow, setAboutWindow} = props
-
     const loader = '...'
 
     useEffect(() => {
+        // checkForMobile()
         getData()
-        checkForMobile()
     }, [])
 
-    window.addEventListener("orientationchange", () => {
-        checkForMobile()
-    });
+    // window.addEventListener("orientationchange", () => {
+    //     checkForMobile()
+    // });
 
-    window.onorientationchange = () => {
-        checkForMobile()
-    };
+    // // window.onorientationchange = () => {
+    // //     checkForMobile()
+    // // };
 
-    const checkForMobile = () => {
-        const windowWidth = window.innerWidth
-        if (windowWidth <= 414) {
-            setIsMobile(true)
-        }else{
-            setIsMobile(false)
-        }
-    }
+    // const checkForMobile = () => {
+    //     console.log('checked')
+    //     const windowWidth = window.innerWidth
+    //     if (windowWidth <= 414) {
+    //         setIsMobile(true)
+    //     }else if (windowWidth > 414){
+    //         setIsMobile(false)
+    //     }
+    //     console.log("IS MOBILE", isMobile)
+    // }
 
     const createDate = (date) => {
         let fullDate = new Date(date)
