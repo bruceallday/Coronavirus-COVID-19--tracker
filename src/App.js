@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -8,8 +8,24 @@ import AboutWindow from './components/about-window/about-window.component'
 import Countries from './components/countries/countries.component'
 
 const App = () => {
-
+    console.log("COMPONENT LOADED")
     const [aboutWindow, setAboutWindow] = useState(false)
+    const [isMobile, setIsMobile] = useState(null)
+
+    window.addEventListener("orientationchange", () => {
+        setIsMobile(!isMobile)
+    });
+
+    const checkForMobile = () => {
+        console.log('checked')
+        if (window.innerWidth <= 414) {
+            setIsMobile(true)
+        } else if (window.innerWidth > 414) {
+            setIsMobile(false)
+        }
+        console.log("IS MOBILE", isMobile)
+ 
+    }
 
     return(
         <div>
@@ -25,8 +41,10 @@ const App = () => {
 
                 <Map 
                     aboutWindow={aboutWindow} 
-                    setAboutWindow={setAboutWindow}  />
-                    
+                    setAboutWindow={setAboutWindow}
+                    isMobile={isMobile}
+                />
+        
                 <Countries />
             </div>
         </div>

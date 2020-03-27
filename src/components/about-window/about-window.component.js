@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography'
 import ClearIcon from '@material-ui/icons/Clear'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
+import ads from '../../../ads'
 
 import {
     EmailShareButton,
@@ -60,6 +61,10 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                         including improved mobile support and the addition of new features
                         by sending a small donation.*/}
                 </p>
+
+                <div>
+                    
+                </div>
 
                     {/*<div style={{ width: 100, height: 40, paddingLeft: 20 }}>
                         <div className={classes.donationInput}>

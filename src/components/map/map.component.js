@@ -12,7 +12,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 
 import { useStyles, CssTextField } from './map.styles'
 
-const Map = ({ aboutWindow, setAboutWindow }) => {
+const Map = ({ aboutWindow, setAboutWindow, isMobile }) => {
     const classes = useStyles()
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
@@ -103,6 +103,7 @@ const Map = ({ aboutWindow, setAboutWindow }) => {
             <Footer
                 setAboutWindow={setAboutWindow}
                 aboutWindow={aboutWindow}
+                isMobile={isMobile}
             />
         </div>
     )
