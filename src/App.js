@@ -12,8 +12,19 @@ const App = () => {
     const [aboutWindow, setAboutWindow] = useState(false)
     const [isMobile, setIsMobile] = useState(null)
 
+    useEffect(() => {
+        if(screen.width <= 414){
+            setIsMobile(true)
+        }
+    }, [])
+
     window.addEventListener("orientationchange", () => {
+        if (screen.width <= 414) {
+            // setIsMobile(true)
         setIsMobile(!isMobile)
+
+        }
+        // setIsMobile(!isMobile)
     });
 
     return(
