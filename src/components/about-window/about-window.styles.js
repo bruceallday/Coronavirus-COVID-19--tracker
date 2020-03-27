@@ -32,7 +32,8 @@ export const useStyles = makeStyles({
         height: '60%', 
         display: 'flex', 
         flexDirection: 'row', 
-        flexWrap: 'wrap' 
+        flexWrap: 'wrap',
+        overflowY: 'scroll'
     },
 
     heading: {
@@ -46,6 +47,17 @@ export const useStyles = makeStyles({
         color: 'white', 
         padding: 20, 
         fontSize: '1.1em'
+    },
+
+    adsContainer: { 
+        display: 'flex', 
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        flexWrap: 'wrap',
+        marginTop: 10, 
+        backgroundColor: 'white', 
+        padding: 20, 
+        borderRadius: 10 
     },
 
     '@media (max-width: 414px)': {
