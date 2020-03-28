@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
 import MenuWidget from '../menu/menu.component'
+import { formatNumber } from '../../constants/utils'
 
 import { textStyles } from '../../constants/textColor'
 import { useStyles } from './footer.styles'
@@ -14,7 +15,6 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
 
     const classes = useStyles()
     const textClass = textStyles()
-    // const [isMobile, setIsMobile] = useState()
     const [totalsData, setTotalsData] = useState("")
     const [lastUpdate, setLastUpdate] = useState('')
     const [isLoading, setLoading] = useState(false)
@@ -31,22 +31,6 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
         let trimStr = str.split('(')
         return trimStr[0]
     }
-
-    const formatNumber = (num) => {
-        let str = num.toString()
-        if (str.length === 4) {
-            str = [str.slice(0, 1), ",", str.slice(1)].join('')
-            console.log("STR TYOE", typeof(str), "STR", str)
-        } else if (str.length === 5) {
-            str = [str.slice(0, 2), ",", str.slice(2)].join('')
-
-        } else if (str.length === 6) {
-            str = [str.slice(0, 3), ",", str.slice(3)].join('')
-        } 
-        return str
-    }
-
-   
 
     const getData = async () => {
         setLoading(true)
@@ -65,8 +49,6 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
         let date = createDate(totalsData.updated)
         setLastUpdate(date)
         setLoading(false)
-
-        let totalCases = formatNumber(totalsData.deaths)
     }
 
 
@@ -89,11 +71,9 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
                         setAboutWindow={setAboutWindow}
                     />
                 )}
-             
             </Toolbar>
 
             <div className={textClass.totalsText}>
-
                 <p>Last updated: <span style={{ fontWeight: "Bold" }} >{lastUpdate}</span></p>
 
                 <div className={classes.linkContainer} >
@@ -128,10 +108,7 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
                         href="https://github.com/BPouncey">
                         Author
                     </Button>
-                </div> <div className={classes.linkContainer}>|</div>
-     
-
-                
+                </div> <div className={classes.linkContainer}>|</div>           
             </div>
             
     </AppBar>)
