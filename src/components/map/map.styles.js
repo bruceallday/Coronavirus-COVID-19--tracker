@@ -19,11 +19,13 @@ export const useStyles = makeStyles(theme => ({
         position: 'absolute', 
         marginTop: 45, 
         marginLeft: 10, 
-        zIndex: 999 
+        zIndex: 999,
+        
     },
 
     navIcon: { 
-        color: '#363636', 
+        // color: '#363636', 
+        color: 'cyan',
         width: 40, 
         height: 40, 
     },

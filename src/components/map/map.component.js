@@ -8,7 +8,7 @@ import AboutWindow from '../about-window/about-window.component.js'
 import Footer from '../footer/footer.component'
 
 import CircularProgress from '@material-ui/core/CircularProgress'
-import MoreVertIcon from '@material-ui/icons/MoreVert'
+import InfoIcon from '@material-ui/icons/Info'
 
 import { useStyles, CssTextField } from './map.styles'
 
@@ -65,7 +65,7 @@ const Map = ({ aboutWindow, setAboutWindow, isMobile }) => {
                         <div 
                             className={classes.navIconDiv} >
                             {!aboutWindow && (
-                                <MoreVertIcon
+                                <InfoIcon
                                     className={classes.navIcon}
                                     onClick={() => {
                                         setAboutWindow(!aboutWindow)
@@ -74,8 +74,11 @@ const Map = ({ aboutWindow, setAboutWindow, isMobile }) => {
                             )}
                         </div>
 
+                        <div>
+                        </div>
+
                    
-                    <div className={classes.chart} >
+                    {/*<div className={classes.chart} >
                         <Chart
                             // forceIFrame={true}
                             width={'65vw'}
@@ -96,7 +99,7 @@ const Map = ({ aboutWindow, setAboutWindow, isMobile }) => {
                                 backgroundColor: '#81d4fa',
                                 // datalessRegionColor: 'blue',
                             }}/>
-                        </div>
+                        </div>*/}
                     </div>
                 )}
             </div>
