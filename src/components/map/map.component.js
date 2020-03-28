@@ -78,7 +78,7 @@ const Map = ({ aboutWindow, setAboutWindow, isMobile }) => {
                         </div>
 
                    
-                    {/*<div className={classes.chart} >
+                    <div className={classes.chart} >
                         <Chart
                             // forceIFrame={true}
                             width={'65vw'}
@@ -99,7 +99,7 @@ const Map = ({ aboutWindow, setAboutWindow, isMobile }) => {
                                 backgroundColor: '#81d4fa',
                                 // datalessRegionColor: 'blue',
                             }}/>
-                        </div>*/}
+                        </div>
                     </div>
                 )}
             </div>
