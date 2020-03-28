@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
 import MenuWidget from '../menu/menu.component'
+import { formatNumber } from '../../constants/utils'
 
 import { textStyles } from '../../constants/textColor'
 import { useStyles } from './footer.styles'
@@ -14,7 +15,6 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
 
     const classes = useStyles()
     const textClass = textStyles()
-    // const [isMobile, setIsMobile] = useState()
     const [totalsData, setTotalsData] = useState("")
     const [lastUpdate, setLastUpdate] = useState('')
     const [isLoading, setLoading] = useState(false)
@@ -22,28 +22,8 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
     const loader = '...'
 
     useEffect(() => {
-        // checkForMobile()
         getData()
     }, [])
-
-    // window.addEventListener("orientationchange", () => {
-    //     checkForMobile()
-    // });
-
-    // // window.onorientationchange = () => {
-    // //     checkForMobile()
-    // // };
-
-    // const checkForMobile = () => {
-    //     console.log('checked')
-    //     const windowWidth = window.innerWidth
-    //     if (windowWidth <= 414) {
-    //         setIsMobile(true)
-    //     }else if (windowWidth > 414){
-    //         setIsMobile(false)
-    //     }
-    //     console.log("IS MOBILE", isMobile)
-    // }
 
     const createDate = (date) => {
         let fullDate = new Date(date)
@@ -76,13 +56,13 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
         <AppBar className={classes.appBar} >
             <Toolbar className={classes.toolbar}>
                 <Typography className={classes.title} >
-                    Total Cases: <span className={textClass.yellowText}>{`${totalsData.cases ? totalsData.cases : loader}`}</span>
+                    Total Cases: <span className={textClass.yellowText}>{`${totalsData.cases ? formatNumber(totalsData.cases) : loader}`}</span>
                 </Typography>
                 <Typography className={classes.title} >
-                    Recovered: <span className={textClass.greenText} >{`${totalsData.recovered ? totalsData.recovered : loader}`}</span>
+                    Recovered: <span className={textClass.greenText} >{`${totalsData.recovered ? formatNumber(totalsData.recovered) : loader}`}</span>
                 </Typography>
                 <Typography className={classes.title} >
-                    Deaths: <span className={textClass.redtext} >{`${totalsData.deaths ? totalsData.deaths : loader}`}</span>
+                    Deaths: <span className={textClass.redtext} >{`${totalsData.deaths ? formatNumber(totalsData.deaths) : loader}`}</span>
                 </Typography>
 
                 {isMobile && (
@@ -91,11 +71,9 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
                         setAboutWindow={setAboutWindow}
                     />
                 )}
-             
             </Toolbar>
 
             <div className={textClass.totalsText}>
-
                 <p>Last updated: <span style={{ fontWeight: "Bold" }} >{lastUpdate}</span></p>
 
                 <div className={classes.linkContainer} >
@@ -130,10 +108,7 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
                         href="https://github.com/BPouncey">
                         Author
                     </Button>
-                </div> <div className={classes.linkContainer}>|</div>
-     
-
-                
+                </div> <div className={classes.linkContainer}>|</div>           
             </div>
             
     </AppBar>)
