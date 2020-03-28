@@ -3,44 +3,17 @@ import IconButton from '@material-ui/core/IconButton'
 import Button from '@material-ui/core/Button'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import InfoIcon from '@material-ui/icons/Info'
-import { useStyles } from './menu.styles'
+import MapIcon from '@material-ui/icons/Map'
+import { useStyles } from './map-menu.styles'
 import { textStyles } from '../../constants/textColor'
 
 
-const MenuWidget = (props) => {
-    const { aboutWindow, setAboutWindow } = props
+const MapMenuWidget = (props) => {
     const classes = useStyles()
     const textClass = textStyles()
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const ITEM_HEIGHT = 48
-    const options = [
-        <Button
-            className={textClass.linkText}
-            onClick={() => {
-                setAboutWindow(!aboutWindow)
-            }}>
-            About
-        </Button>,
-        <Button
-            className={textClass.linkText}
-            href="https://www.worldometers.info/coronavirus/">
-            Source
-        </Button>,
-
-        <Button
-            className={textClass.linkText}
-            href="https://github.com/NovelCOVID/">
-            API
-        </Button>,
-
-        <Button
-            className={textClass.linkText}
-            href="https://github.com/BPouncey">
-            Author
-        </Button>,
-    ]
    
     const handleClick = event => {
         setAnchorEl(event.currentTarget);
@@ -49,7 +22,30 @@ const MenuWidget = (props) => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    
+    const options = [
+        // {
+        //     action: (() => { setAboutWindow(!aboutWindow) }),
+        //     href: null,
+        //     title: "About"
+        // },
+        {
+            action: null,
+            href: null,
+            title: "Coming Soon"
+        },
+        {
+            action: null,
+            href: null,
+            title: "Coming Soon"
+        },
+        {
+            action: null,
+            href: null,
+            title: "Coming Soon",
+        }
 
+    ]
     return (
         <div className={classes.menuContainer} >
             <IconButton
@@ -58,7 +54,7 @@ const MenuWidget = (props) => {
                 aria-haspopup="true"
                 onClick={handleClick}
             >
-                <InfoIcon className={classes.root} />
+                <MapIcon className={classes.navIcon} />
             </IconButton>
             <Menu
                 id="long-menu"
@@ -75,8 +71,13 @@ const MenuWidget = (props) => {
                 }}
             >
                 {options.map((option, index) => (
-                    <MenuItem key={index} selected={option === 'Pyxis'} onClick={handleClose}>
-                        {option}
+                    <MenuItem key={index} selected={option === 'Pyxis'}>
+                        <Button
+                            className={textClass.linkText}
+                            onClick={option.action}
+                            href={option.href}>
+                            {option.title}
+                        </Button>
                     </MenuItem>
                 ))}
             </Menu>
@@ -84,4 +85,4 @@ const MenuWidget = (props) => {
     )
 }
 
-export default MenuWidget
+export default MapMenuWidget

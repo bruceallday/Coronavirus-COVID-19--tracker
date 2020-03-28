@@ -6,11 +6,13 @@ import Map from './components/map/map.component'
 import AboutWindow from './components/about-window/about-window.component'
 import Countries from './components/countries/countries.component'
 import NewsWindow from './components/news/news.component'
+import StatsWindow from './components/stats/stats.component'
 
 const App = () => {
     console.log("COMPONENT LOADED")
     const [aboutWindow, setAboutWindow] = useState(false)
     const [newsWindow, setNewsWindow] = useState(false)
+    const [statsWindow, setStatsWindow] = useState(false)
     const [isMobile, setIsMobile] = useState(null)
 
     useEffect(() => {
@@ -44,9 +46,20 @@ const App = () => {
                     />
                 )}
 
+                {statsWindow && (
+                    <StatsWindow
+                        setStatsWindow={setStatsWindow}
+                        statsWindow={statsWindow}
+                    />
+                )}
+
                 <Map 
                     aboutWindow={aboutWindow} 
                     setAboutWindow={setAboutWindow}
+                    newsWindow={newsWindow}
+                    setNewsWindow={setNewsWindow}
+                    statsWindow={statsWindow}
+                    setStatsWindow={setStatsWindow}
                     isMobile={isMobile}
                 />
 

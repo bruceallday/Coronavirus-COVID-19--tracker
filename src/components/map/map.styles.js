@@ -14,18 +14,21 @@ export const useStyles = makeStyles(theme => ({
         marginLeft: '31vw', 
         marginTop: '33vh' 
     },
- 
-    navIconDiv: { 
-        position: 'absolute', 
-        marginTop: 45, 
-        marginLeft: 10, 
-        zIndex: 999,
-        
+
+    menuContainer: {
+        height: 500,
+        position: 'absolute',
+        // backgroundColor: 'red',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        marginTop: 65,
+        marginLeft: 10,
+        zIndex: 9,
     },
 
     navIcon: { 
-        // color: '#363636', 
-        color: 'cyan',
+        color: '#363636',
         width: 40, 
         height: 40, 
     },
