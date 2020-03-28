@@ -36,7 +36,7 @@ const Card = (props) => {
                 </Typography>
             </div>
             <Typography style={{paddingLeft: 5}} variant="body1" >
-                {`Cases: ${formatNumber(cases)} | Today: `}<span className={textClasses.yellowText}>{`${formatNumber(todayCases)}`}</span>
+                {`Cases: ${formatNumber(cases)} | Today: `}<span className={todayCases == 0 ? textClasses.greenText : textClasses.yellowText}>{`${formatNumber(todayCases)}`}</span>
             </Typography>
 
             <Typography style={{ paddingLeft: 5 }} variant="body1" >
@@ -44,7 +44,7 @@ const Card = (props) => {
             </Typography>
 
             <Typography style={{ paddingLeft: 5 }} variant="body1" >
-                {`Deaths: ${formatNumber(deaths)} | Today: `}<span className={textClasses.redtext}>{`${formatNumber(todayDeaths)}`}</span>
+                {`Deaths: ${formatNumber(deaths)} | Today: `}<span className={todayDeaths == 0 ? textClasses.greenText : textClasses.redtext}>{`${formatNumber(todayDeaths)}`}</span>
             </Typography>
 
             <Typography style={{ paddingLeft: 5 }} variant="body1" >

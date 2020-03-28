@@ -1,3 +1,5 @@
+import React from 'react'
+
 export const formatNumber = (num) => {
     let str = num.toString()
     if (str.length === 4) {
