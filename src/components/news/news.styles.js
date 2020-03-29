@@ -39,12 +39,13 @@ export const useStyles = makeStyles({
     },
 
     icon: { 
-        width: 30, 
-        height: 30, 
+        width: 35, 
+        height: 35, 
         color: 'white', 
         position: 'fixed', 
+        alignSelf: 'flex-start',
         zIndex: 999, 
-        marginRight: '62%' 
+        marginRight: '-100%' 
     },
 
     heading: { 
