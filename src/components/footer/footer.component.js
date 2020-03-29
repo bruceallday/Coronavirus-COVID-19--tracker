@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
-import MenuWidget from '../menu/menu.component'
+import MobileMenuWidget from '../mobile-menu/mobile-menu.component'
 import { formatNumber } from '../../constants/utils'
 
 import { textStyles } from '../../constants/textColor'
@@ -66,7 +66,7 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
                 </Typography>
 
                 {isMobile && (
-                    <MenuWidget
+                    <MobileMenuWidget
                         aboutWindow={aboutWindow}
                         setAboutWindow={setAboutWindow}
                     />
