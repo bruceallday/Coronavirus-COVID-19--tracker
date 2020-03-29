@@ -40,12 +40,10 @@ export const useStyles = makeStyles({
 
     icon: { 
         width: 35, 
-        height: 35, 
-        color: 'white', 
+        height: 35,  
         position: 'fixed', 
-        alignSelf: 'flex-start',
         zIndex: 999, 
-        marginRight: '-100%' 
+        marginLeft: '-60%' 
     },
 
     heading: { 
@@ -63,6 +61,40 @@ export const useStyles = makeStyles({
    
     adsContainer: {
         
-    }
+    },
 
+    '@media (max-width: 414px)': {
+        root: {
+            width: '100vw',
+            height: '85vh',
+            backgroundColor: 'rgba(0,0,0,.7)',
+            zIndex: 999,
+            position: 'fixed',
+            marginTop: '0vh'
+        },
+
+        newsCard: {
+            width: '90%',
+            height: '70%',
+            marginTop: 20,
+        },
+        heading: {
+            fontSize: 22,
+            color: 'white',
+            // fontWeight: 'lighter'
+        },
+
+        paragraphText: {
+            color: 'white',
+            padding: 10,
+            fontSize: '1.1em'
+        },
+        icon: {
+           marginTop: '20%',
+           marginLeft: '-70%',
+           zIndex: 9999
+        },
+
+    },
+   
 });
