@@ -92,7 +92,7 @@ const Map = (props) => {
                                         '#FEEDED','#FB7F81',
                                         '#FB4146','#FA030B',
                                         '#FB040C','#BC0309',
-                                        '#7D0206'
+                                        
                                     ]
                                 },
                                 backgroundColor: '#81d4fa',
