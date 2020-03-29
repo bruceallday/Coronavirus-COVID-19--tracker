@@ -26,7 +26,7 @@ export const useStyles = makeStyles({
     newsCard: {
         backgroundColor: '#363636',
         width: '32%',
-        height: '65%',
+        height: '70%',
         margin: '0.5%',
         display: 'flex',
         flexDirection: 'row',
@@ -35,7 +35,7 @@ export const useStyles = makeStyles({
     },
 
     media: {
-        height: '100%'
+        height: '50%'
     },
 
     icon: { 
@@ -52,11 +52,13 @@ export const useStyles = makeStyles({
         fontSize: 21 
     },
 
-    paragraphText: { 
+    paragraphText: {
+        display: 'flex',
+        flexDirection: 'column',
         color: 'white', 
         fontSize: 17, 
         fontWeight: 'lighter', 
-        fontStyle: "italic" 
+        fontStyle: "italic",
     },
    
     adsContainer: {
@@ -81,7 +83,6 @@ export const useStyles = makeStyles({
         heading: {
             fontSize: 22,
             color: 'white',
-            // fontWeight: 'lighter'
         },
 
         paragraphText: {

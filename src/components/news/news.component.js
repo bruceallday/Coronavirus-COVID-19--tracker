@@ -69,10 +69,9 @@ const NewsWindow = ({ newsWindow, setNewsWindow }) => {
             />
          
             {data && data.map((item, index) => {
-                
                 return(
                     <Card key={index} className={classes.newsCard}>
-                        <CardActionArea href={`${item.url}`} style={{ height: '50%' }}>
+                        <CardActionArea href={`${item.url}`} style={{ height: '100%' }}>
                             <CardMedia
                                 className={classes.media}
                                 image={item.urlToImage}
