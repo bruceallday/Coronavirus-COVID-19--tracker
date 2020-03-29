@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react'
 
-import NumberFormat from 'react-number-format'
-import PropTypes from 'prop-types'
 import { Chart } from "react-google-charts"
 
-import AboutWindow from '../about-window/about-window.component.js'
 import Footer from '../footer/footer.component'
+import MapMenuWidget from '../map-menu/map-menu.component'
 
 import CircularProgress from '@material-ui/core/CircularProgress'
+import IconButton from '@material-ui/core/IconButton'
 import InfoIcon from '@material-ui/icons/Info'
+import PriorityHighIcon from '@material-ui/icons/PriorityHigh'
+import AssessmentIcon from '@material-ui/icons/Assessment'
 
-import { useStyles, CssTextField } from './map.styles'
+import { useStyles } from './map.styles'
 
-const Map = ({ aboutWindow, setAboutWindow, isMobile }) => {
+const Map = ({ aboutWindow, setAboutWindow, newsWindow, setNewsWindow, statsWindow, setStatsWindow, isMobile }) => {
     const classes = useStyles()
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
@@ -33,7 +34,7 @@ const Map = ({ aboutWindow, setAboutWindow, isMobile }) => {
             console.log(data.error)
         }else{
             setData(data)
-            console.log("DATA", data)
+            console.log("novelCOVID DATA", data)
         }
         setLoading(false)
     }
@@ -62,20 +63,37 @@ const Map = ({ aboutWindow, setAboutWindow, isMobile }) => {
                     />
                 ):(
                     <div>
-                        <div 
-                            className={classes.navIconDiv} >
-                            {!aboutWindow && (
+                        <div className={classes.menuContainer} >
+                            <IconButton>
                                 <InfoIcon
                                     className={classes.navIcon}
                                     onClick={() => {
+                                    
                                         setAboutWindow(!aboutWindow)
                                     }}
                                 />
-                            )}
-                        </div>
+                            </IconButton>
+                    
+                            <IconButton>
+                                <PriorityHighIcon
+                                    className={classes.navIcon}
+                                    onClick={() => {
+                                        setNewsWindow(!newsWindow)
+                                    }}
+                                />
+                            </IconButton>
 
-                        <div>
+                            <IconButton>
+                                <AssessmentIcon
+                                    className={classes.navIcon}
+                                    onClick={() => {
+                                        setStatsWindow(!statsWindow)
+                                    }}
+                                />
+                            </IconButton>
+                            <MapMenuWidget />
                         </div>
+                  
 
                    
                     <div className={classes.chart} >

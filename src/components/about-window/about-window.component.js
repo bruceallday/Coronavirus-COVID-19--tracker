@@ -5,19 +5,9 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import ads from '../../../ads'
 
-import {
-    EmailShareButton,
-    FacebookShareButton,
-    LinkedinShareButton,
-    PinterestShareButton,
-    RedditShareButton,
-    TwitterShareButton,
-    WhatsappShareButton,
-} from "react-share";
-
 import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 import { PayPalButton } from "react-paypal-button-v2";
-import { useStyles, CssTextField } from './about-window.styles'
+import { useStyles } from './about-window.styles'
 // import { textStyles } from '../../constants/textColor'
 
 const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
