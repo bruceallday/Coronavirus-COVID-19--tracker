@@ -28,7 +28,6 @@ const StatsWindow = ({ statsWindow, setStatsWindow }) => {
                 />
                 <CardActionArea>
                     <CardMedia
-                        style={{ height: '30%', backgroundColor: 'blue'}}
                         title="Title"
                     />
 
@@ -43,16 +42,7 @@ const StatsWindow = ({ statsWindow, setStatsWindow }) => {
                         </Typography> */}
                     </CardContent>
                 </CardActionArea>
-
-                <CardActions>
-                    <Button size="small" color="primary">
-                        Share
-                    </Button>
-
-                    <Button size="small" color="primary">
-                        Learn More
-                    </Button>
-                </CardActions>      
+    
             </Card>
             </Card>
         </div>

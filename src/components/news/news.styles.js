@@ -4,10 +4,11 @@ export const useStyles = makeStyles({
 
     root: {
         width: '65vw',
-        height: '100vh',
+        height: '85vh',
         paddingTop: '6%',
         display: 'flex',
         flexDirection: 'row',
+        justifyContent: 'center',
         flexWrap: 'wrap',
         backgroundColor: 'rgba(0,0,0,.7)',
         position: 'fixed',
@@ -24,40 +25,43 @@ export const useStyles = makeStyles({
 
     newsCard: {
         backgroundColor: '#363636',
-        width: '30%',
-        height: '50%',
-        marginLeft: '0.5%',
+        width: '32%',
+        height: '65%',
+        margin: '0.5%',
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        zIndex: 99
+        zIndex: 99,
     },
 
     media: {
         height: '100%'
     },
 
-    heading: {
-        // color: 'white',
-        // paddingTop: 20,
-        // paddingLeft: 20,
-        // fontWeight: 'lighter'
+    icon: { 
+        width: 30, 
+        height: 30, 
+        color: 'white', 
+        position: 'fixed', 
+        zIndex: 999, 
+        marginRight: '62%' 
     },
 
-    paragraphText: {
-        // color: 'white',
-        // padding: 20,
-        // fontSize: '1.1em'
+    heading: { 
+        color: 'white', 
+        padding: 5, 
+        fontSize: 21 
     },
 
+    paragraphText: { 
+        color: 'white', 
+        fontSize: 17, 
+        fontWeight: 'lighter', 
+        fontStyle: "italic" 
+    },
+   
     adsContainer: {
-        // display: 'flex',
-        // flexDirection: 'row',
-        // justifyContent: 'space-evenly',
-        // flexWrap: 'wrap',
-        // marginTop: 10,
-        // backgroundColor: 'white',
-        // padding: 20,
-        // borderRadius: 10
-    },
+        
+    }
+
 });

@@ -16,13 +16,13 @@ export const useStyles = makeStyles(theme => ({
     },
 
     menuContainer: {
-        height: 500,
+        width: 500,
         position: 'absolute',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         justifyContent: 'space-around',
-        marginTop: 65,
-        marginLeft: 10,
+        marginTop: '3%',
+        marginLeft: '53%',
         zIndex: 9,
 
     },
