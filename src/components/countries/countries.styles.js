@@ -62,7 +62,7 @@ export const useStyles = makeStyles({
 
     '@media (max-width: 896px)': {
         appBar: {
-            height: '19vh'
+            // height: '19vh'
         },
         title: {
             fontSize: 28,

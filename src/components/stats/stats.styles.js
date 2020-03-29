@@ -3,7 +3,7 @@ import { makeStyles, withStyles } from '@material-ui/styles/'
 export const useStyles = makeStyles({
 
     root: {
-        width: '65vw',
+        width: '100vw',
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
@@ -22,13 +22,13 @@ export const useStyles = makeStyles({
 
     statsCard: {
         backgroundColor: '#363636',
-        width: '100%',
-        height: '81%',
-        marginRight: 5,
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        overflowY: 'scroll',
+        // width: '100%',
+        // height: '81%',
+        // marginRight: 5,
+        // display: 'flex',
+        // flexDirection: 'row',
+        // flexWrap: 'wrap',
+        // overflowY: 'scroll',
     },
 
     heading: {

@@ -22,7 +22,7 @@ export const useStyles = makeStyles(theme => ({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginTop: '3%',
-        marginLeft: '53%',
+        marginLeft: '55%',
         zIndex: 9,
 
     },
