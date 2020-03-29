@@ -15,23 +15,23 @@ export const useStyles = makeStyles(theme => ({
         marginTop: '33vh' 
     },
 
-    menuContainer: {
-        width: 500,
-        position: 'absolute',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginTop: '3%',
-        marginLeft: '55%',
-        zIndex: 9,
+    // menuContainer: {
+    //     width: 500,
+    //     position: 'absolute',
+    //     display: 'flex',
+    //     flexDirection: 'row',
+    //     justifyContent: 'space-around',
+    //     marginTop: '3%',
+    //     marginLeft: '55%',
+    //     zIndex: 9,
 
-    },
+    // },
 
-    navIcon: { 
-        color: '#363636',
-        width: 40, 
-        height: 40, 
-    },
+    // navIcon: { 
+    //     color: '#363636',
+    //     width: 40, 
+    //     height: 40, 
+    // },
 
     textfieldInput: {
         color: 'white',
