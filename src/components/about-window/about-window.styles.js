@@ -66,6 +66,8 @@ export const useStyles = makeStyles({
             width: '100vw',
             height: '85vh',
             backgroundColor: 'rgba(0,0,0,.7)',
+            justifyContent: 'center',
+
             zIndex: 999,
             position: 'fixed',
             marginTop: '0vh'

@@ -8,7 +8,7 @@ export const useStyles = makeStyles({
         paddingTop: '6%',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'center',
+        // justifyContent: 'center',
         flexWrap: 'wrap',
         backgroundColor: 'rgba(0,0,0,.7)',
         position: 'fixed',
@@ -42,8 +42,10 @@ export const useStyles = makeStyles({
         width: 35, 
         height: 35,  
         position: 'fixed', 
-        zIndex: 999, 
-        marginLeft: '-60%' 
+        zIndex: 9999, 
+        color: 'white',
+        margin: 10,
+        
     },
 
     heading: { 
@@ -67,6 +69,7 @@ export const useStyles = makeStyles({
 
     '@media (max-width: 414px)': {
         root: {
+            justifyContent: 'center',
             width: '100vw',
             height: '85vh',
             backgroundColor: 'rgba(0,0,0,.7)',
@@ -93,7 +96,7 @@ export const useStyles = makeStyles({
             fontSize: '1.1em'
         },
         icon: {
-            position: 'absolute',
+            position: 'fixed',
            marginTop: '20%',
            marginLeft: '-40%',
            zIndex: 99999,
