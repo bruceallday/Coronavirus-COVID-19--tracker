@@ -26,7 +26,7 @@ export const useStyles = makeStyles({
     newsCard: {
         backgroundColor: '#363636',
         width: '32%',
-        height: '65%',
+        height: '70%',
         margin: '0.5%',
         display: 'flex',
         flexDirection: 'row',
@@ -35,16 +35,15 @@ export const useStyles = makeStyles({
     },
 
     media: {
-        height: '100%'
+        height: '50%'
     },
 
     icon: { 
-        width: 30, 
-        height: 30, 
-        color: 'white', 
+        width: 35, 
+        height: 35,  
         position: 'fixed', 
         zIndex: 999, 
-        marginRight: '62%' 
+        marginLeft: '-60%' 
     },
 
     heading: { 
@@ -53,15 +52,50 @@ export const useStyles = makeStyles({
         fontSize: 21 
     },
 
-    paragraphText: { 
+    paragraphText: {
+        display: 'flex',
+        flexDirection: 'column',
         color: 'white', 
         fontSize: 17, 
         fontWeight: 'lighter', 
-        fontStyle: "italic" 
+        fontStyle: "italic",
     },
    
     adsContainer: {
         
-    }
+    },
 
+    '@media (max-width: 414px)': {
+        root: {
+            width: '100vw',
+            height: '85vh',
+            backgroundColor: 'rgba(0,0,0,.7)',
+            zIndex: 999,
+            position: 'fixed',
+            marginTop: '0vh'
+        },
+
+        newsCard: {
+            width: '90%',
+            height: '70%',
+            marginTop: 20,
+        },
+        heading: {
+            fontSize: 22,
+            color: 'white',
+        },
+
+        paragraphText: {
+            color: 'white',
+            padding: 10,
+            fontSize: '1.1em'
+        },
+        icon: {
+           marginTop: '20%',
+           marginLeft: '-70%',
+           zIndex: 9999
+        },
+
+    },
+   
 });
