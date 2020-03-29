@@ -61,7 +61,8 @@ const NewsWindow = ({ newsWindow, setNewsWindow }) => {
     return(
         <div className={classes.root} >
             <ClearIcon
-                className={classes.icon}
+                // className={classes.icon}
+                style={{zIndex: 9999, color: 'white'}}
                 onClick={() => {
                     setNewsWindow(!newsWindow)
                 }}
