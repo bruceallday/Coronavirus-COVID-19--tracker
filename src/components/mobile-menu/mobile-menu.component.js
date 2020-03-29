@@ -80,7 +80,7 @@ const MobileMenuWidget = (props) => {
             <Menu
                 id="long-menu"
                 anchorEl={anchorEl}
-                // keepMounted
+                keepMounted
                 open={open}
                 onClose={handleClose}
                 PaperProps={{
@@ -94,7 +94,7 @@ const MobileMenuWidget = (props) => {
                 {mobileOptions.map((option, index) => (
                     <MenuItem key={index} selected={option === 'Pyxis'}>
                         <Button
-                            onClick={[option.action]}
+                            onClick={option.action}
                             className={textClass.linkText}
                             href={option.href}>
                             {option.title}

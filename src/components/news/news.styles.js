@@ -93,8 +93,9 @@ export const useStyles = makeStyles({
             fontSize: '1.1em'
         },
         icon: {
+            position: 'absolute',
            marginTop: '20%',
-        //    marginLeft: '-70%',
+           marginLeft: '-40%',
            zIndex: 99999,
            color: 'white',
         },
