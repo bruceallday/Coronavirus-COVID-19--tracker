@@ -5,12 +5,14 @@ export const useStyles = makeStyles({
     root: {
         width: '65vw',
         height: '100vh',
+        paddingTop: '6%',
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
         backgroundColor: 'rgba(0,0,0,.7)',
         position: 'fixed',
-        zIndex: 99,
+        zIndex: 9,
+        overflowY: 'scroll',
     },
 
     linkText: {
@@ -21,13 +23,18 @@ export const useStyles = makeStyles({
     },
 
     newsCard: {
-        // backgroundColor: '#363636',
+        backgroundColor: '#363636',
         width: '30%',
-        height: '20%',
-        // display: 'flex',
-        // flexDirection: 'row',
-        // flexWrap: 'wrap',
-        // overflowY: 'scroll'
+        height: '50%',
+        marginLeft: '0.5%',
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        zIndex: 99
+    },
+
+    media: {
+        height: '100%'
     },
 
     heading: {

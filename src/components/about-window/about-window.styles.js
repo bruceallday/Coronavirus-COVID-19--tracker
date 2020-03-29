@@ -7,7 +7,7 @@ export const useStyles = makeStyles({
         width: '65vw',
         height: '100vh',
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         backgroundColor: 'rgba(0,0,0,.7)',
         position: 'fixed',
@@ -28,12 +28,13 @@ export const useStyles = makeStyles({
 
     aboutCard: { 
         backgroundColor: '#363636', 
-        width: '70%', 
-        height: '60%', 
+        width: '99.5%', 
+        height: '81%', 
+        marginRight: 5,
         display: 'flex', 
         flexDirection: 'row', 
         flexWrap: 'wrap',
-        overflowY: 'scroll'
+        overflowY: 'scroll',
     },
 
     heading: {

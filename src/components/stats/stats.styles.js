@@ -21,13 +21,14 @@ export const useStyles = makeStyles({
     },
 
     statsCard: {
-        // backgroundColor: '#363636',
-        width: '30%',
-        height: '20%',
-        // display: 'flex',
-        // flexDirection: 'row',
-        // flexWrap: 'wrap',
-        // overflowY: 'scroll'
+        backgroundColor: '#363636',
+        width: '100%',
+        height: '81%',
+        marginRight: 5,
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        overflowY: 'scroll',
     },
 
     heading: {

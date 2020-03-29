@@ -18,13 +18,14 @@ const StatsWindow = ({ statsWindow, setStatsWindow }) => {
 
     return(
         <div className={classes.root} >
-            <ClearIcon
-                style={{ color: 'white' }}
-                onClick={() => {
-                    setStatsWindow(!statsWindow)
-                }}
-            />
+        <Card>
             <Card className={classes.statsCard} >
+                <ClearIcon
+                    style={{ color: 'white' }}
+                    onClick={() => {
+                        setStatsWindow(!statsWindow)
+                    }}
+                />
                 <CardActionArea>
                     <CardMedia
                         style={{ height: '30%', backgroundColor: 'blue'}}
@@ -52,6 +53,7 @@ const StatsWindow = ({ statsWindow, setStatsWindow }) => {
                         Learn More
                     </Button>
                 </CardActions>      
+            </Card>
             </Card>
         </div>
 
