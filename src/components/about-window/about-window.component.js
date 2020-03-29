@@ -40,14 +40,24 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                 </Typography>
 
                 <p className={classes.paragraphText} >
-                        Due to the panic and fear in society I created this application to provide correct infomation, on every country
+                        <p className={classes.paragraphText}>Track Coronavirus(COVID-19) is an independently developed, free to use web application.</p> 
+                        <p>Due to the panic and fear in society I created this application to provide correct infomation, on every country
                         where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown.
-                        For more uptodate infomation on the Coronavirus(COVID-19) visit the Center for Disease Control and Prevention website <br />
-                        <a className={classes.linkText} href={"https://www.cdc.gov/coronavirus/2019-ncov/index.html"}>cdc.gov/coronavirus/2019-ncov/index.html</a> <br/>
-                        <br/>
-                        <a className={classes.linkText} href='https://www.worldometers.info/coronavirus/'>Website Data Source</a>
-                        <br/>
-                        <br/>
+                        To find out more, and for more upto date infomation on the Coronavirus(COVID-19) pandemic visit the following links.</p>
+
+                        <p style={{ fontStyle: 'italic' }} >World Health Organisation -
+                         <a className={classes.linkText} href={"https://www.who.int/health-topics/coronavirus#tab=tab_1"}> who.int/health-topics/coronavirus</a>
+                        </p>
+
+                        <p style={{ fontStyle: 'italic' }} >Center for Disease Control and Prevention website -
+                         <a className={classes.linkText} href={"https://www.cdc.gov/coronavirus/2019-ncov/index.html"}> cdc.gov/coronavirus/2019-ncov/index.html</a>
+                        </p>
+
+                        <p style={{ fontStyle: 'italic' }} >European Centre for Disease Prevention and Control  -
+                         <a className={classes.linkText} href={'https://www.ecdc.europa.eu/en/novel-coronavirus-china'}> ecdc.europa.eu/en/novel-coronavirus</a>
+                        </p>
+                      
+                        
                         Help prevent the spread of Coronavirus(COVID-19) by taking necessary precautions.
                         Consider the following items.
                         {/*The app will always remain free to use, you can help support the development of this project, 
@@ -125,7 +135,6 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                         />
                  
                 </div>
-                    <p className={classes.paragraphText}>Track Coronavirus(COVID-19) is an independently developed, free to use web application.</p> 
                 </CardContent>
             </Card>
         </div>

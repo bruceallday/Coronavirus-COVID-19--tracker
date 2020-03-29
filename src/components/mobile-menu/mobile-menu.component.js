@@ -18,7 +18,7 @@ const MobileMenuWidget = (props) => {
     } = props
     const classes = useStyles()
     const textClass = textStyles()
-    const [anchorEl, setAnchorEl] = React.useState(null)
+    const [anchorEl, setAnchorEl] = useState(null)
     const open = Boolean(anchorEl)
     const ITEM_HEIGHT = 48
    
@@ -80,7 +80,7 @@ const MobileMenuWidget = (props) => {
             <Menu
                 id="long-menu"
                 anchorEl={anchorEl}
-                keepMounted
+                // keepMounted
                 open={open}
                 onClose={handleClose}
                 PaperProps={{
@@ -94,7 +94,7 @@ const MobileMenuWidget = (props) => {
                 {mobileOptions.map((option, index) => (
                     <MenuItem key={index} selected={option === 'Pyxis'}>
                         <Button
-                            onClick={option.action}
+                            onClick={[option.action]}
                             className={textClass.linkText}
                             href={option.href}>
                             {option.title}

@@ -77,8 +77,10 @@ export const useStyles = makeStyles({
 
         newsCard: {
             width: '90%',
-            height: '70%',
+            height: '80%',
             marginTop: 20,
+            overflowY: 'scroll',
+
         },
         heading: {
             fontSize: 22,
@@ -92,10 +94,12 @@ export const useStyles = makeStyles({
         },
         icon: {
            marginTop: '20%',
-           marginLeft: '-70%',
-           zIndex: 9999
+        //    marginLeft: '-70%',
+           zIndex: 99999,
+           color: 'white',
         },
 
     },
    
 });
+

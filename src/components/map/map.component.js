@@ -3,13 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { Chart } from "react-google-charts"
 
 import Footer from '../footer/footer.component'
-import MapMenuWidget from '../map-menu/map-menu.component'
+import MainMenu from '../main-menu/main-menu.component'
 
 import CircularProgress from '@material-ui/core/CircularProgress'
-import IconButton from '@material-ui/core/IconButton'
-import InfoIcon from '@material-ui/icons/Info'
-import PriorityHighIcon from '@material-ui/icons/PriorityHigh'
-import AssessmentIcon from '@material-ui/icons/Assessment'
 
 import { useStyles } from './map.styles'
 
@@ -72,38 +68,15 @@ const Map = (props) => {
                     />
                 ):(
                     <div>
-                        <div className={classes.menuContainer} >
-                            <IconButton
-                                    onClick={() => {
-                                        setAboutWindow(!aboutWindow)
-                                    }}>
-                                <InfoIcon
-                                    className={classes.navIcon}
-                                />
-                            </IconButton>
-                    
-                            <IconButton
-                                    onClick={() => {
-                                        setNewsWindow(!newsWindow)
-                                    }}>
-                                <PriorityHighIcon
-                                    className={classes.navIcon}
-                                />
-                            </IconButton>
-
-                            <IconButton
-                                    onClick={() => {
-                                        setStatsWindow(!statsWindow)
-                                    }}>
-                                <AssessmentIcon
-                                    className={classes.navIcon}
-                                />
-                            </IconButton>
-                            <MapMenuWidget />
-                        </div>
+                    <MainMenu
+                        aboutWindow={aboutWindow}
+                        setAboutWindow={setAboutWindow}
+                        newsWindow={newsWindow}
+                        setNewsWindow={setNewsWindow}
+                        statsWindow={statsWindow}
+                        setStatsWindow={setStatsWindow}
+                    />
                   
-
-                   
                     <div className={classes.chart} >
                         <Chart
                             // forceIFrame={true}
