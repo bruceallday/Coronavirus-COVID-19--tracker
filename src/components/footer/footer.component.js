@@ -11,13 +11,22 @@ import { formatNumber } from '../../constants/utils'
 import { textStyles } from '../../constants/textColor'
 import { useStyles } from './footer.styles'
 
-const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
+const Footer = (props) => {
+    const { 
+        aboutWindow, 
+        setAboutWindow,
+        newsWindow,
+        setNewsWindow,
+        statsWindow,
+        setStatsWindow, 
+        isMobile, 
+    } = props
 
     const classes = useStyles()
     const textClass = textStyles()
     const [totalsData, setTotalsData] = useState("")
     const [lastUpdate, setLastUpdate] = useState('')
-    const [isLoading, setLoading] = useState(false)
+    const [isLoading, setLoading] = useState(false) 
 
     const loader = '...'
 
@@ -69,6 +78,10 @@ const Footer = ({ aboutWindow, setAboutWindow, isMobile }) => {
                     <MobileMenuWidget
                         aboutWindow={aboutWindow}
                         setAboutWindow={setAboutWindow}
+                        newsWindow={newsWindow}
+                        setNewsWindow={setNewsWindow}
+                        statsWindow={statsWindow}
+                        setStatsWindow={setStatsWindow}
                     />
                 )}
             </Toolbar>

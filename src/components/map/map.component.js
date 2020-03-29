@@ -13,7 +13,16 @@ import AssessmentIcon from '@material-ui/icons/Assessment'
 
 import { useStyles } from './map.styles'
 
-const Map = ({ aboutWindow, setAboutWindow, newsWindow, setNewsWindow, statsWindow, setStatsWindow, isMobile }) => {
+const Map = (props) => {
+    const {
+        aboutWindow,
+        setAboutWindow,
+        newsWindow,
+        setNewsWindow,
+        statsWindow,
+        setStatsWindow,
+        isMobile } = props
+        
     const classes = useStyles()
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
@@ -124,6 +133,10 @@ const Map = ({ aboutWindow, setAboutWindow, newsWindow, setNewsWindow, statsWind
             <Footer
                 setAboutWindow={setAboutWindow}
                 aboutWindow={aboutWindow}
+                newsWindow={newsWindow}
+                setNewsWindow={setNewsWindow}
+                statsWindow={statsWindow}
+                setStatsWindow={setStatsWindow}
                 isMobile={isMobile}
             />
         </div>
