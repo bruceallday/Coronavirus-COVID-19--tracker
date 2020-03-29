@@ -20,7 +20,7 @@ const NewsWindow = ({ newsWindow, setNewsWindow }) => {
 
     useEffect(() => {
         getData()
-      getTwitter()
+    //   getTwitter()
     }, [])
 
     const getData = async () =>{
@@ -37,13 +37,13 @@ const NewsWindow = ({ newsWindow, setNewsWindow }) => {
         setData(data)
     }
 
-    const getTwitter = async () => {
-        const result = await fetch(
-            `https://api.twitter.com/1.1/search/tweets.json?q=COVID19&count=100`
-        )
-        const data = await result.json()
-        console.log("TWITTER DATA", data)
-    }
+    // const getTwitter = async () => {
+    //     const result = await fetch(
+    //         `https://api.twitter.com/1.1/search/tweets.json?q=COVID19&count=100`
+    //     )
+    //     const data = await result.json()
+    //     console.log("TWITTER DATA", data)
+    // }
 
     const formatDate = (date) => {
         let str = new Date(date).toString()
@@ -62,7 +62,6 @@ const NewsWindow = ({ newsWindow, setNewsWindow }) => {
         <div className={classes.root} >
             <ClearIcon
                 className={classes.icon}
-                style={{zIndex: 9999, color: 'white'}}
                 onClick={() => {
                     setNewsWindow(!newsWindow)
                 }}
