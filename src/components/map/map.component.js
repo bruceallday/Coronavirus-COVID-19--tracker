@@ -73,31 +73,30 @@ const Map = (props) => {
                 ):(
                     <div>
                         <div className={classes.menuContainer} >
-                            <IconButton>
+                            <IconButton
+                                    onClick={() => {
+                                        setAboutWindow(!aboutWindow)
+                                    }}>
                                 <InfoIcon
                                     className={classes.navIcon}
-                                    onClick={() => {
-                                    
-                                        setAboutWindow(!aboutWindow)
-                                    }}
                                 />
                             </IconButton>
                     
-                            <IconButton>
-                                <PriorityHighIcon
-                                    className={classes.navIcon}
+                            <IconButton
                                     onClick={() => {
                                         setNewsWindow(!newsWindow)
-                                    }}
+                                    }}>
+                                <PriorityHighIcon
+                                    className={classes.navIcon}
                                 />
                             </IconButton>
 
-                            <IconButton>
-                                <AssessmentIcon
-                                    className={classes.navIcon}
+                            <IconButton
                                     onClick={() => {
                                         setStatsWindow(!statsWindow)
-                                    }}
+                                    }}>
+                                <AssessmentIcon
+                                    className={classes.navIcon}
                                 />
                             </IconButton>
                             <MapMenuWidget />

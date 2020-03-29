@@ -19,7 +19,8 @@ const NewsWindow = ({ newsWindow, setNewsWindow }) => {
     const newsapi = new NewsAPI('30d46ebe65f441e1a4f4aadd4cfd7199');
 
     useEffect(() => {
-      getData()
+        getData()
+      getTwitter()
     }, [])
 
     const getData = async () =>{
@@ -36,6 +37,14 @@ const NewsWindow = ({ newsWindow, setNewsWindow }) => {
         setData(data)
     }
 
+    const getTwitter = async () => {
+        const result = await fetch(
+            `https://api.twitter.com/1.1/search/tweets.json?q=COVID19&count=100`
+        )
+        const data = await result.json()
+        console.log("TWITTER DATA", data)
+    }
+
     const formatDate = (date) => {
         let str = new Date(date).toString()
         let frmDate = str.split("-0") 
@@ -47,7 +56,7 @@ const NewsWindow = ({ newsWindow, setNewsWindow }) => {
         return fmtStr[0]
     }
 
-    console.log("NEWS DATA", data)
+    // console.log("NEWS DATA", data)
 
     return(
         <div className={classes.root} >
