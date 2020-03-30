@@ -46,7 +46,6 @@ export const useStyles = makeStyles({
 
     paragraphText: {
         color: 'white', 
-        // padding: 20, 
         fontSize: '1.1em'
     },
 
