@@ -81,7 +81,7 @@ const Map = (props) => {
                             setStatsWindow={setStatsWindow}
                        />
                                     
-                       <MapTest/>
+                       <MapTest />
 
                         {/*<Chart
                             // forceIFrame={true}

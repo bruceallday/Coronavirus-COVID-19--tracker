@@ -74,6 +74,18 @@ export const useStyles = makeStyles({
             fontSize: 18,
         },
     },
+
+    '@media (max-width: 768px)': {
+        appBar: {
+            height: '8vh'
+        },
+        title: {
+            fontSize: 28,
+        },
+        version: {
+            fontSize: 18,
+        },
+    },
         
     '@media (max-width: 414px)': {
         root: {

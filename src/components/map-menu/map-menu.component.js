@@ -71,7 +71,8 @@ const MapMenuWidget = (props) => {
                 }}
             >
                 {options.map((option, index) => (
-                    <MenuItem key={index} selected={option === 'Pyxis'}>
+                    <MenuItem
+                        style={{color: 'cyan'}} key={index} selected={option === 'Pyxis'}>
                         <Button
                             className={textClass.linkText}
                             onClick={option.action}

@@ -30,16 +30,19 @@ export const useStyles = makeStyles({
             position: 'absolute',
             display: 'flex',
             flexDirection: 'row',
-            justifyContent: 'space-around',
-            marginTop: '3%',
-            marginLeft: '50%',
+            justifyContent: 'flex-start',
+            marginTop: '2.5%',
+            marginLeft: '0%',
             zIndex: 9,
         },
     },
 
     '@media (max-width: 1200px)': {
         root: {
-            marginTop: '5%',
+            marginTop: '6%',
+            justifyContent: 'flex-start',
+            marginLeft: '0%',
+
         },
     },
     '@media (max-width: 772px)': {
