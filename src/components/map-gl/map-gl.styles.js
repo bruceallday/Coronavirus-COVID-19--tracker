@@ -18,7 +18,7 @@ export const dataLayer = {
     type: 'fill',
     paint: {
         'fill-color': {
-            property: 'pop_est',
+            property: 'cases',
             stops: [
                 [0, '#ffeda0'],
                 [1, '#ffeda0'],

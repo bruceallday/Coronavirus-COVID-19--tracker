@@ -36,17 +36,21 @@ const MapTest = ({ covidData }) => {
         //    'https://raw.githubusercontent.com/uber/react-map-gl/master/examples/.data/us-income.geojson',
            'https://bpouncey.github.io/geo-json-world/custom.geo.json',
             (error, response) => {
-                if (!error) {
-                    // console.log("RESPONSE", response.features)
-                    // console.log("Covid Country", countryData)
-                const data = response.features.map(country => {
-                    covidData.map(countryData => {
-                        if (country.properties.iso_a3 === countryData.countryInfo.iso3){
-                            console.log('country.properties.iso_a3 = ', country.properties.iso_a3, ' | countryData.countryInfo.iso3 = ', countryData.countryInfo.iso3)
+                if ( !error ) {
+                response.features.map( country => {
+                    covidData.map( countryData => {
+                        if ( country.properties.iso_a3 === countryData.countryInfo.iso3 ){
+                            country.properties = { ...countryData, ...country.properties }
+                            // console.log( "NEW MERGED DATA", country )
+                            // console.log('country.properties.iso_a3 = ', country.properties.iso_a3, ' | countryData.countryInfo.iso3 = ', countryData.countryInfo.iso3)
                         }
                     })
                 })
-                    loadData(response);
+
+                console.log("NEW MERGED DATA", response)
+
+                loadData(response);
+
                 } else { 
                     console.log(error)
                 }
@@ -55,11 +59,8 @@ const MapTest = ({ covidData }) => {
         )
     }
 
-
-
-
     const loadData = data => {
-        setState({data: updatePercentiles(data, f => f.properties.pop_est)})
+        setState({data: updatePercentiles(data, f => f.properties.cases)})
     }
 
     const onHover = event => {
@@ -73,9 +74,9 @@ const MapTest = ({ covidData }) => {
         return (
             hoveredFeature && (
                 <div className={classes.tooltip} style={{ left: x, top: y }}>
-                    <div>State: {hoveredFeature.properties.sovereignt}</div>
-                    <div>Population estimate: {hoveredFeature.properties.pop_est}</div>
-                    <div>Population estimate: {(hoveredFeature.properties.pop_est / 8) * 100}</div>
+                    <div>Country: {hoveredFeature.properties.sovereignt}</div>
+                    <div>Cases: {hoveredFeature.properties.cases}</div>
+                    <div>Recovered: {hoveredFeature.properties.recovered}</div>
                 </div>
             )
         )
