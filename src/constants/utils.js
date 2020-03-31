@@ -32,7 +32,7 @@ export const updatePercentiles = (featureCollection, accessor) =>{
             const properties = {
                 ...f.properties,
                 value,
-                percentile: scale(value)
+                pop_est: scale(value)
             };
             return { ...f, properties };
         })

@@ -33,7 +33,8 @@ const MapTest = () => {
     const getData = async () => {
         setLoading(true)
         await requestJson(
-            'https://raw.githubusercontent.com/uber/react-map-gl/master/examples/.data/us-income.geojson',
+        //    'https://raw.githubusercontent.com/uber/react-map-gl/master/examples/.data/us-income.geojson',
+           'https://bpouncey.github.io/geo-json-world/custom.geo.json',
             (error, response) => {
                 if (!error) {
                     console.log("RESPONSE", response)
@@ -47,7 +48,7 @@ const MapTest = () => {
     }
 
     const loadData = data => {
-        setState({data: updatePercentiles(data, f => f.properties.income[state.year])})
+        setState({data: updatePercentiles(data, f => f.properties.pop_est)})
     }
 
     const onHover = event => {
@@ -61,17 +62,17 @@ const MapTest = () => {
         return (
             hoveredFeature && (
                 <div className={classes.tooltip} style={{ left: x, top: y }}>
-                    <div>State: {hoveredFeature.properties.name}</div>
-                    <div>Median Household Income: {hoveredFeature.properties.value}</div>
-                    <div>Percentile: {(hoveredFeature.properties.percentile / 8) * 100}</div>
+                    <div>State: {hoveredFeature.properties.sovereignt}</div>
+                    <div>Population estimate: {hoveredFeature.properties.pop_est}</div>
+                    <div>Population estimate: {(hoveredFeature.properties.pop_est / 8) * 100}</div>
                 </div>
             )
         )
     }
 
     return (
-        <div >
-        {/*<h4 style={ { zIndex: 999, position: 'absolute', fontSize: 24 } }  >Improved maps in development</h4>*/}
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}} >
+        <h4 style={ { zIndex: 999, position: 'absolute', fontSize: 24 } }  >Improved maps in development</h4>
             <MapGL
                 {...viewport}
                 width="100vw"
@@ -81,10 +82,10 @@ const MapTest = () => {
                 mapboxApiAccessToken={TOKEN}
                 onHover={onHover}
             >
-                <Source type="geojson" data={state.data}>
+                {/*<Source type="geojson" data={state.data}>
                     <Layer {...dataLayer} />
                 </Source>
-                {renderTooltip()}
+    {renderTooltip()}*/}
             </MapGL>
         </div>
     );
