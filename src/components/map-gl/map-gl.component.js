@@ -16,7 +16,7 @@ const MapTest = () => {
         data: null,
         hoveredFeature: null,
     })
-    
+
     const [viewport, setViewport] = useState({
         latitude: 10,
         longitude: 100,
@@ -29,22 +29,17 @@ const MapTest = () => {
         getData()
     }, [])
 
-    
     const getData = async () => {
-
         setLoading(true)
-
-        const result = requestJson(
-            'https://raw.githubusercontent.com/uber/react-map-gl/master/examples/.data/feature-example-sf.json'
+        requestJson(
+            'https://raw.githubusercontent.com/uber/react-map-gl/master/examples/.data/us-income.geojson',
+            (error, response) => {
+                if (!error) {
+                    console.log("RESPONSE", response)
+                    loadData(response);
+                } else { }
+            }
         )
-
-        if (result.error) {
-            console.log(result.error)
-        } else {
-            console.log("GEOJSON", result)
-            loadData(result)
-        }
-        setLoading(false)
     }
 
     const loadData = data => {
@@ -61,7 +56,7 @@ const MapTest = () => {
         const { hoveredFeature, x, y } = state
         return (
             hoveredFeature && (
-                <div className={tooltip} style={{ left: 500, top: 500 }}>
+                <div className={classes.tooltip} style={{ left: 500, top: 500 }}>
                     <div>State: {hoveredFeature.properties.name}</div>
                     <div>Median Household Income: {hoveredFeature.properties.value}</div>
                     <div>Percentile: {(hoveredFeature.properties.percentile / 8) * 100}</div>
@@ -71,8 +66,8 @@ const MapTest = () => {
     }
 
     return (
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} >
-        <h4 style={ { zIndex: 999, position: 'absolute', fontSize: 24 } }  >Improved maps in development</h4>
+        <div >
+        {/*<h4 style={ { zIndex: 999, position: 'absolute', fontSize: 24 } }  >Improved maps in development</h4>*/}
             <MapGL
                 {...viewport}
                 width="100vw"
@@ -82,10 +77,10 @@ const MapTest = () => {
                 mapboxApiAccessToken={TOKEN}
                 onHover={onHover}
             >
-                {/*<Source type="geojson" data={state.data}>
+                <Source type="geojson" data={state.data}>
                     <Layer {...dataLayer} />
                 </Source>
-    {renderTooltip()}*/}
+                {renderTooltip()}
             </MapGL>
 
         </div>
@@ -118,15 +113,15 @@ export default MapTest
 //     };
 
 //     componentDidMount() {
-//         requestJson(
-//             'https://bpouncey.github.io/geo-json-world/custom.geo.json',
-//             (error, response) => {
-//                 if (!error) {
-//                     console.log("RESPONSE", response)
-//                     this._loadData(response);
-//                 }else{}
-//             }
-//         );
+        // requestJson(
+        //     'https://bpouncey.github.io/geo-json-world/custom.geo.json',
+        //     (error, response) => {
+        //         if (!error) {
+        //             console.log("RESPONSE", response)
+        //             this._loadData(response);
+        //         }else{}
+        //     }
+        // );
 //     }
 
 //     _loadData = data => {
