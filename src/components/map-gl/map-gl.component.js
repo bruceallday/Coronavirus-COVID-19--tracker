@@ -24,7 +24,11 @@ const MapTest = () => {
         zoom: 1.3,
         bearing: 0,
         pitch: 0
-    });
+    })
+
+    useEffect(() => {
+        getData()
+    }, [])
 
     const getData = async () => {
         setLoading(true)
@@ -34,7 +38,6 @@ const MapTest = () => {
                 if (!error) {
                     console.log("RESPONSE", response)
                     loadData(response);
-                    
                 } else { 
                     console.log(error)
                 }
@@ -42,10 +45,6 @@ const MapTest = () => {
             }
         )
     }
-
-    useEffect(() => {
-        getData()
-    }, [])
 
     const loadData = data => {
         setState({data: updatePercentiles(data, f => f.properties.income[state.year])})
@@ -70,7 +69,6 @@ const MapTest = () => {
         )
     }
 
-
     return (
         <div >
         {/*<h4 style={ { zIndex: 999, position: 'absolute', fontSize: 24 } }  >Improved maps in development</h4>*/}
@@ -88,7 +86,6 @@ const MapTest = () => {
                 </Source>
                 {renderTooltip()}
             </MapGL>
-
         </div>
     );
 }
