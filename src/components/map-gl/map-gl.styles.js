@@ -18,13 +18,13 @@ export const dataLayer = {
     type: 'fill',
     paint: {
         'fill-color': {
-            property: 'percentile',
+            property: 'pop_est',
             stops: [
-                [0, '#3288bd'],
-                [1, '#66c2a5'],
-                [2, '#abdda4'],
-                [3, '#e6f598'],
-                [4, '#ffffbf'],
+                [0, '#ffeda0'],
+                [1, '#ffeda0'],
+                [2, '#fed976'],
+                [3, '#feb24c'],
+                [4, "#fd8d3c"],
                 [5, '#fee08b'],
                 [6, '#fdae61'],
                 [7, '#f46d43'],
