@@ -10,6 +10,7 @@ import MapTest from '../map-gl/map-gl.component'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import { useStyles } from './map.styles'
+import Typography from 'material-ui/styles/typography'
 
 const Map = (props) => {
     const {
@@ -79,8 +80,7 @@ const Map = (props) => {
                             statsWindow={statsWindow}
                             setStatsWindow={setStatsWindow}
                        />
-                       
-
+                                    
                        <MapTest/>
 
                         {/*<Chart

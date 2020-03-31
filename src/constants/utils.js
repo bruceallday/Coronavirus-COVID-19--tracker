@@ -15,11 +15,19 @@ export const formatNumber = (num) => {
 }
 
 
-export function updatePercentiles(featureCollection, accessor) {
+
+
+export const updatePercentiles = (featureCollection, accessor) =>{
+
+
     const { features } = featureCollection;
+
+
     const scale = scaleQuantile()
         .domain(features.map(accessor))
         .range(range(9));
+
+        
     return {
         type: 'FeatureCollection',
         features: features.map(f => {
