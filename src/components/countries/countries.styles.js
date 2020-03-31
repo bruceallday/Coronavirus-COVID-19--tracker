@@ -9,7 +9,10 @@ export const useStyles = makeStyles({
         flexWrap: 'wrap',
         marginLeft: '65vw',
         marginTop: '10vh',
-        width: '35vw'
+        width: '35vw',
+
+        //MAP GL
+        position: 'absolute'
     },
 
     textField:{

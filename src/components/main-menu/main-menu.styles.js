@@ -9,12 +9,16 @@ export const useStyles = makeStyles({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginTop: '3%',
-        marginLeft: '50%',
         zIndex: 9,
+        // marginLeft: '50%',
+
+        //MAPGL // MAPBOX
+        marginLeft: '15%',
+
+       
     },
 
     navIcon: {
-        
         color: '#363636',
         width: 40,
         height: 40,

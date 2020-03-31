@@ -15,24 +15,6 @@ export const useStyles = makeStyles(theme => ({
         marginTop: '33vh' 
     },
 
-    // menuContainer: {
-    //     width: 500,
-    //     position: 'absolute',
-    //     display: 'flex',
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-around',
-    //     marginTop: '3%',
-    //     marginLeft: '55%',
-    //     zIndex: 9,
-
-    // },
-
-    // navIcon: { 
-    //     color: '#363636',
-    //     width: 40, 
-    //     height: 40, 
-    // },
-
     textfieldInput: {
         color: 'white',
         fontSize: "1.7em",
@@ -42,6 +24,10 @@ export const useStyles = makeStyles(theme => ({
     textField: {
         width: 300,
     },
+
+    // chart: {
+    //     zIndex: -10,
+    // },
 
     '@media (max-width: 414px)': {
         chart: {
