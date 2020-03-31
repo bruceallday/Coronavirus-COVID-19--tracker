@@ -8,7 +8,7 @@ import Typography from 'material-ui/styles/typography'
 
 const TOKEN = process.env.MAPBOXKEY
 
-const MapTest = () => {
+const MapTest = ({ covidData }) => {
     const classes = useStyles()
     const [isLoading, setLoading] = useState(false)
 
@@ -37,7 +37,15 @@ const MapTest = () => {
            'https://bpouncey.github.io/geo-json-world/custom.geo.json',
             (error, response) => {
                 if (!error) {
-                    console.log("RESPONSE", response)
+                    // console.log("RESPONSE", response.features)
+                    // console.log("Covid Country", countryData)
+                const data = response.features.map(country => {
+                    covidData.map(countryData => {
+                        if (country.properties.iso_a3 === countryData.countryInfo.iso3){
+                            console.log('country.properties.iso_a3 = ', country.properties.iso_a3, ' | countryData.countryInfo.iso3 = ', countryData.countryInfo.iso3)
+                        }
+                    })
+                })
                     loadData(response);
                 } else { 
                     console.log(error)
@@ -46,6 +54,9 @@ const MapTest = () => {
             }
         )
     }
+
+
+
 
     const loadData = data => {
         setState({data: updatePercentiles(data, f => f.properties.pop_est)})
@@ -71,8 +82,8 @@ const MapTest = () => {
     }
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}} >
-        <h4 style={ { zIndex: 999, position: 'absolute', fontSize: 24 } }  >Improved maps in development</h4>
+        <div>
+        {/*<h4 style={ { zIndex: 999, position: 'absolute', fontSize: 24 } }  >Improved maps in development</h4>*/}
             <MapGL
                 {...viewport}
                 width="100vw"
@@ -82,128 +93,12 @@ const MapTest = () => {
                 mapboxApiAccessToken={TOKEN}
                 onHover={onHover}
             >
-                {/*<Source type="geojson" data={state.data}>
+                <Source type="geojson" data={state.data}>
                     <Layer {...dataLayer} />
                 </Source>
-    {renderTooltip()}*/}
+                {renderTooltip()}
             </MapGL>
         </div>
-    );
+    )
 }
 export default MapTest
-
-
-
-// import React, { Component } from 'react';
-// import MapGL, { Source, Layer } from 'react-map-gl';
-
-// import { dataLayer } from './map-gl.styles';
-// import { json as requestJson } from 'd3-request';
-
-// const MAPBOX_TOKEN = 'pk.eyJ1IjoiYnJ1Y2UwNCIsImEiOiJjazhla2psbWoxNjZoM2RvMXByZmh5amQxIn0.ZY2sxvVkPEFMwj2EJCTRjQ'; // Set your mapbox token here
-
-// export  default class MapTest extends Component {
-//     state = {
-//         year: 2015,
-//         data: null,
-//         hoveredFeature: null,
-//         viewport: {
-//             latitude: 20,
-//             longitude: 90,
-//             zoom: 1.3,
-//             bearing: 0,
-//             pitch: 0
-//         }
-//     };
-
-//     componentDidMount() {
-        // requestJson(
-        //     'https://bpouncey.github.io/geo-json-world/custom.geo.json',
-        //     (error, response) => {
-        //         if (!error) {
-        //             console.log("RESPONSE", response)
-        //             this._loadData(response);
-        //         }else{}
-        //     }
-        // );
-//     }
-
-//     _loadData = data => {
-//         this.setState({
-//             data: updatePercentiles(data, f => f.properties.income[this.state.year])
-//         });
-//     };
-
-//     _onViewportChange = viewport => this.setState({ viewport });
-
-//     _onHover = event => {
-//         const {
-//             features,
-//             srcEvent: { offsetX, offsetY }
-//         } = event;
-//         const hoveredFeature = features && features.find(f => f.layer.id === 'data');
-
-//         this.setState({ hoveredFeature, x: offsetX, y: offsetY });
-//     };
-
-//     _renderTooltip() {
-//         const { hoveredFeature, x, y } = this.state;
-
-//         return (
-//             hoveredFeature && (
-//                 <div className="tooltip" style={{ left: 500, top: 500 }}>
-//                     <div>State: {hoveredFeature.properties.name}</div>
-//                     <div>Median Household Income: {hoveredFeature.properties.value}</div>
-//                     <div>Percentile: {(hoveredFeature.properties.percentile / 8) * 100}</div>
-//                 </div>
-//             )
-//         );
-//     }
-
-//     render() {
-//         const { viewport, data } = this.state;
-
-//         return (
-//             <div style={{ height: '100%', position: 'relative' }}>
-//                 <MapGL
-//                     {...viewport}
-//                     width="100vw"
-//                     height="100vh"
-//                     mapStyle="mapbox://styles/mapbox/light-v9"
-//                     onViewportChange={this._onViewportChange}
-//                     mapboxApiAccessToken={MAPBOX_TOKEN}
-//                     onHover={this._onHover}
-//                 >
-//                 <Source type="geojson" data={data}>
-//                     <Layer {...dataLayer} />
-//                 </Source>
-//                     {this._renderTooltip()}
-//                 </MapGL>
-
-//             </div>
-//         );
-//     }
-// }
-
-// import { range } from 'd3-array';
-// import { scaleQuantile } from 'd3-scale';
-
-// export function updatePercentiles(featureCollection, accessor) {
-//     const { features } = featureCollection;
-//     const scale = scaleQuantile()
-//         .domain(features.map(accessor))
-//         .range(range(9));
-//     return {
-//         type: 'FeatureCollection',
-//         features: features.map(f => {
-//             const value = accessor(f);
-//             const properties = {
-//                 ...f.properties,
-//                 value,
-//                 percentile: scale(value)
-//             };
-//             return { ...f, properties };
-//         })
-//     };
-// }
-

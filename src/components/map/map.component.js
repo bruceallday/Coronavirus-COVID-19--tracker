@@ -43,20 +43,14 @@ const Map = (props) => {
             console.log(data.error)
         }else{
             setData(data)
-            console.log("novelCOVID DATA", data)
         }
         setLoading(false)
     }
 
     const countryArr = data.map((item, index) => {
-        if(item.country == "UK"){
-            return [item.cases, item.deaths, item.recovered, item.countryInfo]
-        }else{
-            return [item.cases, item.deaths, item.recovered, item.countryInfo]
-        }
+            return {cases: item.cases, deaths: item.deaths, recovered: item.recovered, countryInfo: item.countryInfo}
     })
 
-    console.log("COUNTRY ARRAY", countryArr)
 
     let countriesData = [
         ['Country', 'Cases', 'Deaths'],
@@ -83,7 +77,7 @@ const Map = (props) => {
                             setStatsWindow={setStatsWindow}
                        />
                                     
-                       <MapTest />
+                       <MapTest covidData={countryArr} />
 
                         {/*<Chart
                             // forceIFrame={true}
