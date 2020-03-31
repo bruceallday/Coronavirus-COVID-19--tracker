@@ -50,11 +50,13 @@ const Map = (props) => {
 
     const countryArr = data.map((item, index) => {
         if(item.country == "UK"){
-            return ["United Kingdom", item.cases, item.deaths]
+            return [item.cases, item.deaths, item.recovered, item.countryInfo]
         }else{
-            return [item.country, item.cases, item.deaths]
+            return [item.cases, item.deaths, item.recovered, item.countryInfo]
         }
     })
+
+    console.log("COUNTRY ARRAY", countryArr)
 
     let countriesData = [
         ['Country', 'Cases', 'Deaths'],
@@ -63,7 +65,7 @@ const Map = (props) => {
 
     return(
         <div >
-            <div className={classes.map} >
+            <div className={classes.map}>
                 {isLoading ? (
                     <CircularProgress
                         className={classes.loader}
