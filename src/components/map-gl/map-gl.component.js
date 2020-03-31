@@ -11,6 +11,7 @@ const TOKEN = process.env.MAPBOXKEY
 const MapTest = () => {
     const classes = useStyles()
     const [isLoading, setLoading] = useState(false)
+
     const [state, setState] = useState({
         year: 2015,
         data: null,
@@ -25,22 +26,26 @@ const MapTest = () => {
         pitch: 0
     });
 
-    useEffect(() => {
-        getData()
-    }, [])
-
     const getData = async () => {
         setLoading(true)
-        requestJson(
+        await requestJson(
             'https://raw.githubusercontent.com/uber/react-map-gl/master/examples/.data/us-income.geojson',
             (error, response) => {
                 if (!error) {
                     console.log("RESPONSE", response)
                     loadData(response);
-                } else { }
+                    
+                } else { 
+                    console.log(error)
+                }
+                setLoading(false)
             }
         )
     }
+
+    useEffect(() => {
+        getData()
+    }, [])
 
     const loadData = data => {
         setState({data: updatePercentiles(data, f => f.properties.income[state.year])})
@@ -56,7 +61,7 @@ const MapTest = () => {
         const { hoveredFeature, x, y } = state
         return (
             hoveredFeature && (
-                <div className={classes.tooltip} style={{ left: 500, top: 500 }}>
+                <div className={classes.tooltip} style={{ left: x, top: y }}>
                     <div>State: {hoveredFeature.properties.name}</div>
                     <div>Median Household Income: {hoveredFeature.properties.value}</div>
                     <div>Percentile: {(hoveredFeature.properties.percentile / 8) * 100}</div>
@@ -64,6 +69,7 @@ const MapTest = () => {
             )
         )
     }
+
 
     return (
         <div >
