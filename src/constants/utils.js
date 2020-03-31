@@ -1,4 +1,6 @@
 import React from 'react'
+import { range } from 'd3-array';
+import { scaleQuantile } from 'd3-scale';
 
 export const formatNumber = (num) => {
     let str = num.toString()
@@ -10,4 +12,32 @@ export const formatNumber = (num) => {
         str = [str.slice(0, 3), ",", str.slice(3)].join('')
     }
     return str
+}
+
+
+
+
+export const updatePercentiles = (featureCollection, accessor) =>{
+
+
+    const { features } = featureCollection;
+
+
+    const scale = scaleQuantile()
+        .domain(features.map(accessor))
+        .range(range(9));
+
+        
+    return {
+        type: 'FeatureCollection',
+        features: features.map(f => {
+            const value = accessor(f);
+            const properties = {
+                ...f.properties,
+                value,
+                percentile: scale(value)
+            };
+            return { ...f, properties };
+        })
+    };
 }

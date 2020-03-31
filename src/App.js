@@ -30,7 +30,7 @@ const App = () => {
     return(
         <div>
             <CssBaseline/>
-            <div style={{ display: 'flex', flexDirection: 'row' }} >
+            <div>
 
                 {aboutWindow && (
                     <AboutWindow 
@@ -64,7 +64,6 @@ const App = () => {
                 />
 
                 <Countries />
-
             </div>
         </div>
     )

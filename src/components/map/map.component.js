@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 
 import { Chart } from "react-google-charts"
+import ReactMapGL from 'react-map-gl'
 
 import Footer from '../footer/footer.component'
 import MainMenu from '../main-menu/main-menu.component'
+import MapTest from '../map-gl/map-gl.component'
 
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import { useStyles } from './map.styles'
+import Typography from 'material-ui/styles/typography'
 
 const Map = (props) => {
     const {
@@ -17,7 +20,8 @@ const Map = (props) => {
         setNewsWindow,
         statsWindow,
         setStatsWindow,
-        isMobile } = props
+        isMobile 
+    } = props
         
     const classes = useStyles()
     const [data, setData] = useState([])
@@ -26,7 +30,7 @@ const Map = (props) => {
     useEffect(() => {
         getData()
     }, [])
-
+ 
     const getData = async () => {
         setLoading(true)
     
@@ -58,7 +62,7 @@ const Map = (props) => {
     ]
 
     return(
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        <div >
             <div className={classes.map} >
                 {isLoading ? (
                     <CircularProgress
@@ -68,17 +72,18 @@ const Map = (props) => {
                     />
                 ):(
                     <div>
-                    <MainMenu
-                        aboutWindow={aboutWindow}
-                        setAboutWindow={setAboutWindow}
-                        newsWindow={newsWindow}
-                        setNewsWindow={setNewsWindow}
-                        statsWindow={statsWindow}
-                        setStatsWindow={setStatsWindow}
-                    />
-                  
-                    <div className={classes.chart} >
-                        <Chart
+                       <MainMenu
+                            aboutWindow={aboutWindow}
+                            setAboutWindow={setAboutWindow}
+                            newsWindow={newsWindow}
+                            setNewsWindow={setNewsWindow}
+                            statsWindow={statsWindow}
+                            setStatsWindow={setStatsWindow}
+                       />
+                                    
+                       <MapTest/>
+
+                        {/*<Chart
                             // forceIFrame={true}
                             width={'65vw'}
                             height={'77.7vh'}
@@ -97,8 +102,7 @@ const Map = (props) => {
                                 },
                                 backgroundColor: '#81d4fa',
                                 // datalessRegionColor: 'blue',
-                            }}/>
-                        </div>
+                            }}/>*/}
                     </div>
                 )}
             </div>
