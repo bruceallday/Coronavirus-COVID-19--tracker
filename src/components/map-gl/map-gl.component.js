@@ -71,7 +71,7 @@ const MapTest = () => {
     }
 
     return (
-        <div >
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}} >
         <h4 style={ { zIndex: 999, position: 'absolute', fontSize: 24 } }  >Improved maps in development</h4>
             <MapGL
                 {...viewport}
