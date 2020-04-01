@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
-import { Chart } from "react-google-charts"
-import ReactMapGL from 'react-map-gl'
-
 import Footer from '../footer/footer.component'
 import MainMenu from '../main-menu/main-menu.component'
-import MapTest from '../map-gl/map-gl.component'
+import ChoroplethMap from '../map-gl/map-gl.component'
 
 import CircularProgress from '@material-ui/core/CircularProgress'
-
 import { useStyles } from './map.styles'
-import Typography from 'material-ui/styles/typography'
+
 
 const Map = (props) => {
     const {
@@ -33,7 +29,7 @@ const Map = (props) => {
  
     const getData = async () => {
         setLoading(true)
-    
+
         const result = await fetch(
             `https://corona.lmao.ninja/countries`
         )
@@ -48,14 +44,12 @@ const Map = (props) => {
     }
 
     const countryArr = data.map((item, index) => {
-            return {cases: item.cases, deaths: item.deaths, recovered: item.recovered, countryInfo: item.countryInfo}
+        return {
+            cases: item.cases, 
+            deaths: item.deaths, 
+            recovered: item.recovered, 
+            countryInfo: item.countryInfo}
     })
-
-
-    let countriesData = [
-        ['Country', 'Cases', 'Deaths'],
-        ...countryArr,
-    ]
 
     return(
         <div >
@@ -75,30 +69,8 @@ const Map = (props) => {
                             setNewsWindow={setNewsWindow}
                             statsWindow={statsWindow}
                             setStatsWindow={setStatsWindow}
-                       />
-                                    
-                       <MapTest covidData={countryArr} />
-
-                        {/*<Chart
-                            // forceIFrame={true}
-                            width={'65vw'}
-                            height={'77.7vh'}
-                            chartType="GeoChart"
-                            data={countriesData}
-                            mapsApiKey={process.env.YOUR_KEY}
-                            rootProps={{ 'data-testid': '1' }}
-                            options={{
-                                colorAxis: {
-                                    colors: [
-                                        '#FEEDED','#FB7F81',
-                                        '#FB4146','#FA030B',
-                                        '#FB040C','#BC0309',
-                                        
-                                    ]
-                                },
-                                backgroundColor: '#81d4fa',
-                                // datalessRegionColor: 'blue',
-                            }}/>*/}
+                       />         
+                        <ChoroplethMap covidData={countryArr} />
                     </div>
                 )}
             </div>
