@@ -94,7 +94,19 @@ const ChoroplethMap = ({ covidData }) => {
                 <Layer {...dataLayer} />
             </Source>
             {renderTooltip()}
+            <div className={classes.legend} >
+                <div style={{ backgroundColor: '#94C9BC' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >0</span></div>
+                <div style={{ backgroundColor: '#CFE5BC' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >1</span></div>
+                <div style={{ backgroundColor: '#FFFFCE' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >50</span></div>
+                <div style={{ backgroundColor: '#FFEDA0' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >1000</span></div>
+                <div style={{ backgroundColor: '#FED976' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >3000</span></div>
+                <div style={{ backgroundColor: '#FEB24C' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >8,000</span></div>
+                <div style={{ backgroundColor: '#FD8D3C' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >18,000</span></div>
+                <div style={{ backgroundColor: '#FC4E2A' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >50,000</span></div>
+                <div style={{ backgroundColor: '#E31A1C' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >200,000+</span></div>
+            </div>
         </MapGL>
+   
     )
 }
 export default ChoroplethMap

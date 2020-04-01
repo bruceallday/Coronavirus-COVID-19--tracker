@@ -14,7 +14,21 @@ export const useStyles = makeStyles({
         zIndex: '9',
         pointerEvents: 'none',
         borderRadius: 5
+    },
+
+    legend: { 
+        width: 500, 
+        height: 200, 
+        marginTop: '3%',
+        marginLeft: '2%',
+    },
+
+    colourSq: {
+        width: 15,
+        height: 15,
+        opacity: 0.7
     }
+
 });
 
 export const dataLayer = {
@@ -29,8 +43,8 @@ export const dataLayer = {
                 [50, '#FFFFCE'],
                 [1000, '#FFEDA0'],
                 [3000, '#FED976'],
-                [10000, '#FEB24C'],
-                [16000, '#FD8D3C'],
+                [8000, '#FEB24C'],
+                [18000, '#FD8D3C'],
                 [50000, '#FC4E2A'],
                 [200000, '#E31A1C'],
             ]
