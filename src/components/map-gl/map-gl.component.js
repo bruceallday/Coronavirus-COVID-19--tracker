@@ -4,11 +4,13 @@ import { dataLayer } from './map-gl.styles'
 import { useStyles } from './map-gl.styles'
 import { json as requestJson } from 'd3-request'
 import { updatePercentiles } from '../../constants/utils'
+import { textStyles } from '../../constants/textColor'
 import Typography from 'material-ui/styles/typography'
 
 const TOKEN = process.env.MAPBOXKEY
 
 const MapTest = ({ covidData }) => {
+    const textClass = textStyles()
     const classes = useStyles()
     const [isLoading, setLoading] = useState(false)
 
@@ -75,8 +77,8 @@ const MapTest = ({ covidData }) => {
             hoveredFeature && (
                 <div className={classes.tooltip} style={{ left: x, top: y }}>
                     <div>Country: {hoveredFeature.properties.sovereignt}</div>
-                    <div>Cases: {hoveredFeature.properties.cases}</div>
-                    <div>Recovered: {hoveredFeature.properties.recovered}</div>
+                    <div>Cases: <span className={textClass.yellowText} >{hoveredFeature.properties.cases}</span></div>
+                    <div>Recovered: <span className={textClass.greenText} >{hoveredFeature.properties.recovered}</span></div>
                 </div>
             )
         )

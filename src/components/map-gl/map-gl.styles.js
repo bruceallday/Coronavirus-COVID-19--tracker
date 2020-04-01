@@ -4,13 +4,16 @@ export const useStyles = makeStyles({
    tooltip: {
     position: 'absolute',
     margin: '8px',
-    padding: '4px',
-    background: 'rgba(0, 0, 0, 0.8)',
+    padding: 5,
+    color: 'white',
+    backgroundColor: '#363636',
+    opacity: 0.9,
     color: '#fff',
-    maxWidth: '300px',
-    fontSize: '10px',
+    maxWidth: '350px',
+    fontSize: '14px',
     zIndex: '9',
     pointerEvents: 'none',
+    borderRadius: 5
 }
 });
 export const dataLayer = {
@@ -20,17 +23,18 @@ export const dataLayer = {
         'fill-color': {
             property: 'cases',
             stops: [
-                [0, '#ffeda0'],
-                [1, '#ffeda0'],
-                [2, '#fed976'],
-                [3, '#feb24c'],
-                [4, "#fd8d3c"],
-                [5, '#fee08b'],
-                [6, '#fdae61'],
-                [7, '#f46d43'],
-                [8, '#d53e4f']
+                [1, '#FFEDA0'],
+                [100, '#FFEDA0'],
+                [500, '#FEB24C'],
+                [1000, '#FD8D3C'],
+                [1500, "#FC4E2A"],
+                [5000, '#E31A1C'],
+                [10000, '#BD0026'],
+                [20000, '#FB040C'],
+                [50000, '#BC0309'],
+                [100000, 'firebrick'],
             ]
         },
-        'fill-opacity': 0.8
+        'fill-opacity': 0.7
     }
 };

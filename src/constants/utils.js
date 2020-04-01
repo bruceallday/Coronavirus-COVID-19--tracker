@@ -22,7 +22,7 @@ export const updatePercentiles = (featureCollection, accessor) =>{
 
     const scale = scaleQuantile()
         .domain(features.map(accessor))
-        .range(range(5000));
+        .range(range(10));
 
         
     return {
