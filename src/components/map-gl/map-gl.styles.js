@@ -19,7 +19,7 @@ export const useStyles = makeStyles({
     legend: { 
         width: 500, 
         height: 200, 
-        marginTop: '3%',
+        marginTop: '35%',
         marginLeft: '2%',
     },
 
