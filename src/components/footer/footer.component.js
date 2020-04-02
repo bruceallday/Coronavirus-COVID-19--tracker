@@ -102,8 +102,8 @@ const Footer = (props) => {
                 <div className={classes.linkContainer} >
                     <Button
                         className={textClass.linkText}
-                        href="https://www.worldometers.info/coronavirus/">
-                        Source
+                        href="https://github.com/BPouncey/Coronavirus-COVID-19--tracker">
+                        Docs
                     </Button> 
                 </div> <div className={classes.linkContainer}>|</div>
 
@@ -121,7 +121,15 @@ const Footer = (props) => {
                         href="https://github.com/BPouncey">
                         Author
                     </Button>
-                </div> <div className={classes.linkContainer}>|</div>           
+                </div> <div className={classes.linkContainer}>|</div>
+                
+                <div className={classes.linkContainer} >
+                    <Button
+                        className={textClass.linkText}
+                        href={ "mailto:" + 'brucematthewp@gmail.com'}>
+                        Contact
+                    </Button>
+                </div> <div className={classes.linkContainer}>|</div>  
             </div>
             
     </AppBar>)
