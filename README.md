@@ -5,6 +5,7 @@
 
 ### Run locally
 Clone project <br>
+Navigate into the project <br>
 run ```yarn``` in the project directory to install all dependancies <br>
 ```yarn start``` to spin up a local server <br>
 View at ```localhost:1234/```<br>
