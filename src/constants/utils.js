@@ -11,6 +11,8 @@ export const formatNumber = (num) => {
             str = [str.slice(0, 2), ",", str.slice(2)].join('')
         } else if (str.length === 6) {
             str = [str.slice(0, 3), ",", str.slice(3)].join('')
+        } else if (str.length === 7) {
+            str = [str.slice(0, 1), ',', str.slice(1, 4), ',', str.slice(4, 7)].join('')
         }
         return str
     } else {

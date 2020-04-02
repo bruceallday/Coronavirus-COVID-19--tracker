@@ -26,7 +26,8 @@ export const useStyles = makeStyles({
     colourSq: {
         width: 15,
         height: 15,
-        opacity: 0.7
+        opacity: 0.7,
+        marginLeft: 20
     }
 
 });

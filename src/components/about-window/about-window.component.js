@@ -5,7 +5,6 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import ads from '../../../ads'
 
-import StripeCheckoutButton from '../stripe-button/stripe-button.component'
 import { PayPalButton } from "react-paypal-button-v2";
 import { useStyles } from './about-window.styles'
 // import { textStyles } from '../../constants/textColor'
