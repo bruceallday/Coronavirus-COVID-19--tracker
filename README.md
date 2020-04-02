@@ -78,13 +78,13 @@ const Totals = () => {
 export default Totals
 ```
 
-## Features
+# Features
 
-### :mag:  Dynamic search engine
+## :mag:  Dynamic search engine
 Making use of the React ```useState()``` hook to make an event based search engine. <br>
 ![](./readme-images/search.gif)
 
-### :world_map:  Data Driven Styling
+## :world_map:  Data Driven Styling
 Using my endpoint data, I create dynamic data driven styling to associated parameters, in my [mapbox.com](https://www.mapbox.com) / [Geo-Json](https://github.com/BPouncey/geo-json-world) / [NovelCOVID/API](https://github.com/NovelCOVID/API)) merged data to dynammically create a real-time data visualisation of COVID-19 cases around the world.<br>
 ![](./readme-images/zoom.gif)
 
