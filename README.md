@@ -19,8 +19,8 @@ View at ```localhost:1234/```<br>
 
 ### Endpoints:
 * Coronavirus(COVID-19) data - [NovelCOVID/API](https://github.com/NovelCOVID/API)
-* countryByGeo Codes - [datahub.io/core/countryByGeo-list](https://datahub.io/core/countryByGeo-list)
-* countryByGeo Flags - [countryByGeoflags.io/](https://www.countryByGeoflags.io/)
+* Country codes - [datahub.io/core/countryByGeo-list](https://datahub.io/core/countryByGeo-list)
+* Country Flags - [countryByGeoflags.io/](https://www.countryByGeoflags.io/)
 * Mapbox - [mapbox.com](https://www.mapbox.com)
 * Geo-Json-World - [github.com/BPouncey/geo-json-world](https://github.com/BPouncey/geo-json-world)
 
@@ -139,4 +139,4 @@ Track Coronavirus(COVID-19) is an independently developed, free to use web appli
 (MIT)
 
 ## Acknowledgments
-@[NovelCOVID](github.com/NovelCOVID)
+[@NovelCOVID](https://github.com/NovelCOVID)
