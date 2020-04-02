@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import MapGL, { Source, Layer } from 'react-map-gl'
+import MapLegend from '../map-legend/map-legend.component' 
 
 import { formatNumber } from '../../constants/utils'
 import { dataLayer } from './map-gl.styles'
@@ -19,11 +20,11 @@ const ChoroplethMap = ({ covidData }) => {
     })
 
     const [viewport, setViewport] = useState({
-        latitude: -15,
-        longitude: 85,
-        zoom: 1.4,
-        bearing: 20,
-        pitch: 20
+        latitude: 0,
+        longitude: 110,
+        zoom: 1.3,
+        bearing: 0,
+        pitch: 0
     })
 
     useEffect(() => {
@@ -71,42 +72,50 @@ const ChoroplethMap = ({ covidData }) => {
         return (
             hoveredFeature && (
                 <div className={classes.tooltip} style={{ left: x, top: y }}>
-                    <div>Country: {hoveredFeature.properties.sovereignt}</div>
-                    <div>Cases: <span className={textClass.yellowText} >{formatNumber(hoveredFeature.properties.cases)}</span></div>
-                    <div>Recovered: <span className={textClass.greenText} >{formatNumber(hoveredFeature.properties.recovered)}</span></div>
+
+                    <div>Country:
+                        {hoveredFeature.properties.sovereignt}
+                    </div>
+
+                    <div>Cases: 
+                        <span 
+                            className={textClass.yellowText}>
+                            {formatNumber(hoveredFeature.properties.cases)}
+                        </span>
+                    </div>
+
+                    <div>Recovered: 
+                        <span 
+                            className={textClass.greenText}>
+                            {formatNumber(hoveredFeature.properties.recovered)}
+                        </span>
+                    </div>
                 </div>
             )
         )
     }
 
     return (
-        <MapGL
-            {...viewport}
-            width="100vw"
-            height="100vh"
-            mapStyle="mapbox://styles/mapbox/light-v9"
-            onViewportChange={setViewport}
-            mapboxApiAccessToken={TOKEN}
-            onHover={onHover}
-        >
-            <Source type="geojson" data={state.data}>
-                <Layer {...dataLayer} />
-            </Source>
+        <div>
 
-            {renderTooltip()}
+                <MapGL
+                    {...viewport}
+                    width="100vw"
+                    height="100vh"
+                    mapStyle="mapbox://styles/mapbox/light-v9"
+                    onViewportChange={setViewport}
+                    mapboxApiAccessToken={TOKEN}
+                    onHover={onHover}
+                >
+                    <Source type="geojson" data={state.data}>
+                        <Layer {...dataLayer} />
+                    </Source>
+                    {renderTooltip()}
+                    <MapLegend />
 
-            <div className={classes.legend} >
-                <div style={{ backgroundColor: '#94C9BC' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >0</span></div>
-                <div style={{ backgroundColor: '#CFE5BC' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >1</span></div>
-                <div style={{ backgroundColor: '#FFFFCE' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >50</span></div>
-                <div style={{ backgroundColor: '#FFEDA0' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >1000</span></div>
-                <div style={{ backgroundColor: '#FED976' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >3000</span></div>
-                <div style={{ backgroundColor: '#FEB24C' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >8,000</span></div>
-                <div style={{ backgroundColor: '#FD8D3C' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >18,000</span></div>
-                <div style={{ backgroundColor: '#FC4E2A' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >50,000</span></div>
-                <div style={{ backgroundColor: '#E31A1C' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >200,000+</span></div>
-            </div>
-        </MapGL>
+                </MapGL>
+        </div>
+
    
     )
 }

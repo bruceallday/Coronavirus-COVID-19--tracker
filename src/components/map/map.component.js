@@ -48,7 +48,8 @@ const Map = (props) => {
             cases: item.cases, 
             deaths: item.deaths, 
             recovered: item.recovered, 
-            countryInfo: item.countryInfo}
+            countryInfo: item.countryInfo
+        }
     })
 
     return(
