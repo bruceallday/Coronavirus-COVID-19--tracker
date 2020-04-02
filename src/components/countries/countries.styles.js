@@ -21,6 +21,7 @@ export const useStyles = makeStyles({
  
     title: {
         padding: 25,
+        fontWeight: 'lighter'
     },
 
     toolbar: { 
