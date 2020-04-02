@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import MapGL, { Source, Layer } from 'react-map-gl'
-import { json as requestJson } from 'd3-request'
 
 import { formatNumber } from '../../constants/utils'
 import { dataLayer } from './map-gl.styles'
@@ -33,32 +32,32 @@ const ChoroplethMap = ({ covidData }) => {
 
     const getData = async () => {
         setLoading(true)
-        await requestJson(
-           'https://bpouncey.github.io/geo-json-world/custom.geo.json',
-            (error, response) => {
-                if ( !error ) {
 
-                response.features.map( country => {
-                    covidData.map( countryData => {
-                        if ( country.properties.iso_a3 === countryData.countryInfo.iso3 ){
+        const result = await fetch(
+            `https://bpouncey.github.io/geo-json-world/custom.geo.json`
+        )
+        const data = await result.json()
 
-                            country.properties = { 
-                                ...countryData, 
-                                ...country.properties
-                             }
+        if (data.error) {
+            console.log(data.error)
+        } else {
+            data.features.map(country => {
+                covidData.map(countryData => {
+                    if (country.properties.iso_a3 === countryData.countryInfo.iso3) {
+
+                        country.properties = {
+                            ...countryData,
+                            ...country.properties
                         }
-                    })
-                    if (!country.properties.cases) {
-                        country.properties.cases = 0
                     }
                 })
-                setState({data: response})
-                } else { 
-                    console.log(error)
+                if (!country.properties.cases) {
+                    country.properties.cases = 0
                 }
-                setLoading(false)
-            }
-        )
+            })
+            setState({ data: data })
+        }
+        setLoading(false)
     }
 
     const onHover = event => {
@@ -93,7 +92,9 @@ const ChoroplethMap = ({ covidData }) => {
             <Source type="geojson" data={state.data}>
                 <Layer {...dataLayer} />
             </Source>
+
             {renderTooltip()}
+
             <div className={classes.legend} >
                 <div style={{ backgroundColor: '#94C9BC' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >0</span></div>
                 <div style={{ backgroundColor: '#CFE5BC' }} className={classes.colourSq}><span style={{ marginLeft: 20 }} >1</span></div>

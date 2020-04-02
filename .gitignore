@@ -6,5 +6,5 @@ dist
 /src/components/map/map.data.js
 /src/components/stripe-button/stripe-key.js
 /src/components/about-window/about-window.key
-
+.DS_Store
 
