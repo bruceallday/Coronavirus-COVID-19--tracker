@@ -92,8 +92,6 @@ Using my endpoint data, I create dynamic data driven styling to associated param
 ``````javascript
        const getData = async () => {
         setLoading(true)
-        
-        ## Fetching from BPouncey/geo-json-world world vector maps for data druven styling layer --
         const result = await fetch(
             `https://bpouncey.github.io/geo-json-world/custom.geo.json`
         )
@@ -101,20 +99,18 @@ Using my endpoint data, I create dynamic data driven styling to associated param
 
         if (data.error) {
             console.log(data.error)
+            
         } else {
-            ## Comparison alogrythm to find adjacent country IS03 numbers --
             data.features.map(country => {
                 covidData.map(countryData => {
+                
                     if (country.properties.iso_a3 === countryData.countryInfo.iso3) {
-
-                        ## spreading the novel covid data into my geo-json properties for react-map-gl / mapbox --
                         country.properties = {
                             ...countryData,
                             ...country.properties
                         }
                     }
                 })
-                ## check for NULL data 
                 if (!country.properties.cases) {
                     country.properties.cases = 0
                 }
