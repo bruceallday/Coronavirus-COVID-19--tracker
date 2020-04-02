@@ -18,7 +18,6 @@ export const formatNumber = (num) => {
     } else {
         return 0
     } 
-   
 }
 
 export const updatePercentiles = (featureCollection, accessor) =>{
