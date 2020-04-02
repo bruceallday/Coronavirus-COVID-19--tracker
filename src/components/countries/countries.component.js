@@ -120,10 +120,10 @@ const Countries = () => {
         <div>
             <AppBar className={classes.appBar} position="fixed">
                 <Toolbar className={classes.toolbar}>
-                    <Typography className={classes.title} variant="h2" noWrap>
-                        Track Coronavirus(COVID-19) 
+                    <Typography className={classes.title} variant="h3" noWrap>
+                        Track Coronavirus(COVID-19) <span className={classes.version} >v1.4.1</span> 
                     </Typography>
-                    <p className={classes.version} >v1.4.1</p> 
+  
                     <div>
                         <CssTextField
                             className={classes.textField}
