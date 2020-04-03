@@ -30,7 +30,7 @@ const MainMenu = (props) => {
                     setAboutWindow(!aboutWindow)
                 }}>
                 <InfoIcon
-                    style={{ color: mapDark ? '#363636' : 'cyan' }}
+                    style={{ color: mapDark ? 'cyan' : '#363636' }}
                     className={classes.navIcon}
             />
             </IconButton>
@@ -40,7 +40,7 @@ const MainMenu = (props) => {
                     setNewsWindow(!newsWindow)
                 }}>
                 <PriorityHighIcon
-                    style={{ color: mapDark ? '#363636' : 'cyan' }}
+                    style={{ color: mapDark ? 'cyan' : '#363636' }}
                     className={classes.navIcon}
             />
             </IconButton>
@@ -50,7 +50,7 @@ const MainMenu = (props) => {
                     setStatsWindow(!statsWindow)
                 }}>
                 <AssessmentIcon
-                    style={{ color: mapDark ? '#363636' : 'cyan'}}
+                    style={{ color: mapDark ? 'cyan' : '#363636' }}
                     className={classes.navIcon}
             />
             </IconButton>
