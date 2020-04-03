@@ -89,34 +89,34 @@ Using my endpoint data, I create dynamic data driven styling to associated param
 ![](./readme-images/zoom.gif)
 
 ``````javascript
-    const getData = async () => {
+   const getData = async () => {
         setLoading(true)
-        await requestJson(
-           'https://bpouncey.github.io/geo-json-world/custom.geo.json',
-            (error, response) => {
-                if ( !error ) {
 
-                response.features.map( countryByGeo => {
-                    covidData.map(countryByCovid => {
-                        if ( countryByGeo.properties.iso_a3 === countryByCovid.countryByCovid.countryInfo.iso3 ){
+        const result = await fetch(
+            `https://bpouncey.github.io/geo-json-world/custom.geo.json`
+        )
+        const data = await result.json()
 
-                            countryByGeo.properties = { 
-                                ..countryByCovid, 
-                                ...countryByGeo.properties
-                             }
+        if (data.error) {
+            console.log(data.error)
+        } else {
+            data.features.map(country => {
+                covidData.map(countryData => {
+                    if (country.properties.iso_a3 === countryData.countryInfo.iso3) {
+
+                        country.properties = {
+                            ...countryData,
+                            ...country.properties
                         }
-                    })
-                    if (!countryByGeo.properties.cases) {
-                        countryByGeo.properties.cases = 0
                     }
                 })
-                setState({data: response})
-                } else { 
-                    console.log(error)
+                if (!country.properties.cases) {
+                    country.properties.cases = 0
                 }
-                setLoading(false)
-            }
-        )
+            })
+            setState({ data: data })
+        }
+        setLoading(false)
     }
 ``````
 
