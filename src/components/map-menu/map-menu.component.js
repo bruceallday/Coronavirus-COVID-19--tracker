@@ -14,12 +14,13 @@ import { textStyles } from '../../constants/textColor'
 const MapMenuWidget = ({ mapDark, setMapDark }) => {
     const classes = useStyles()
     const textClass = textStyles()
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const ITEM_HEIGHT = 48
    
     const handleClick = event => {
         setAnchorEl(event.currentTarget);
+        
     };
 
     const handleClose = () => {
