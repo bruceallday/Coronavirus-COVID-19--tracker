@@ -22,6 +22,7 @@ const Map = (props) => {
     const classes = useStyles()
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
+    const [mapDark, setMapDark] = useState(false)
 
     useEffect(() => {
         getData()
@@ -70,8 +71,13 @@ const Map = (props) => {
                             setNewsWindow={setNewsWindow}
                             statsWindow={statsWindow}
                             setStatsWindow={setStatsWindow}
+                            mapDark={mapDark}
+                            setMapDark={setMapDark}
                        />         
-                        <ChoroplethMap covidData={countryArr} />
+                        <ChoroplethMap 
+                            covidData={countryArr} 
+                            mapDark={mapDark} 
+                            setMapDark={setMapDark} />
                     </div>
                 )}
             </div>

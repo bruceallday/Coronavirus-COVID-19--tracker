@@ -8,7 +8,7 @@ import { useStyles } from './map-menu.styles'
 import { textStyles } from '../../constants/textColor'
 
 
-const MapMenuWidget = (props) => {
+const MapMenuWidget = ({ mapDark, setMapDark }) => {
     const classes = useStyles()
     const textClass = textStyles()
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -24,27 +24,21 @@ const MapMenuWidget = (props) => {
     };
     
     const options = [
+        {
+            action: (() => { setMapDark(!mapDark) }),
+            href: null,
+            title: "Choropleth / Country",
+        },
+        {
+            action: (() => { setMapDark(!mapDark) }),
+            href: null,
+            title: "Heatmap / Region",
+        },
         // {
-        //     action: (() => { setAboutWindow(!aboutWindow) }),
+        //     action: null,
         //     href: null,
-        //     title: "About"
+        //     title: "Coming Soon"
         // },
-        {
-            action: null,
-            href: null,
-            title: "Coming Soon"
-        },
-        {
-            action: null,
-            href: null,
-            title: "Coming Soon"
-        },
-        {
-            action: null,
-            href: null,
-            title: "Coming Soon",
-        }
-
     ]
     return (
         <div className={classes.menuContainer} >
@@ -54,7 +48,10 @@ const MapMenuWidget = (props) => {
                 aria-haspopup="true"
                 onClick={handleClick}
             >
-                <MapIcon className={classes.navIcon} />
+                <MapIcon 
+                    className={classes.navIcon}
+                    style={{ color: mapDark ? '#363636' : 'cyan' }}
+                 />
             </IconButton>
             <Menu
                 id="long-menu"

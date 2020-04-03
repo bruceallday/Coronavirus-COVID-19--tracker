@@ -3,13 +3,13 @@ import MapGL, { Source, Layer } from 'react-map-gl'
 import MapLegend from '../map-legend/map-legend.component' 
 
 import { formatNumber } from '../../constants/utils'
-import { dataLayer } from './map-gl.styles'
+import { dataLayer, heatmapLayer } from './map-gl.styles'
 import { useStyles } from './map-gl.styles'
 import { textStyles } from '../../constants/textColor'
 
 const TOKEN = process.env.MAPBOXKEY
 
-const ChoroplethMap = ({ covidData }) => {
+const ChoroplethMap = ({ covidData, mapDark, setMapDark }) => {
     const textClass = textStyles()
     const classes = useStyles()
     const [isLoading, setLoading] = useState(false)
@@ -98,21 +98,20 @@ const ChoroplethMap = ({ covidData }) => {
     return (
         <div>
 
-                <MapGL
-                    {...viewport}
-                    width="100vw"
-                    height="100vh"
-                    mapStyle="mapbox://styles/mapbox/light-v9"
-                    onViewportChange={setViewport}
-                    mapboxApiAccessToken={TOKEN}
-                    onHover={onHover}
-                >
-                    <Source type="geojson" data={state.data}>
-                        <Layer {...dataLayer} />
-                    </Source>
-                    {renderTooltip()}
+            <MapGL
+                {...viewport}
+                width="100vw"
+                height="100vh"
+                mapStyle={`mapbox://styles/mapbox/${mapDark ? 'dark' : 'light'}-v9`}
+                onViewportChange={setViewport}
+                mapboxApiAccessToken={TOKEN}
+                onHover={onHover}
+            >
+                <Source type="geojson" data={state.data}>
+                    <Layer {...dataLayer} />
+                </Source>
+                {renderTooltip()}
                     <MapLegend />
-
                 </MapGL>
         </div>
 

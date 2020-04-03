@@ -19,7 +19,6 @@ export const useStyles = makeStyles({
     },
 
     navIcon: {
-        color: '#363636',
         width: 40,
         height: 40,
     },
