@@ -1,6 +1,6 @@
-# :heavy_exclamation_mark: Track Coronavirus(COVID-19) v1.4.1 [![Netlify Status](https://api.netlify.com/api/v1/badges/a8277b72-79da-4905-8c84-ce9ccbfc8e45/deploy-status)](https://app.netlify.com/sites/musing-meitner-afa826/deploys)
-## [trackcoronavirus.info](https://trackcoronavirus.info) 
-![](./readme-images/readme-fullscreen.png)
+# :heavy_exclamation_mark: Track Coronavirus(COVID-19) v1.4.1
+## [trackcoronavirus.info ](https://trackcoronavirus.info) 
+![](./readme-images/readme-fullscreen.png)  [![Netlify Status](https://api.netlify.com/api/v1/badges/a8277b72-79da-4905-8c84-ce9ccbfc8e45/deploy-status)](https://app.netlify.com/sites/musing-meitner-afa826/deploys)
 
 
 ### Run locally
