@@ -97,8 +97,7 @@ const ChoroplethMap = ({ covidData, mapDark, setMapDark }) => {
 
     return (
         <div>
-
-            <MapGL
+           <MapGL
                 {...viewport}
                 width="100vw"
                 height="100vh"
@@ -112,7 +111,7 @@ const ChoroplethMap = ({ covidData, mapDark, setMapDark }) => {
                 </Source>
                 {renderTooltip()}
                     <MapLegend />
-                </MapGL>
+            </MapGL>
         </div>
 
    

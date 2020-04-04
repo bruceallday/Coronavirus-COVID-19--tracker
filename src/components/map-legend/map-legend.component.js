@@ -20,9 +20,8 @@ const MapLegend = () => {
     return(
         <div className={classes.legend} >
             {colours.map((item, index) => (
-                <div style={{display: 'flex'}} >
+                <div key={index} style={{display: 'flex'}} >
                     <div
-                        key={index}
                         style={{backgroundColor: item[0]}} 
                         className={classes.colourSq}> 
                     </div>
@@ -32,7 +31,7 @@ const MapLegend = () => {
                     </span>
                 </div>
             ))}
-            <p>Cases per country</p>
+            <p>Recorded cases per country</p>
         </div>
     )
 }

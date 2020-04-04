@@ -5,10 +5,10 @@ import MainMenu from '../main-menu/main-menu.component'
 import ChoroplethMap from '../map-gl/map-gl.component'
 
 import CircularProgress from '@material-ui/core/CircularProgress'
-import { useStyles } from './map.styles'
+import { useStyles } from './main-window.styles'
 
 
-const Map = (props) => {
+const MainWindow = (props) => {
     const {
         aboutWindow,
         setAboutWindow,
@@ -94,6 +94,6 @@ const Map = (props) => {
     )
 }
 
-export default Map
+export default MainWindow
 
    

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import IconButton from '@material-ui/core/IconButton'
-import Button from '@material-ui/core/Button'
 import Menu from '@material-ui/core/Menu'
-import MenuItem from '@material-ui/core/MenuItem'
 import MapIcon from '@material-ui/icons/Map'
 import Switch from '@material-ui/core/Switch'
 
@@ -76,20 +74,10 @@ const MapMenuWidget = ({ mapDark, setMapDark }) => {
                     },
                 }}
             >
-                {/*options.map((option, index) => (
-                    <MenuItem
-                        style={{color: 'cyan'}} key={index} selected={option === 'Pyxis'}>
-                        <Button
-                            className={textClass.linkText}
-                            onClick={option.action}
-                            href={option.href}>
-                            {option.title}
-                        </Button>
-                    </MenuItem>
-                ))*/}
+
                 <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}} >
                     <Switch onChange={handleChange} />
-                    <p className={textClass.linkText} >{mapDark ? 'Heatmap' : 'Chloropleth'}</p>
+                    <p className={textClass.linkText} >{mapDark ? 'Heatmap' : 'Choropleth'}</p>
                 </div>
             
                 
