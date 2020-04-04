@@ -56,7 +56,7 @@ const Heatmap = ({ covidData }) => {
             //     }
             // })
             // console.log("data", data)
-            // setState({ data: data })
+            setState({ data: data })
         }
         setLoading(false)
     }
@@ -106,9 +106,8 @@ const Heatmap = ({ covidData }) => {
                 mapboxApiAccessToken={TOKEN}
             >
                 <Source type="geojson" data={state.data}>
-                    <Layer {...dataLayer} />
+                    <Layer {...heatmapLayer} />
                 </Source>
-                <MapLegend />
             </MapGL>
         </div>
 

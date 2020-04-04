@@ -56,7 +56,6 @@ const ChoroplethMap = ({ covidData }) => {
                     country.properties.cases = 0
                 }
             })
-            console.log("data", data)
             setState({ data: data })
         }
         setLoading(false)
