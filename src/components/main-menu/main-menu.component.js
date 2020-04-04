@@ -45,7 +45,7 @@ const MainMenu = (props) => {
             />
             </IconButton>
 
-            <IconButton
+            {/*<IconButton
                 onClick={() => {
                     setStatsWindow(!statsWindow)
                 }}>
@@ -53,7 +53,7 @@ const MainMenu = (props) => {
                     style={{ color: mapDark ? 'cyan' : '#363636' }}
                     className={classes.navIcon}
             />
-            </IconButton>
+            </IconButton>*/}
 
             <MapMenuWidget
                 mapDark={mapDark}

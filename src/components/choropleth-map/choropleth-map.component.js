@@ -3,13 +3,13 @@ import MapGL, { Source, Layer } from 'react-map-gl'
 import MapLegend from '../map-legend/map-legend.component' 
 
 import { formatNumber } from '../../constants/utils'
-import { dataLayer, heatmapLayer } from './map-gl.styles'
-import { useStyles } from './map-gl.styles'
+import { dataLayer } from './choropleth-map.styles'
+import { useStyles } from './choropleth-map.styles'
 import { textStyles } from '../../constants/textColor'
 
 const TOKEN = process.env.MAPBOXKEY
 
-const ChoroplethMap = ({ covidData, mapDark, setMapDark }) => {
+const ChoroplethMap = ({ covidData }) => {
     const textClass = textStyles()
     const classes = useStyles()
     const [isLoading, setLoading] = useState(false)
@@ -56,6 +56,7 @@ const ChoroplethMap = ({ covidData, mapDark, setMapDark }) => {
                     country.properties.cases = 0
                 }
             })
+            console.log("data", data)
             setState({ data: data })
         }
         setLoading(false)
@@ -101,7 +102,7 @@ const ChoroplethMap = ({ covidData, mapDark, setMapDark }) => {
                 {...viewport}
                 width="100vw"
                 height="100vh"
-                mapStyle={`mapbox://styles/mapbox/${mapDark ? 'dark' : 'light'}-v9`}
+                mapStyle={'mapbox://styles/mapbox/light-v9'}
                 onViewportChange={setViewport}
                 mapboxApiAccessToken={TOKEN}
                 onHover={onHover}

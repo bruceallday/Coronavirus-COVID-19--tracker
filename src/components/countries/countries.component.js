@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-
-import TextField from '@material-ui/core/TextField';
-import AppBar from'@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
-import Toolbar from '@material-ui/core/Toolbar';
+import TextField from '@material-ui/core/TextField'
+import AppBar from'@material-ui/core/AppBar'
+import Typography from '@material-ui/core/Typography'
+import Toolbar from '@material-ui/core/Toolbar'
 
 import Card from '../country-card/country-card.component'
 
