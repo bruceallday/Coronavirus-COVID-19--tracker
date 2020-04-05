@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import MapGL, { Source, Layer } from 'react-map-gl'
-import MapLegend from '../map-legend/map-legend.component'
 
-import { formatNumber } from '../../constants/utils'
+import HeatmapLegend from '../heatmap-legend/heatmap-legend.component'
+import { createFeatures } from '../../constants/utils'
 import { heatmapLayer } from './heatmap.styles'
-// import { useStyles } from './heatmap.styles'
 import { textStyles } from '../../constants/textColor'
-import { ImageTexture } from 'material-ui/svg-icons'
 
 const TOKEN = process.env.MAPBOXKEY
 
@@ -17,12 +15,13 @@ const Heatmap = ({ covidData }) => {
 
     const [state, setState] = useState({
         data: null,
+        hoveredFeature: null,
     })
 
     const [viewport, setViewport] = useState({
         latitude: 0,
         longitude: 110,
-        zoom: 1.3,
+        zoom: 1,
         bearing: 0,
         pitch: 0
     })
@@ -39,22 +38,7 @@ const Heatmap = ({ covidData }) => {
         if (data.error) {
             console.log(data.error)
         } else {
-            const test = data.map((item, index)=> (
-                {
-                    "type": "Feature",
-                        "properties": {
-                        "mag": item.stats.confirmed, 
-                    },
-                    "geometry": {
-                        "type":
-                        "Point",
-                        "coordinates": [
-                            parseFloat(item.coordinates.longitude), 
-                            parseFloat(item.coordinates.latitude)
-                        ]
-                    }
-                }
-            ))
+            const test = createFeatures(data)
 
             const featureCollection = 
             { 
@@ -65,39 +49,39 @@ const Heatmap = ({ covidData }) => {
         }
         setLoading(false)
     }
+
     //ON HOVER-TOOLTIP FEATURE
-    const onHover = event => {
-        const { features, srcEvent: { offsetX, offsetY } } = event
-        const hoveredFeature = (features && features.find(f => f.layer.id === 'data'))
-        setState({ hoveredFeature, x: offsetX, y: offsetY })
-    }
-    const renderTooltip = () => {
-        const { hoveredFeature, x, y } = state
-        return (
-            hoveredFeature && (
-                <div className={classes.tooltip} style={{ left: x, top: y }}>
+    // const onHover = event => {
+    //     const { features, srcEvent: { offsetX, offsetY } } = event
+    //     const hoveredFeature = (features && features.find(f => f.layer.id === 'data'))
+    //     setState({ hoveredFeature, x: offsetX, y: offsetY })
+    // }
 
-                    <div>Country:
-                        {hoveredFeature.properties.sovereignt}
-                    </div>
+    // const renderTooltip = () => {
+    //     const { hoveredFeature, x, y } = state
+    //     return (
+    //         hoveredFeature && (
+    //             <div className={classes.tooltip} style={{ left: x, top: y }}>
+    //                 <div>Country:
+    //                     {hoveredFeature.properties.province ? (
+    //                         hoveredFeature.properties.province
+    //                         ) : (
+    //                             hoveredFeature.properties.country
+    //                         )
+    //                     }
+    //                 </div>
 
-                    <div>Cases:
-                        <span
-                            className={textClass.yellowText}>
-                            {formatNumber(hoveredFeature.properties.cases)}
-                        </span>
-                    </div>
+    //                 <div>Cases:
+    //                     <span
+    //                         className={textClass.yellowText}>
+    //                         {formatNumber(hoveredFeature.properties.confirmed)}
+    //                     </span>
+    //                 </div>
 
-                    <div>Recovered:
-                        <span
-                            className={textClass.greenText}>
-                            {formatNumber(hoveredFeature.properties.recovered)}
-                        </span>
-                    </div>
-                </div>
-            )
-        )
-    }
+    //             </div>
+    //         )
+    //     )
+    // }
 
     return (
         <div>
@@ -112,7 +96,7 @@ const Heatmap = ({ covidData }) => {
                 <Source type="geojson" data={state.data}>
                     <Layer {...heatmapLayer} />
                 </Source>
-                {renderTooltip()}
+                {/*<HeatmapLegend />*/}
             </MapGL>
         </div>
 
@@ -120,3 +104,5 @@ const Heatmap = ({ covidData }) => {
     )
 }
 export default Heatmap
+
+

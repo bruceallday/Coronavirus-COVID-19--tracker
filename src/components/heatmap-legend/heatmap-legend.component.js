@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { useStyles } from './map-legend.styles'
+import { useStyles } from './heatmap-legend.styles'
 
-const MapLegend = () => {
+const HeatmapLegend = () => {
     const classes = useStyles()
     const colours = [
         ['#94C9BC', 'No data'],
@@ -36,4 +36,4 @@ const MapLegend = () => {
     )
 }
 
-export default MapLegend
+export default HeatmapLegend

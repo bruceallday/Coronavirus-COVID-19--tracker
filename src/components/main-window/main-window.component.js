@@ -23,7 +23,7 @@ const MainWindow = (props) => {
     const classes = useStyles()
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
-    const [mapDark, setMapDark] = useState(true)
+    const [mapDark, setMapDark] = useState(false)
 
     useEffect(() => {
         getData()

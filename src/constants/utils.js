@@ -19,3 +19,22 @@ export const formatNumber = (num) => {
         return 0
     } 
 }
+
+export const createFeatures = (data) => {
+    return data.map((item, index) => ({
+        "type": "Feature",
+        "properties": {
+            "province": item.province,
+            "country": item.country,
+            "confirmed": item.stats.confirmed,
+            "mag": item.stats.confirmed,
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                parseFloat(item.coordinates.longitude),
+                parseFloat(item.coordinates.latitude)
+            ]
+        }
+    }))
+}

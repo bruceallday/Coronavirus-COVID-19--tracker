@@ -1,7 +1,28 @@
+import { makeStyles } from '@material-ui/styles/'
+
+export const useStyles = makeStyles({
+    tooltip: {
+        position: 'absolute',
+        margin: '8px',
+        padding: 5,
+        color: 'white',
+        backgroundColor: '#363636',
+        opacity: 0.9,
+        color: '#fff',
+        maxWidth: '350px',
+        fontSize: '14px',
+        zIndex: '9',
+        pointerEvents: 'none',
+        borderRadius: 5
+    },
+
+})
+
 const MAX_ZOOM_LEVEL = 9
 
 export const heatmapLayer = {
     maxzoom: MAX_ZOOM_LEVEL,
+    id: 'data',
     type: 'heatmap',
     paint: {
         // increase weight as diameter breast height increases
@@ -10,7 +31,7 @@ export const heatmapLayer = {
             type: 'exponential',
             stops: [
                 [1, 0],
-                [62, 1]
+                [60, 1]
             ]
         },
         // increase intensity as zoom level increases
@@ -47,4 +68,16 @@ export const heatmapLayer = {
             ]
         },
     }
-};
+}
+export const unclusteredPointLayer = {
+    id: 'unclustered-point',
+    type: 'circle',
+    source: 'earthquakes',
+    filter: ['!', ['has', 'point_count']],
+    paint: {
+        'circle-color': '#11b4da',
+        'circle-radius': 4,
+        'circle-stroke-width': 1,
+        'circle-stroke-color': '#fff'
+    }
+}

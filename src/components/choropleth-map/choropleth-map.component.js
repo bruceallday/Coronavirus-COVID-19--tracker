@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import MapGL, { Source, Layer } from 'react-map-gl'
-import MapLegend from '../map-legend/map-legend.component' 
+import ChoroplethLegend from '../choropleth-legend/choropleth-legend.component' 
 
 import { formatNumber } from '../../constants/utils'
 import { dataLayer } from './choropleth-map.styles'
@@ -110,7 +110,7 @@ const ChoroplethMap = ({ covidData }) => {
                     <Layer {...dataLayer} />
                 </Source>
                 {renderTooltip()}
-                    <MapLegend />
+                    <ChoroplethLegend />
             </MapGL>
         </div>
 
