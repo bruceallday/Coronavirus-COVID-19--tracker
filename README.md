@@ -1,4 +1,4 @@
-# :heavy_exclamation_mark: Track Coronavirus(COVID-19) v1.4.1
+# :heavy_exclamation_mark: Track Coronavirus(COVID-19) v1.5.0
 ## [trackcoronavirus.info](https://trackcoronavirus.info) 
 ![](./readme-images/readme-fullscreen.png)
 
@@ -122,6 +122,10 @@ Using my endpoint data, I create dynamic data driven styling to associated param
 
 ### :chart_with_upwards_trend: Totals display 
 ![](./readme-images/footer.png)
+
+### :fire: Heatmap
+View a heatmap visual based on cases per region
+![](./readme-images/heatmap.png)
 
 ## :exclamation: About
 Due to the panic and fear in society I created this accesible application to provide correct infomation, on every countryByGeo where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown. 
