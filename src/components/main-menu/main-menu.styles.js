@@ -7,7 +7,7 @@ export const useStyles = makeStyles({
         position: 'absolute',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-around',
+        justifyContent: 'flex-end',
         marginTop: '3%',
         zIndex: 9,
         // marginLeft: '50%',
@@ -19,7 +19,6 @@ export const useStyles = makeStyles({
     },
 
     navIcon: {
-        color: '#363636',
         width: 40,
         height: 40,
     },

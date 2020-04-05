@@ -1,6 +1,7 @@
-# :heavy_exclamation_mark: Track Coronavirus(COVID-19) v1.4.1
-## [trackcoronavirus.info ](https://trackcoronavirus.info)  [![Netlify Status](https://api.netlify.com/api/v1/badges/a8277b72-79da-4905-8c84-ce9ccbfc8e45/deploy-status)](https://app.netlify.com/sites/musing-meitner-afa826/deploys)
-![](./readme-images/readme-fullscreen.png) 
+# :heavy_exclamation_mark: Track Coronavirus(COVID-19) v1.5.0
+## [trackcoronavirus.info](https://trackcoronavirus.info) 
+![](./readme-images/readme-fullscreen.png)
+
 
 
 ### Run locally
@@ -123,6 +124,10 @@ Using my endpoint data, I create dynamic data driven styling to associated param
 
 ### :chart_with_upwards_trend: Totals display 
 ![](./readme-images/footer.png)
+
+### :fire: Heatmap
+View a heatmap visual based on cases per region
+![](./readme-images/heatmap.png)
 
 ## :exclamation: About
 Due to the panic and fear in society I created this accesible application to provide correct infomation, on every countryByGeo where data has been recorded. Please also know, the data shown is recorded infomation, unrecorded infomation will not be shown. 
