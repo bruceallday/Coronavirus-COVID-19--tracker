@@ -33,25 +33,12 @@ const Heatmap = ({ covidData }) => {
 
     const getData = async () => {
         setLoading(true)
-
         const result = await fetch('https://corona.lmao.ninja/v2/jhucsse')
-       
         const data = await result.json()
 
         if (data.error) {
             console.log(data.error)
         } else {
-
-            console.log("DATA ", data)
-
-            // console.log("data", data[2].stats.confirmed)
-            // console.log("latitude ",parseFloat(data[2].coordinates.latitude))
-            // console.log("longitude ", parseFloat(data[2].coordinates.longitude))
-
-            // let cases = data[2].stats.confirmed
-            // let lat = parseFloat(data[2].coordinates.latitude)
-            // let lon = parseFloat(data[2].coordinates.longitude)
-
             const test = data.map((item, index)=> (
                 {
                     "type": "Feature",
@@ -61,32 +48,29 @@ const Heatmap = ({ covidData }) => {
                     "geometry": {
                         "type":
                         "Point",
-                        "coordinates": [parseFloat(item.coordinates.longitude), parseFloat(item.coordinates.latitude)]
+                        "coordinates": [
+                            parseFloat(item.coordinates.longitude), 
+                            parseFloat(item.coordinates.latitude)
+                        ]
                     }
                 }
             ))
-            
+
             const featureCollection = 
             { 
                 "type": "FeatureCollection",
                 "features":[...test]    
             }
-
-            console.log("NEW OBJECT", featureCollection)
-            console.log("TEST", test)
-
-
             setState({ data: featureCollection })
         }
         setLoading(false)
     }
-
+    //ON HOVER-TOOLTIP FEATURE
     const onHover = event => {
         const { features, srcEvent: { offsetX, offsetY } } = event
         const hoveredFeature = (features && features.find(f => f.layer.id === 'data'))
         setState({ hoveredFeature, x: offsetX, y: offsetY })
     }
-
     const renderTooltip = () => {
         const { hoveredFeature, x, y } = state
         return (
@@ -128,6 +112,7 @@ const Heatmap = ({ covidData }) => {
                 <Source type="geojson" data={state.data}>
                     <Layer {...heatmapLayer} />
                 </Source>
+                {renderTooltip()}
             </MapGL>
         </div>
 
