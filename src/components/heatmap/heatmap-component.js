@@ -6,6 +6,7 @@ import { formatNumber } from '../../constants/utils'
 import { heatmapLayer } from './heatmap.styles'
 // import { useStyles } from './heatmap.styles'
 import { textStyles } from '../../constants/textColor'
+import { ImageTexture } from 'material-ui/svg-icons'
 
 const TOKEN = process.env.MAPBOXKEY
 
@@ -33,30 +34,49 @@ const Heatmap = ({ covidData }) => {
     const getData = async () => {
         setLoading(true)
 
-        const result = await fetch(
-            'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson'
-        )
+        const result = await fetch('https://corona.lmao.ninja/v2/jhucsse')
+       
         const data = await result.json()
 
         if (data.error) {
             console.log(data.error)
         } else {
-            // data.features.map(country => {
-            //     covidData.map(countryData => {
-            //         if (country.properties.iso_a3 === countryData.countryInfo.iso3) {
 
-            //             country.properties = {
-            //                 ...countryData,
-            //                 ...country.properties
-            //             }
-            //         }
-            //     })
-            //     if (!country.properties.cases) {
-            //         country.properties.cases = 0
-            //     }
-            // })
-            // console.log("data", data)
-            setState({ data: data })
+            console.log("DATA ", data)
+
+            // console.log("data", data[2].stats.confirmed)
+            // console.log("latitude ",parseFloat(data[2].coordinates.latitude))
+            // console.log("longitude ", parseFloat(data[2].coordinates.longitude))
+
+            // let cases = data[2].stats.confirmed
+            // let lat = parseFloat(data[2].coordinates.latitude)
+            // let lon = parseFloat(data[2].coordinates.longitude)
+
+            const test = data.map((item, index)=> (
+                {
+                    "type": "Feature",
+                        "properties": {
+                        "mag": item.stats.confirmed, 
+                    },
+                    "geometry": {
+                        "type":
+                        "Point",
+                        "coordinates": [parseFloat(item.coordinates.longitude), parseFloat(item.coordinates.latitude)]
+                    }
+                }
+            ))
+            
+            const featureCollection = 
+            { 
+                "type": "FeatureCollection",
+                "features":[...test]    
+            }
+
+            console.log("NEW OBJECT", featureCollection)
+            console.log("TEST", test)
+
+
+            setState({ data: featureCollection })
         }
         setLoading(false)
     }
