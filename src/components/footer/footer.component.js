@@ -65,7 +65,10 @@ const Footer = (props) => {
         <AppBar className={classes.appBar} >
             <Toolbar className={classes.toolbar}>
                 <Typography className={classes.title} >
-                    Total Cases: <span className={textClass.yellowText}>{`${totalsData.cases ? formatNumber(totalsData.cases) : loader}`}</span>
+                    Countries: <span className={textClass.yellowText} >{`${totalsData.affectedCountries ? formatNumber(totalsData.affectedCountries) : loader}`}</span>
+                </Typography>
+                <Typography className={classes.title} >
+                    Cases: <span className={textClass.yellowText}>{`${totalsData.cases ? formatNumber(totalsData.cases) : loader}`}</span>
                 </Typography>
                 <Typography className={classes.title} >
                     Recovered: <span className={textClass.greenText} >{`${totalsData.recovered ? formatNumber(totalsData.recovered) : loader}`}</span>

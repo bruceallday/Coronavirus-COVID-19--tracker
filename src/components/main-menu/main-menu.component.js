@@ -16,7 +16,9 @@ const MainMenu = (props) => {
         newsWindow,
         setNewsWindow,
         statsWindow,
-        setStatsWindow
+        setStatsWindow,
+        mapDark,
+        setMapDark,
     } = props
 
     const classes = useStyles()
@@ -28,8 +30,9 @@ const MainMenu = (props) => {
                     setAboutWindow(!aboutWindow)
                 }}>
                 <InfoIcon
+                    style={{ color: mapDark ? 'cyan' : '#363636' }}
                     className={classes.navIcon}
-                />
+            />
             </IconButton>
 
             <IconButton
@@ -37,19 +40,25 @@ const MainMenu = (props) => {
                     setNewsWindow(!newsWindow)
                 }}>
                 <PriorityHighIcon
+                    style={{ color: mapDark ? 'cyan' : '#363636' }}
                     className={classes.navIcon}
-                />
+            />
             </IconButton>
 
-            <IconButton
+            {/*<IconButton
                 onClick={() => {
                     setStatsWindow(!statsWindow)
                 }}>
                 <AssessmentIcon
+                    style={{ color: mapDark ? 'cyan' : '#363636' }}
                     className={classes.navIcon}
-                />
-            </IconButton>
-            <MapMenuWidget />
+            />
+            </IconButton>*/}
+
+            <MapMenuWidget
+                mapDark={mapDark}
+                setMapDark={setMapDark}
+            />
         </div>
     )
 }

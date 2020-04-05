@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Map from './components/map/map.component'
+import MainWindow from './components/main-window/main-window.component'
 import AboutWindow from './components/about-window/about-window.component'
 import Countries from './components/countries/countries.component'
 import NewsWindow from './components/news/news.component'
@@ -53,7 +53,7 @@ const App = () => {
                     />
                 )}
 
-                <Map 
+                <MainWindow 
                     aboutWindow={aboutWindow} 
                     setAboutWindow={setAboutWindow}
                     newsWindow={newsWindow}

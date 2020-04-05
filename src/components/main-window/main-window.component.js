@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react'
 
 import Footer from '../footer/footer.component'
 import MainMenu from '../main-menu/main-menu.component'
-import ChoroplethMap from '../map-gl/map-gl.component'
+import ChoroplethMap from '../choropleth-map/choropleth-map.component'
+import Heatmap from '../heatmap/heatmap-component'
 
 import CircularProgress from '@material-ui/core/CircularProgress'
-import { useStyles } from './map.styles'
+import { useStyles } from './main-window.styles'
 
 
-const Map = (props) => {
+const MainWindow = (props) => {
     const {
         aboutWindow,
         setAboutWindow,
@@ -22,6 +23,7 @@ const Map = (props) => {
     const classes = useStyles()
     const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
+    const [mapDark, setMapDark] = useState(false)
 
     useEffect(() => {
         getData()
@@ -70,8 +72,19 @@ const Map = (props) => {
                             setNewsWindow={setNewsWindow}
                             statsWindow={statsWindow}
                             setStatsWindow={setStatsWindow}
-                       />         
-                        <ChoroplethMap covidData={countryArr} />
+                            mapDark={mapDark}
+                            setMapDark={setMapDark}
+                       />
+
+                       {mapDark ? (
+                            <Heatmap
+                                covidData={countryArr}
+                            />
+                       ):(
+                            <ChoroplethMap
+                                covidData={countryArr}
+                            />
+                       )}
                     </div>
                 )}
             </div>
@@ -88,6 +101,6 @@ const Map = (props) => {
     )
 }
 
-export default Map
+export default MainWindow
 
    

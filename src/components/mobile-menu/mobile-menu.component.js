@@ -32,19 +32,19 @@ const MobileMenuWidget = (props) => {
     
     const mobileOptions = [
         {
-            action: (() => { setAboutWindow( !aboutWindow ) }),
+            action: (() => { setAboutWindow(!aboutWindow), setAnchorEl(null); }),
             href: null,
             title: "About"
         },
 
         {
-            action: (() => { setNewsWindow( !newsWindow ) }),
+            action: (() => { setNewsWindow(!newsWindow), setAnchorEl(null); }),
             href: null,
             title:"News",
         },
 
         {
-            action: (() => { setStatsWindow( !statsWindow ) }),
+            action: (() => { setStatsWindow(!statsWindow), setAnchorEl(null); }),
             href: null,
             title: "Stats",
         },

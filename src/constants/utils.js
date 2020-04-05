@@ -20,22 +20,21 @@ export const formatNumber = (num) => {
     } 
 }
 
-export const updatePercentiles = (featureCollection, accessor) =>{
-    const { features } = featureCollection;
-    const scale = scaleQuantile()
-        .domain(features.map(accessor))
-        .range(range(9));
-
-    return {
-        type: 'FeatureCollection',
-        features: features.map(f => {
-            const value = accessor(f);
-            const properties = {
-                ...f.properties,
-                value,
-                cases: scale(value)
-            };
-            return { ...f, properties };
-        })
-    };
+export const createFeatures = (data) => {
+    return data.map((item, index) => ({
+        "type": "Feature",
+        "properties": {
+            "province": item.province,
+            "country": item.country,
+            "confirmed": item.stats.confirmed,
+            "mag": item.stats.confirmed,
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [
+                parseFloat(item.coordinates.longitude),
+                parseFloat(item.coordinates.latitude)
+            ]
+        }
+    }))
 }
