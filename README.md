@@ -3,8 +3,10 @@
 ![](./readme-images/readme-fullscreen.png)
 
 
+
 ### Run locally
 Clone project <br>
+Navigate into the project <br>
 run ```yarn``` in the project directory to install all dependancies <br>
 ```yarn start``` to spin up a local server <br>
 View at ```localhost:1234/```<br>
@@ -19,8 +21,8 @@ View at ```localhost:1234/```<br>
 
 ### Endpoints:
 * Coronavirus(COVID-19) data - [NovelCOVID/API](https://github.com/NovelCOVID/API)
-* countryByGeo Codes - [datahub.io/core/countryByGeo-list](https://datahub.io/core/countryByGeo-list)
-* countryByGeo Flags - [countryByGeoflags.io/](https://www.countryByGeoflags.io/)
+* Country codes - [datahub.io/core/countryByGeo-list](https://datahub.io/core/countryByGeo-list)
+* Country Flags - [countryByGeoflags.io/](https://www.countryByGeoflags.io/)
 * Mapbox - [mapbox.com](https://www.mapbox.com)
 * Geo-Json-World - [github.com/BPouncey/geo-json-world](https://github.com/BPouncey/geo-json-world)
 
@@ -78,20 +80,19 @@ const Totals = () => {
 export default Totals
 ```
 
-## Features
+# Features
 
-### :mag:  Dynamic search engine
+## :mag:  Dynamic search engine
 Making use of the React ```useState()``` hook to make an event based search engine. <br>
 ![](./readme-images/search.gif)
 
-### :world_map:  Data Driven Styling
+## :world_map:  Data Driven Styling
 Using my endpoint data, I create dynamic data driven styling to associated parameters, in my [mapbox.com](https://www.mapbox.com) / [Geo-Json](https://github.com/BPouncey/geo-json-world) / [NovelCOVID/API](https://github.com/NovelCOVID/API)) merged data to dynammically create a real-time data visualisation of COVID-19 cases around the world.<br>
 ![](./readme-images/zoom.gif)
 
 ``````javascript
    const getData = async () => {
         setLoading(true)
-
         const result = await fetch(
             `https://bpouncey.github.io/geo-json-world/custom.geo.json`
         )
@@ -99,6 +100,7 @@ Using my endpoint data, I create dynamic data driven styling to associated param
 
         if (data.error) {
             console.log(data.error)
+
         } else {
             data.features.map(country => {
                 covidData.map(countryData => {
@@ -143,4 +145,4 @@ Track Coronavirus(COVID-19) is an independently developed, free to use web appli
 (MIT)
 
 ## Acknowledgments
-@[NovelCOVID](github.com/NovelCOVID)
+[@NovelCOVID](https://github.com/NovelCOVID)
