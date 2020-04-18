@@ -9,7 +9,6 @@ import NewsWindow from './components/news/news.component'
 import StatsWindow from './components/stats/stats.component'
 
 const App = () => {
-    console.log("COMPONENT LOADED")
     const [aboutWindow, setAboutWindow] = useState(false)
     const [newsWindow, setNewsWindow] = useState(false)
     const [statsWindow, setStatsWindow] = useState(false)

@@ -33,7 +33,7 @@ const MainWindow = (props) => {
         setLoading(true)
 
         const result = await fetch(
-            `https://corona.lmao.ninja/countries`
+            `https://corona.lmao.ninja/v2/countries`
         )
         const data = await result.json()
 
