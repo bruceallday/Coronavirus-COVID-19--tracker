@@ -60,6 +60,25 @@ export const useStyles = makeStyles({
         borderRadius: 10 
     },
 
+    bmcButton: {
+        height: 51,
+        width: 217,
+        padding: '7px 10px 7px 10px',
+        color: 'white',
+        borderWidth: 1,
+        backgroundColor: '#79D6B5',
+        fontSize: 12,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        textDecoration: 'none',
+        borderRadius: 5,
+        boxShadow: '0px 1px 2px rgba(190, 190, 190, 0.5)'
+
+        
+    },
+
     '@media (max-width: 414px)': {
         root: {
             width: '100vw',

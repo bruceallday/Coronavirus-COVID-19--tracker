@@ -45,7 +45,7 @@ const Footer = (props) => {
         setLoading(true)
 
         const totalsResult = await fetch(`
-            https://corona.lmao.ninja/all
+            https://corona.lmao.ninja/v2/all
         `)
         const totalsData = await totalsResult.json()
 

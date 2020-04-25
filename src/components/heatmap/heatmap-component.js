@@ -43,7 +43,7 @@ const Heatmap = ({ covidData }) => {
             const featureCollection = 
             { 
                 "type": "FeatureCollection",
-                "features":[...test]    
+                "features":[...test]
             }
             setState({ data: featureCollection })
         }

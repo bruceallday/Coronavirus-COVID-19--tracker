@@ -21,7 +21,7 @@ const Countries = () => {
 
     const getData = async () => {
         const result = await fetch(`
-            https://corona.lmao.ninja/countries
+            https://corona.lmao.ninja/v2/countries
         `)
         const data = await result.json()
 
@@ -113,7 +113,7 @@ const Countries = () => {
 
     const filteredCountries = data.filter(item =>
         item.country.toLowerCase().includes(search.toLowerCase())
-    )
+    ).sort((a, b) => b.cases - a.cases)
 
     return(
         <div>
