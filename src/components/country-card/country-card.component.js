@@ -40,7 +40,7 @@ const Card = (props) => {
             </Typography>
 
             <Typography style={{ paddingLeft: 5 }} variant="body1" >
-                {`Recovered: `}<span className={textClasses.greenText}>{`${formatNumber(recovered)}`}</span>
+                {`Recovered: `}<span className={textClasses.greenText}>{`${formatNumber(recovered) === 0 ? 'N/A' : formatNumber(recovered) }`}</span>
             </Typography>
 
             <Typography style={{ paddingLeft: 5 }} variant="body1" >
