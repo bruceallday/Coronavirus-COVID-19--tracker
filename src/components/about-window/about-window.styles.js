@@ -75,8 +75,6 @@ export const useStyles = makeStyles({
         textDecoration: 'none',
         borderRadius: 5,
         boxShadow: '0px 1px 2px rgba(190, 190, 190, 0.5)'
-
-        
     },
 
     '@media (max-width: 414px)': {
