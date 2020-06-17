@@ -44,17 +44,6 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                         <a className={classes.linkText} href={'https://www.ecdc.europa.eu/en/novel-coronavirus-china'}> ecdc.europa.eu/en/novel-coronavirus</a>
                     </p>
                 </p>
-
-                <div>
-                    <a
-                            className={classes.bmcButton}
-                    target="_blank"
-                        href="https://www.buymeacoffee.com/brucepouncey"><img
-                        src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" /><span
-                        style={{ marginLeft: 15, fontSize: 18 }}>Buy me a coffee</span>
-                    </a>
-                </div>
-
                 </CardContent>
             </Card>
         </div>
