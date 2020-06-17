@@ -2,8 +2,6 @@
 ## [trackcoronavirus.info](https://trackcoronavirus.info) 
 ![](./readme-images/readme-fullscreen.png)
 
-
-
 ### Run locally
 Clone project <br>
 Navigate into the project <br>
