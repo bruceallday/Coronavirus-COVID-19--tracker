@@ -44,7 +44,6 @@ const AboutWindow = ({ setAboutWindow, aboutWindow }) => {
                         <a className={classes.linkText} href={'https://www.ecdc.europa.eu/en/novel-coronavirus-china'}> ecdc.europa.eu/en/novel-coronavirus</a>
                     </p>
                 </p>
-
                 </CardContent>
             </Card>
         </div>
