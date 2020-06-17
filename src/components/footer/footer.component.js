@@ -121,11 +121,7 @@ const Footer = (props) => {
                 <div className={classes.linkContainer} >
                     <Button
                         className={textClass.linkText}
-<<<<<<< HEAD
-                        href="https://hellobruce.co.uk`">
-=======
                         href="https://hellobruce.co.uk">
->>>>>>> master
                         Author
                     </Button>
                 </div> <div className={classes.linkContainer}>|</div>
