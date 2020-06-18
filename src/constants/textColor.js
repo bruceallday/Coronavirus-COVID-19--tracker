@@ -15,11 +15,19 @@ export const textStyles = makeStyles({
     },
 
     yellowText: {
-        color: '#FCAB10',
+        color: 'yellow',
+    },
+
+    orangeText: {
+        color: 'orange',
     },
 
     greenText: {
         color: '#44AF69',
+    },
+
+    blueText: {
+        color: '#00b4d8'
     },
 
     totalsText: {
@@ -27,7 +35,7 @@ export const textStyles = makeStyles({
         marginLeft: '4.5%',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-evenly', 
+        justifyContent: 'space-evenly',
         alignItems: 'center',
         zIndex: 999,
         flexWrap: 'wrap'

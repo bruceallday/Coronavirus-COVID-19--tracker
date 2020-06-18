@@ -12,129 +12,155 @@ import { textStyles } from '../../constants/textColor'
 import { useStyles } from './footer.styles'
 
 const Footer = (props) => {
-    const { 
-        aboutWindow, 
-        setAboutWindow,
-        newsWindow,
-        setNewsWindow,
-        statsWindow,
-        setStatsWindow, 
-        isMobile, 
-    } = props
+  const {
+    aboutWindow,
+    setAboutWindow,
+    newsWindow,
+    setNewsWindow,
+    statsWindow,
+    setStatsWindow,
+    isMobile,
+  } = props
 
-    const classes = useStyles()
-    const textClass = textStyles()
-    const [totalsData, setTotalsData] = useState("")
-    const [lastUpdate, setLastUpdate] = useState('')
-    const [isLoading, setLoading] = useState(false) 
+  const classes = useStyles()
+  const textClass = textStyles()
+  const [totalsData, setTotalsData] = useState("")
+  const [lastUpdate, setLastUpdate] = useState('')
+  const [isLoading, setLoading] = useState(false)
 
-    const loader = '...'
+  const loader = '...'
 
-    useEffect(() => {
-        getData()
-    }, [])
+  useEffect(() => {
+    getData()
+  }, [])
 
-    const createDate = (date) => {
-        let fullDate = new Date(date)
-        let str = fullDate.toString()
-        let trimStr = str.split('(')
-        return trimStr[0]
-    }
+  const createDate = (date) => {
+    let fullDate = new Date(date)
+    let str = fullDate.toString()
+    let trimStr = str.split('(')
+    return trimStr[0]
+  }
 
-    const getData = async () => {
-        setLoading(true)
+  const getData = async () => {
+    setLoading(true)
 
-        const totalsResult = await fetch(`
+    const totalsResult = await fetch(`
             https://corona.lmao.ninja/v2/all
         `)
-        const totalsData = await totalsResult.json()
+    const totalsData = await totalsResult.json()
 
-        if (totalsData.error) {
-            console.log("error", totalsData.error)
-        } else {
-            setTotalsData(totalsData)
-        }
-
-        let date = createDate(totalsData.updated)
-        setLastUpdate(date)
-        setLoading(false)
+    if (totalsData.error) {
+      console.log("error", totalsData.error)
+    } else {
+      setTotalsData(totalsData)
     }
 
+    let date = createDate(totalsData.updated)
+    setLastUpdate(date)
+    setLoading(false)
+  }
 
-    return (
-        <AppBar className={classes.appBar} >
-            <Toolbar className={classes.toolbar}>
-                <Typography className={classes.title} >
-                    Countries: <span className={textClass.yellowText} >{`${totalsData.affectedCountries ? formatNumber(totalsData.affectedCountries) : loader}`}</span>
-                </Typography>
-                <Typography className={classes.title} >
-                    Cases: <span className={textClass.yellowText}>{`${totalsData.cases ? formatNumber(totalsData.cases) : loader}`}</span>
-                </Typography>
-                <Typography className={classes.title} >
-                    Recovered: <span className={textClass.greenText} >{`${totalsData.recovered ? formatNumber(totalsData.recovered) : loader}`}</span>
-                </Typography>
-                <Typography className={classes.title} >
-                    Deaths: <span className={textClass.redtext} >{`${totalsData.deaths ? formatNumber(totalsData.deaths) : loader}`}</span>
-                </Typography>
 
-                {isMobile && (
-                    <MobileMenuWidget
-                        aboutWindow={aboutWindow}
-                        setAboutWindow={setAboutWindow}
-                        newsWindow={newsWindow}
-                        setNewsWindow={setNewsWindow}
-                        statsWindow={statsWindow}
-                        setStatsWindow={setStatsWindow}
-                    />
-                )}
-            </Toolbar>
+  return (
+    <AppBar className={classes.appBar} >
+      <Toolbar className={classes.toolbar}>
+        <Typography className={classes.title} >
+          Recovered:
+          <span className={textClass.greenText} >
+            {`${totalsData.recovered ? (
+              formatNumber(totalsData.recovered)
+            ) : (
+                loader
+              )}`}
+          </span>
+        </Typography>
+        <Typography className={classes.title} >
+          Active Cases:
+            <span className={textClass.yellowText} >
+            {`${totalsData.active ? (
+              formatNumber(totalsData.active)
+            ) : (loader)}`}
+          </span>
+        </Typography>
+        <Typography className={classes.title} >
+          Total Cases:
+          <span className={textClass.orangeText}>
+            {`${totalsData.cases ? (
+              formatNumber(totalsData.cases)
+            ) : (
+                loader
+              )}`}
+          </span>
+        </Typography>
+        <Typography className={classes.title} >
+          Deaths:
+          <span className={textClass.redtext} >
+            {`${totalsData.deaths ? (
+              formatNumber(totalsData.deaths)
+            ) : (
+                loader
+              )}`}
+          </span>
+        </Typography>
 
-            <div className={textClass.totalsText}>
-                <p>Last updated: <span style={{ fontWeight: "Bold" }} >{lastUpdate}</span></p>
+        {isMobile && (
+          <MobileMenuWidget
+            aboutWindow={aboutWindow}
+            setAboutWindow={setAboutWindow}
+            newsWindow={newsWindow}
+            setNewsWindow={setNewsWindow}
+            statsWindow={statsWindow}
+            setStatsWindow={setStatsWindow}
+          />
+        )}
+      </Toolbar>
 
-                <div className={classes.linkContainer} >
-                    <Button
-                        className={textClass.linkText}
-                        onClick={() => {
-                            setAboutWindow(!aboutWindow)
-                        }}>
-                        About
-                    </Button> 
-                </div> <div className={classes.linkContainer}>|</div>
+      <div className={textClass.totalsText}>
+        <p>Last updated: <span style={{ fontWeight: "Bold" }} >{lastUpdate}</span></p>
 
-                <div className={classes.linkContainer} >
-                    <Button
-                        className={textClass.linkText}
-                        href="https://github.com/BPouncey/Coronavirus-COVID-19--tracker">
-                        Docs
-                    </Button> 
-                </div> <div className={classes.linkContainer}>|</div>
-
-                <div className={classes.linkContainer} >
-                    <Button
-                        className={textClass.linkText}
-                        href="https://github.com/NovelCOVID/">
-                        API
-                    </Button> 
-                </div> <div className={classes.linkContainer}>|</div>
-            
-                <div className={classes.linkContainer} >
-                    <Button
-                        className={textClass.linkText}
-                        href="https://hellobruce.co.uk">
-                        Author
+        <div className={classes.linkContainer} >
+          <Button
+            className={textClass.linkText}
+            onClick={() => {
+              setAboutWindow(!aboutWindow)
+            }}>
+            About
                     </Button>
-                </div> <div className={classes.linkContainer}>|</div>
-                
-                <div className={classes.linkContainer} >
-                    <Button
-                        className={textClass.linkText}
-                        href={ "mailto:" + 'brucematthewp@gmail.com'}>
-                        Contact
+        </div> <div className={classes.linkContainer}>|</div>
+
+        <div className={classes.linkContainer} >
+          <Button
+            className={textClass.linkText}
+            href="https://github.com/BPouncey/Coronavirus-COVID-19--tracker">
+            Docs
                     </Button>
-                </div> <div className={classes.linkContainer}>|</div>  
-            </div>
-            
+        </div> <div className={classes.linkContainer}>|</div>
+
+        <div className={classes.linkContainer} >
+          <Button
+            className={textClass.linkText}
+            href="https://github.com/NovelCOVID/">
+            API
+                    </Button>
+        </div> <div className={classes.linkContainer}>|</div>
+
+        <div className={classes.linkContainer} >
+          <Button
+            className={textClass.linkText}
+            href="https://hellobruce.co.uk">
+            Author
+                    </Button>
+        </div> <div className={classes.linkContainer}>|</div>
+
+        <div className={classes.linkContainer} >
+          <Button
+            className={textClass.linkText}
+            href={"mailto:" + 'brucematthewp@gmail.com'}>
+            Contact
+                    </Button>
+        </div> <div className={classes.linkContainer}>|</div>
+      </div>
+
     </AppBar>)
 }
 

@@ -9,101 +9,101 @@ import { textStyles } from '../../constants/textColor'
 
 
 const MobileMenuWidget = (props) => {
-    const { aboutWindow, 
-            setAboutWindow,
-            newsWindow,
-            setNewsWindow,
-            statsWindow,
-            setStatsWindow, 
-    } = props
-    const classes = useStyles()
-    const textClass = textStyles()
-    const [anchorEl, setAnchorEl] = useState(null)
-    const open = Boolean(anchorEl)
-    const ITEM_HEIGHT = 48
-   
-    const handleClick = event => {
-        setAnchorEl(event.currentTarget)
-    };
+  const { aboutWindow,
+    setAboutWindow,
+    newsWindow,
+    setNewsWindow,
+    statsWindow,
+    setStatsWindow,
+  } = props
+  const classes = useStyles()
+  const textClass = textStyles()
+  const [anchorEl, setAnchorEl] = useState(null)
+  const open = Boolean(anchorEl)
+  const ITEM_HEIGHT = 48
 
-    const handleClose = () => {
-        setAnchorEl(null)
-    };
-    
-    const mobileOptions = [
-        {
-            action: (() => { setAboutWindow(!aboutWindow), setAnchorEl(null); }),
-            href: null,
-            title: "About"
-        },
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget)
+  };
 
-        {
-            action: (() => { setNewsWindow(!newsWindow), setAnchorEl(null); }),
-            href: null,
-            title:"News",
-        },
+  const handleClose = () => {
+    setAnchorEl(null)
+  };
 
-        {
-            action: (() => { setStatsWindow(!statsWindow), setAnchorEl(null); }),
-            href: null,
-            title: "Stats",
-        },
+  const mobileOptions = [
+    {
+      action: (() => { setAboutWindow(!aboutWindow), setAnchorEl(null); }),
+      href: null,
+      title: "About"
+    },
 
-        {
-            action: null,
-            href: "https://www.worldometers.info/coronavirus/",
-            title: "Source"
-        },
-        {
-            action: null,
-            href: "https://github.com/NovelCOVID/",
-            title: "API"
-        },
-        {
-            action: null,
-            href: "https://github.com/BPouncey",
-            title: "Author",
-        },
-        
+    {
+      action: (() => { setNewsWindow(!newsWindow), setAnchorEl(null); }),
+      href: null,
+      title: "News",
+    },
 
-    ]
-    return (
-        <div className={classes.menuContainer} >
-            <IconButton
-                aria-label="more"
-                aria-controls="long-menu"
-                aria-haspopup="true"
-                onClick={handleClick}
-            >
-                <InfoIcon className={classes.root} />
-            </IconButton>
-            <Menu
-                id="long-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={open}
-                onClose={handleClose}
-                PaperProps={{
-                    style: {
-                        maxHeight: ITEM_HEIGHT * 4.5,
-                        width: '20ch',
-                        backgroundColor: '#363636',
-                    },
-                }}
-            >
-                {mobileOptions.map((option, index) => (
-                    <MenuItem key={index} selected={option === 'Pyxis'}>
-                        <Button
-                            onClick={option.action}
-                            className={textClass.linkText}
-                            href={option.href}>
-                            {option.title}
-                        </Button>
-                    </MenuItem>
-                ))}
-            </Menu>
-        </div>
-    )
+    {
+      action: (() => { setStatsWindow(!statsWindow), setAnchorEl(null); }),
+      href: null,
+      title: "Stats",
+    },
+
+    {
+      action: null,
+      href: "https://www.worldometers.info/coronavirus/",
+      title: "Source"
+    },
+    {
+      action: null,
+      href: "https://github.com/NovelCOVID/",
+      title: "API"
+    },
+    {
+      action: null,
+      href: "https://github.com/BPouncey",
+      title: "Author",
+    },
+
+
+  ]
+  return (
+    <div className={classes.menuContainer} >
+      <IconButton
+        aria-label="more"
+        aria-controls="long-menu"
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
+        <InfoIcon className={classes.root} />
+      </IconButton>
+      <Menu
+        id="long-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={open}
+        onClose={handleClose}
+        PaperProps={{
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5,
+            width: '20ch',
+            backgroundColor: '#363636',
+          },
+        }}
+      >
+        {mobileOptions.map((option, index) => (
+          <MenuItem key={index} selected={option === 'Pyxis'}>
+            <Button
+              onClick={option.action}
+              className={textClass.linkText}
+              href={option.href}>
+              {option.title}
+            </Button>
+          </MenuItem>
+        ))}
+      </Menu>
+    </div>
+  )
 }
 
 export default MobileMenuWidget

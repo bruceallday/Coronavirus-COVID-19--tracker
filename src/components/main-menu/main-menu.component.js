@@ -10,42 +10,42 @@ import MapMenuWidget from '../map-menu/map-menu.component'
 import { useStyles } from './main-menu.styles'
 
 const MainMenu = (props) => {
-    const {
-        aboutWindow,
-        setAboutWindow,
-        newsWindow,
-        setNewsWindow,
-        statsWindow,
-        setStatsWindow,
-        mapDark,
-        setMapDark,
-    } = props
+  const {
+    aboutWindow,
+    setAboutWindow,
+    newsWindow,
+    setNewsWindow,
+    statsWindow,
+    setStatsWindow,
+    mapDark,
+    setMapDark,
+  } = props
 
-    const classes = useStyles()
+  const classes = useStyles()
 
-    return (
-        <div className={classes.root} >
-            <IconButton
-                onClick={() => {
-                    setAboutWindow(!aboutWindow)
-                }}>
-                <InfoIcon
-                    style={{ color: mapDark ? 'cyan' : '#363636' }}
-                    className={classes.navIcon}
-            />
-            </IconButton>
+  return (
+    <div className={classes.root} >
+      <IconButton
+        onClick={() => {
+          setAboutWindow(!aboutWindow)
+        }}>
+        <InfoIcon
+          style={{ color: mapDark ? 'cyan' : '#363636' }}
+          className={classes.navIcon}
+        />
+      </IconButton>
 
-            <IconButton
-                onClick={() => {
-                    setNewsWindow(!newsWindow)
-                }}>
-                <PriorityHighIcon
-                    style={{ color: mapDark ? 'cyan' : '#363636' }}
-                    className={classes.navIcon}
-            />
-            </IconButton>
+      <IconButton
+        onClick={() => {
+          setNewsWindow(!newsWindow)
+        }}>
+        <PriorityHighIcon
+          style={{ color: mapDark ? 'cyan' : '#363636' }}
+          className={classes.navIcon}
+        />
+      </IconButton>
 
-            {/*<IconButton
+      {/*<IconButton
                 onClick={() => {
                     setStatsWindow(!statsWindow)
                 }}>
@@ -55,12 +55,12 @@ const MainMenu = (props) => {
             />
             </IconButton>*/}
 
-            <MapMenuWidget
-                mapDark={mapDark}
-                setMapDark={setMapDark}
-            />
-        </div>
-    )
+      <MapMenuWidget
+        mapDark={mapDark}
+        setMapDark={setMapDark}
+      />
+    </div>
+  )
 }
 
 export default MainMenu
