@@ -139,9 +139,9 @@ const Footer = (props) => {
         <div className={classes.linkContainer} >
           <Button
             className={textClass.linkText}
-            href="https://github.com/disease-sh/API">
-            API/DATA SOURCE
-                    </Button>
+            href="https://github.com/disease-sh/API#sources">
+            DATA SOURCES
+          </Button>
         </div> <div className={classes.linkContainer}>|</div>
 
         <div className={classes.linkContainer} >
