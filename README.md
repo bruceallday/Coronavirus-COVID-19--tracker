@@ -1,5 +1,4 @@
 # :heavy_exclamation_mark: Track Coronavirus(COVID-19) v1.5.0
-## [trackcoronavirus.info](https://trackcoronavirus.info) 
 ![](./readme-images/readme-fullscreen.png)
 
 ### Run locally
